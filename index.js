@@ -24,3 +24,8 @@ app.get('/test/test2', (req, res) => {
 app.get('/test/test3', (req, res) => {
   res.send('hello')
 })
+
+
+app.get('/test/test4', (req, res) => {
+  res.send('hello')
+})
