@@ -13,3 +13,9 @@ app.get('/', (req, res) => {
 app.get('/test', (req, res) => {
   res.send('hello')
 })
+
+
+
+app.get('/test/test2', (req, res) => {
+  res.send('hello')
+})
