@@ -1,31 +1,33 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const app = express()
+'user strict'
 
-app = express()
+const express = require('express')
+const mongoose = require('mongoose')
+const es6Renderer = require('express-es6-template-engine')
+const path = require('path')
+const app = express()
+const port = 8080
+
+app.use('/public', express.static(path.join(__dirname, 'public')))
+app.engine('html', es6Renderer)
+app.set('views', 'templates')
+app.set('view engine', 'html')
+
+
+
+
+app.get('/login', (req, res) => {
+  res.render('login')
+})
+
+
+
+
 
 
 app.get('/', (req, res) => {
   res.send('done!!')
 })
 
-
-app.get('/test', (req, res) => {
-  res.send('hello')
-})
-
-
-
-app.get('/test/test2', (req, res) => {
-  res.send('hello')
-})
-
-
-app.get('/test/test3', (req, res) => {
-  res.send('hello')
-})
-
-
-app.get('/test/test4', (req, res) => {
-  res.send('hello')
+app.listen(port, () => {
+  console.log(`server is on port: ${port}`)
 })

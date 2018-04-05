@@ -11,5 +11,10 @@
     "url": "https://github.coventry.ac.uk/hajdinim/205CDE.git"
   },
   "author": "Tony Hajdini",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "express-es6-template-engine": "^2.0.3",
+    "mongoose": "^5.0.12"
+  }
 }

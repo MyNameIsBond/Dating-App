@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Document</title>
+    <link rel='stylesheet' href='/public/css/login.css'>
+    <link rel='stylesheet' href='/public/css/home.css'>
+</head>
+
+<body>
+    <!-- Login  Form -->
+    <div class="container">
+
+
+        <div id=''>
+            <button>Log in</button>
+            <button>Register</button>
+            <form id='logindiv' class='lgform'>
+                <ul>
+                    
+                    <li>
+                    </li>
+                    <li>
+                        <h1>Log in</h1>
+                    </li>
+                    <li>
+                        <p>email</p>
+                        <input id='username' type='text' placeholder='example@mail.ac.uk'>
+                    </li>
+                    <li>
+                        <p>password</p>
+                        <input id='password' type='password' placeholder='password'>
+                    </li>
+                    <li>
+                        <a href="">forgot password</a>
+                        <button type='button' class='btn' id='login_btn'>Log In</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <!-- Register  Form -->
+        <div id='regdiv'>
+
+            <form class='lgform' id='register'>
+                <ul>
+                    <li>
+                        <h1>Register</h1>
+                    </li>
+
+                    <li>
+                        <p>username</p>
+                        <input type='text' id='reg_username' placeholder='username'>
+                    </li>
+
+                    <li>
+                        <p>email</p>
+                        <input type='text' id='reg_email' placeholder='example@mail.ac.uk'>
+                    </li>
+                    <li>
+                        <p>password</p>
+                        <input type='password' id='reg_password' placeholder='password'>
+
+                    </li>
+                    <li>
+                        <p>repeat password</p>
+                        <input type='password' id='reg_password2' placeholder='password'>
+
+                    </li>
+
+                    <li>
+                        <p>What's your gender</p>
+                        <select id='gender'>
+                            <option value='male' selected=''>male</option>
+                            <option value=' female '>female</option>
+                            <option value='gay '>gay</option>
+                            <option value='transgender '>transgender</option>
+                        </select>
+                    </li>
+
+                    <li>
+                        <button class='btn' id='reg_button' type='button '>Register</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+
+</body>
+<script src='../public/js/login.js '> </script>
+
+</html>
