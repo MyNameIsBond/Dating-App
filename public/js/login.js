@@ -1,4 +1,3 @@
-
 window.document.getElementById('login_btn').addEventListener('click', () => {
     const email = document.getElementById('username').value
     const password = document.getElementById('password').value
@@ -14,3 +13,13 @@ window.document.getElementById('reg_button').addEventListener('click', () => {
     const gender = document.getElementById('gender').value
     console.log(gender, username, email)
 })
+
+function tabs(tab,cl) {
+    let form = document.getElementsByClassName('form')
+    for (let i = 0; i < form.length; i++) {
+        form[i].style.display = 'none'
+    }
+    document.getElementById(tab).style.display = 'block'
+    let tabs = document.getElementById(cl)
+    tabs.classList.add('actives')
+}

@@ -13,16 +13,13 @@
 <body>
     <!-- Login  Form -->
     <div class="container">
-
-
-        <div id=''>
-            <button>Log in</button>
-            <button>Register</button>
-            <form id='logindiv' class='lgform'>
+        <div id='tabs-cnt'>
+            <button class='tabs-btn' id='libtn' onclick="tabs('logindiv','libtn')">Log in</button>
+            <button class='tabs-btn' id='regbtn' onclick="tabs('register','regbtn')">Register</button>
+        </div>
+        <div class="log-items form" id='logindiv'>
+            <form>
                 <ul>
-                    
-                    <li>
-                    </li>
                     <li>
                         <h1>Log in</h1>
                     </li>
@@ -35,16 +32,15 @@
                         <input id='password' type='password' placeholder='password'>
                     </li>
                     <li>
-                        <a href="">forgot password</a>
+                        <a href="">forgot password?</a>
                         <button type='button' class='btn' id='login_btn'>Log In</button>
                     </li>
                 </ul>
             </form>
         </div>
         <!-- Register  Form -->
-        <div id='regdiv'>
-
-            <form class='lgform' id='register'>
+        <div class="form" id='register' hidden>
+            <form class='lgform'>
                 <ul>
                     <li>
                         <h1>Register</h1>
@@ -69,7 +65,6 @@
                         <input type='password' id='reg_password2' placeholder='password'>
 
                     </li>
-
                     <li>
                         <p>What's your gender</p>
                         <select id='gender'>
@@ -89,6 +84,7 @@
     </div>
 
 </body>
-<script src='../public/js/login.js '> </script>
+<script src='../public/js/login.js '>
+</script>
 
 </html>
