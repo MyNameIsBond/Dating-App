@@ -2,89 +2,93 @@
 <html lang='en'>
 
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
-    <title>Document</title>
-    <link rel='stylesheet' href='/public/css/login.css'>
-    <link rel='stylesheet' href='/public/css/home.css'>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <link rel='stylesheet' href='/public/css/login.css'>
+  <link rel='stylesheet' href='/public/css/home.css'>
 </head>
 
 <body>
-    <!-- Login  Form -->
-    <div class="container">
-        <div id='tabs-cnt'>
-            <button class='tabs-btn' id='libtn' onclick="tabs('logindiv','libtn')">Log in</button>
-            <button class='tabs-btn' id='regbtn' onclick="tabs('register','regbtn')">Register</button>
-        </div>
-        <div class="log-items form" id='logindiv'>
-            <form>
-                <ul>
-                    <li>
-                        <h1>Log in</h1>
-                    </li>
-                    <li>
-                        <p>email</p>
-                        <input id='username' type='text' placeholder='example@mail.ac.uk'>
-                    </li>
-                    <li>
-                        <p>password</p>
-                        <input id='password' type='password' placeholder='password'>
-                    </li>
-                    <li>
-                        <a href="">forgot password?</a>
-                        <button type='button' class='btn' id='login_btn'>Log In</button>
-                    </li>
-                </ul>
-            </form>
-        </div>
-        <!-- Register  Form -->
-        <div class="form" id='register' hidden>
-            <form class='lgform'>
-                <ul>
-                    <li>
-                        <h1>Register</h1>
-                    </li>
+  <div id="nav">
 
-                    <li>
-                        <p>username</p>
-                        <input type='text' id='reg_username' placeholder='username'>
-                    </li>
+  </div>
+  <!-- Login  Form -->
+  <div class="container">
+    <div id='tabs-cnt'>
+      <button class='tabs-btn' id='libtn' onclick="tabs('logindiv','libtn')">Log in</button>
+      <button class='tabs-btn' id='regbtn' onclick="tabs('register','regbtn')">Register</button>
+    </div>
+    <div class="log-items form" id='logindiv'>
+      <form>
+        <ul>
+          <li>
+            <h1>Log in</h1>
+          </li>
+          <li>
+            <p>email</p>
+            <input class='input' id='username' type='text' placeholder='example@mail.ac.uk'>
+          </li>
+          <li>
+            <p>password</p>
+            <input class='input' id='password' type='password' placeholder='password'>
+          </li>
+          <li>
+            <a href="">forgot password?</a>
+            <button type='button' class='btn' id='login_btn'>Log In</button>
+          </li>
+        </ul>
+      </form>
+    </div>
+    <!-- Register  Form -->
+    <div class="form" id='register' hidden>
+      <form class='lgform'>
+        <ul>
+          <li>
+            <h1>Register</h1>
+          </li>
 
-                    <li>
-                        <p>email</p>
-                        <input type='text' id='reg_email' placeholder='example@mail.ac.uk'>
-                    </li>
-                    <li>
-                        <p>password</p>
-                        <input type='password' id='reg_password' placeholder='password'>
+          <li>
+            <p>username</p>
+            <input type='text' class='input' id='reg_username' placeholder='username'>
+          </li>
 
-                    </li>
-                    <li>
-                        <p>repeat password</p>
-                        <input type='password' id='reg_password2' placeholder='password'>
+          <li>
+            <p>email</p>
+            <input type='text' id='reg_email' class='input' placeholder='example@mail.ac.uk'>
+          </li>
+          <li>
+            <p>password</p>
+            <input class='input' type='password' id='reg_password' placeholder='password'>
 
-                    </li>
-                    <li>
-                        <p>What's your gender</p>
-                        <select id='gender'>
+          </li>
+          <li>
+            <p>repeat password</p>
+            <input type='password' class='input' id='reg_password2' placeholder='password'>
+
+          </li>
+          <li>
+            <p>What's your gender</p>
+            <select id='gender'>
                             <option value='male' selected=''>male</option>
                             <option value=' female '>female</option>
                             <option value='gay '>gay</option>
                             <option value='transgender '>transgender</option>
                         </select>
-                    </li>
+          </li>
 
-                    <li>
-                        <button class='btn' id='reg_button' type='button '>Register</button>
-                    </li>
-                </ul>
-            </form>
-        </div>
+          <li>
+            <button class='btn' type="button" id='reg_button'>Register</button>
+          </li>
+        </ul>
+      </form>
     </div>
+  </div>
 
 </body>
-<script src='../public/js/login.js '>
-</script>
+<script src='../public/js/login.js'></script>
+<script src='../public/js/home.js '></script>
+
 
 </html>

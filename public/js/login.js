@@ -11,7 +11,7 @@ window.document.getElementById('reg_button').addEventListener('click', () => {
     const password = document.getElementById('reg_password').value
     const password2 = document.getElementById('reg_password2').value
     const gender = document.getElementById('gender').value
-    console.log(gender, username, email)
+    console.log(gender, username,password2, email)
 })
 
 function tabs(tab,cl) {

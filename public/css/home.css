@@ -1,105 +1,31 @@
 body {
-    background-color: bisque;
+  background-color: bisque;
 }
 
 * {
-    padding: 0px;
-    margin: 0px;
-    color: grey;
+  padding: 0px;
+  margin: 0px;
+  color: grey;
 }
 
 .container {
-    width: 70%;
-    margin: 0% auto;
-}
-
-/* Login - Register Form */
-
-.lgform {
-    align-items: center;
-    padding: 2% 1%;
-}
-
-ul {
-    list-style-type: none;
-}
-
-input {
-    font-size: 15px;
-}
-
-ul li {
-    padding: 2% 30%;
-    align-items: center;
-}
-
-ul li input {
-    padding: 15px;
-    width: 100%;
-    box-shadow: 0px 1px 15px grey;
-    border-radius: 2px;
-    border-color: transparent;
-}
-
-ul li input:focus {
-    box-shadow: 0px 1px 25px rgb(24, 151, 194);
-    border-radius: 2px;
-    border-color: transparent;
-}
-
-ul li input:hover {
-    box-shadow: 0px 1px 25px grey;
+  width: 70%;
+  margin: 0% auto;
 }
 
 .btn {
-    color: white;
-    width: 107%;
-    height: 50px;
-    margin: 0 auto;
-    border-radius: 2px;
-    cursor: pointer;
-    border-color: transparent;
-    background-color: rgb(19, 202, 156);
-    box-shadow: 0px 1px 25px grey;
+  color: white;
+  width: 110%;
+  height: 50px;
+  margin: 0 auto;
+  border-radius: 2px;
+  cursor: pointer;
+  border-color: transparent;
+  background-color: rgb(19, 202, 156);
+  box-shadow: 0px 1px 25px grey;
 }
 
 .btn:hover {
-    background-color: rgb(18, 145, 113);
-    box-shadow: 0px 1px 25px grey;
-}
-
-p {
-    margin: 3px 1px;
-    padding: 3px 1px;
-}
-
-a {
-    margin: 3px 1px;
-    padding: 3px 1px;
-}
-
-#tabs-cnt {
-    margin: 0 -2%;
-    padding: 0 30%;
-    display: flex;
-}
-
-.tabs-btn {
-    width: 53%;
-}
-
-.actives {
-    color: blue;
-}
-
-.from {
-    display: none;
-}
-
-#register {
-    border: solid red 1px;
-}
-
-#logindiv {
-    border: solid red 1px;
+  background-color: rgb(18, 145, 113);
+  box-shadow: 0px 1px 25px grey;
 }

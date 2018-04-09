@@ -21,7 +21,11 @@ app.get('/login', (req, res) => {
 
 
 app.get('/', (req, res) => {
-  res.send('done!!')
+  res.render('home')
+})
+
+app.get('/nav_bar', (req, res) => {
+  res.sendFile(`${__dirname}/templates/nav_bar.html`)
 })
 
 app.listen(port, () => {
