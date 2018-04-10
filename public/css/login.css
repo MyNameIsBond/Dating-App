@@ -1,4 +1,3 @@
-
 /* Login - Register Form */
 
 .lgform {
@@ -36,6 +35,7 @@ ul li .input:focus {
 ul li .input:hover {
   box-shadow: 0px 1px 25px grey;
 }
+
 p {
   margin: 3px 1px;
   padding: 3px 1px;
@@ -47,8 +47,9 @@ a {
 }
 
 #tabs-cnt {
+  width: 100%;
   margin: 0 -2%;
-  padding: 0 30%;
+  padding: 0 2%;
   display: flex;
 }
 
@@ -57,7 +58,7 @@ a {
 }
 
 .actives {
-  color: blue;
+  width: 100%;
 }
 
 .from {
@@ -65,7 +66,34 @@ a {
 }
 
 #register {
-  border:1px solid red;
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 14px 15px grey;
 }
 
-#logindiv {}
+#logindiv {
+  background-color: rgba( 218, 165, 32, 0.1);
+  box-shadow: 0px 14px 15px grey;
+}
+
+/*  */
+
+#libtn {
+  width: 50%;
+  background-color: rgba( 218, 165, 32, 0.1);
+}
+
+#regbtn {
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 50%;
+}
+
+#regbtn:active {
+  outline: none;
+}
+
+#tabs-cnt>button {
+  text-align: 15px;
+  height: 40px;
+  cursor: pointer;
+  border-color: transparent;
+}
