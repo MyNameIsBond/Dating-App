@@ -1,4 +1,3 @@
-console.log('hey');
 window.onload = nav_bar()
 function nav_bar() {
   const xml = new XMLHttpRequest()

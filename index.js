@@ -28,9 +28,8 @@ app.get('/nav_bar', (req, res) => {
   res.sendFile(`${__dirname}/templates/nav_bar.html`)
 })
 
-app.get('/:username', (req, res) => {
-    res.sendFile(`${__dirname}/templates/profile.html`)
-
+app.get('/profile/:username', (req, res) => {
+  res.sendFile(`${__dirname}/templates/profile.html`)
 })
 
 app.listen(port, () => {
