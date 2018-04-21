@@ -4,10 +4,15 @@
   border: 1px solid red;
 }
 
-#profile h1 {
-  color: red;
+.prof-list li {
+  list-style: none;
+  display: inline;
+  padding: 0px 10px;
+  margin: 0px 10px;
 }
 
-#h1 {
-  color: pink;
+.profile-div {
+  padding: 10px 10px;
+  box-shadow: 1px 1px 15px grey;
+  outline: none;
 }
