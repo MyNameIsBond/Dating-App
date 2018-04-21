@@ -4,10 +4,10 @@
   border: 1px solid red;
 }
 
-#profile>h1 {
+#profile h1 {
   color: red;
 }
 
-#some {
-  color: red;
+#h1 {
+  color: pink;
 }
