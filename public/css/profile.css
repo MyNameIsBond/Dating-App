@@ -1,18 +1,43 @@
-#photo {
-  width: 20px;
-  height: 20px;
-  border: 1px solid red;
-}
-
 .prof-list li {
   list-style: none;
   display: inline;
   padding: 0px 10px;
   margin: 0px 10px;
+  width: 100%;
 }
 
 .profile-div {
   background-color: white;
   padding: 10px 10px;
   box-shadow: 1px 1px 15px grey;
+  height: 200px;
+}
+
+.prof-list {
+  width: 100%;
+  text-align: center;
+}
+
+.left-prof {
+  width: 300px;
+  float: left;
+  overflow: hidden;
+}
+
+.biocont {
+  width: auto;
+  height: auto;
+  display: inline;
+  text-align: center;
+}
+
+.left-prof {
+  padding: 25px 20px;
+  width: 200px;
+  height: 200px;
+}
+
+.bio {
+  padding: 25px 20px;
+  overflow: hidden;
 }

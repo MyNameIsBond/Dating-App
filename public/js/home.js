@@ -13,3 +13,8 @@ function nav_bar() {
   xml.send()
 }
 nav_bar()
+
+
+document.getElementById('refreshbtn').addEventListener('click', () => {
+  document.getElementById('textarea').value =''
+})

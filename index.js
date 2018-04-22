@@ -30,8 +30,12 @@ app.get('/nav_bar', (req, res) => {
 
 app.get('/profile/:username', (req, res) => {
   res.sendFile(`${__dirname}/templates/profile.html`)
-
 })
+
+app.post('/post', (req, res) => {
+  console.log(req.body.textarea);
+})
+
 
 app.listen(port, () => {
   console.log(`server is on port: ${port}`)
