@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <link href="../public/css/home.css">
-  <title>ok</title>
+  <title>Home</title>
 </head>
 
 <body>
@@ -36,15 +36,14 @@
 
 
 
-    <form class="container " id="submit-form" action="/post" method="post">
+    <form class="container " id="submit-form">
       <h4>Write your thoughts</h4>
       <br>
-      <textarea id="textarea" name="name" rows="10" cols="72"></textarea>
+      <textarea id="textarea" name="textarea" rows="10" cols="72"></textarea>
       <ul>
-        <li><button type="button" name="button" class="btn btn-post">Post</button></li>
-        <li><button type="button" name="button" class="btn btn-cancel" id="refreshbtn">Cancel</button></li>
+        <li><button onclick="sendpost()" type="button" name="button" class="btn btn-post">Post</button></li>
+        <li><button type="button" class="btn btn-cancel" id="refreshbtn">Cancel</button></li>
       </ul>
-
     </form>
 
   </div>
