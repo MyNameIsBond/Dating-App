@@ -44,13 +44,13 @@ form ul {
   padding: 10px 0px;
 }
 
-.container form ul li button {
+#submit-form ul li button {
   margin: 0px 0px;
   width: 49%;
   box-shadow: none;
 }
 
-.container form ul li {
+#submit-form ul li {
   display: inline;
   list-style: none;
   margin-top: 10px;
@@ -78,7 +78,7 @@ textarea:active {
   background-color: white;
 }
 
-.container form {
+#submit-form {
   box-shadow: 0px 1px 25px grey;
   padding: 15px;
   background-color: white;
@@ -95,19 +95,32 @@ textarea:active {
 .user-card {
   background-color: white;
   padding: 15px 20px;
-  margin:40px 0px;
+  margin: 40px 0px;
   height: auto;
   width: auto;
   box-shadow: 0px 1px 25px grey;
 }
+
 .user-card-items {
   padding: 10px 25px;
   font-size: 20px;
-
 }
 
-.home-card-list li{
+.home-card-list li {
   display: inline;
   padding: 20px 20px;
   margin: 10px;
+}
+
+.like-link {
+  text-decoration: none;
+  color: rgb(19, 202, 156);
+}
+
+.like-link:hover {
+  color:rgb(18, 145, 113);
+}
+
+.home-card-list {
+  text-align: center;
 }
