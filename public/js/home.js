@@ -33,6 +33,6 @@ function sendpost() {
     }
   }
 
-  xml.open('POST', `/post/${post}`, true)
+  xml.open('GET', `/post/${post}`, true)
   xml.send()
 }
