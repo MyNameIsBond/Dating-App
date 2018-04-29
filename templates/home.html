@@ -12,39 +12,57 @@
   <div id='nav'>
   </div>
   <div class="container">
+    ${posts.map(f =>`
     <div class="user-card">
+
       <div class="user-card-items">
         <img src="../public/img/download2.jpeg" width="40px" height="40px">
         <br>
-        <small>suername</small>
+        <small>Mr. Smith</small>
       </div>
 
       <div class="user-card-items">
         <p>
-          Something Something Something Something Something Something Something Something Something Something Something Something Something Something Something Something Something Something Something Something Something Something Something Something Something Something
-          Something Something Something Something
+          ${f.post}
         </p>
 
       </div>
       <hr>
       <ul class="home-card-list">
-        <li>23<a href="" class="like-link"> like(s) </a> </li>
-        <li> </li>
+        <li>23
+          <a href="" class="like-link"> like(s) </a>
+        </li>
+        <li>${f.date}</li>
       </ul>
+    </div>`).join('')}
+    <!-- //////////////User Card /////////////// -->
+    <div id="post">
 
     </div>
+    <!-- ///////////////////////////////// -->
+
+    <!-- ///////////////////////////////// -->
 
 
-    <form class="container " id="submit-form">
+
+
+
+
+    <!-- ///////////////////////////////// -->
+
+    <form class="container" id="submit-form">
       <h4>Write your thoughts</h4>
       <br>
       <textarea id="textarea" name="textarea" rows="10" cols="72"></textarea>
       <ul>
-        <li><button onclick="sendpost()" type="button" name="button" class="btn btn-post">Post</button></li>
-        <li><button type="button" class="btn btn-cancel" id="refreshbtn">Cancel</button></li>
+        <li>
+          <button onclick="sendpost()" type="button" name="button" class="btn btn-post">Post</button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-cancel" id="refreshbtn">Cancel</button>
+        </li>
       </ul>
     </form>
-
   </div>
 
 

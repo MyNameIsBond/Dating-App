@@ -15,7 +15,7 @@ body {
 
 .btn {
   color: white;
-  width: 110%;
+  width: 107%;
   height: 50px;
   margin: 0 auto;
   border-radius: 2px;
@@ -106,6 +106,10 @@ textarea:active {
   font-size: 20px;
 }
 
+.user-card-items p {
+  text-align: center;
+}
+
 .home-card-list li {
   display: inline;
   padding: 20px 20px;
@@ -118,7 +122,7 @@ textarea:active {
 }
 
 .like-link:hover {
-  color:rgb(18, 145, 113);
+  color: rgb(18, 145, 113);
 }
 
 .home-card-list {

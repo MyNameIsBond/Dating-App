@@ -1,5 +1,4 @@
 'user strict'
-
 const express = require('express')
 const mongoose = require('mongoose')
 const es6Renderer = require('express-es6-template-engine')
@@ -9,7 +8,7 @@ const bodyParser = require('body-parser')
 const port = 8080
 let db = mongoose.connection
 mongoose.connect('mongodb://localhost/user')
-let Posts = require('/models/post')
+let Posts = require('./models/post')
 
 db.on('error', err => {
   console.log(err)
@@ -37,7 +36,17 @@ app.get('/login', (req, res) => {
 
 
 app.get('/', (req, res) => {
-  res.render('home')
+  Posts.find({}, (err, posts) => {
+    if (err)
+      console.log(err)
+    else
+      console.log(posts)
+    res.render('home', {
+      locals: {
+        posts
+      }
+    })
+  })
 })
 
 app.get('/nav_bar', (req, res) => {
@@ -50,6 +59,17 @@ app.get('/profile/:username', (req, res) => {
 
 app.get('/post/:textarea', (req, res) => {
   console.log(req.params.textarea)
+  let postt = new Posts()
+  postt.post = req.params.textarea
+  date = new Date()
+  postt.date = `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`
+
+  postt.save(err => {
+    if (err)
+      console.log(err)
+    else
+      return res.send(postt)
+  })
 })
 
 

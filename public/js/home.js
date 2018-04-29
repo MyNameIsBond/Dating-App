@@ -1,6 +1,6 @@
 function nav_bar() {
   const xml = new XMLHttpRequest()
-  xml.onload = function() {
+  xml.onload = function () {
     if (xml.readyState === 4 && xml.status === 200) {
       document.getElementById('nav').innerHTML = this.responseText
     } else {
@@ -14,19 +14,12 @@ function nav_bar() {
 }
 nav_bar()
 
-
-document.getElementById('refreshbtn').addEventListener('click', () => {
-  document.getElementById('textarea').value = ''
-})
-
 function sendpost() {
   post = document.getElementById('textarea').value
-  console.log(post);
   const xml = new XMLHttpRequest()
-  xml.onload = function() {
+  xml.onload = function () {
     if (xml.readyState === 4 && xml.status === 200) {
-      document.getElementById('nav').innerHTML = this.responseText
-      console.log(this.responseText)
+      document.getElementById('post').innerHTML = makepost(this.responseText)
     } else {
       const error = 'error'
       console.log(error, this.statusText)
@@ -36,3 +29,33 @@ function sendpost() {
   xml.open('GET', `/post/${post}`, true)
   xml.send()
 }
+
+function makepost(text1) {
+  let text = JSON.parse(text1)
+  console.log(text)
+  return `
+  <div class="user-card">
+  <div class="user-card-items">
+    <img src="../public/img/download2.jpeg" width="40px" height="40px">
+    <br>
+    <small>Mr. Smith</small>
+  </div>
+
+  <div class="user-card-items">
+    <p>${text.post}</p>
+  </div>
+  <hr>
+  <ul class="home-card-list">
+    <li>30
+      <a href="" class="like-link"> like(s) </a>
+    </li>
+    <li>${text.date}</li>
+  </ul>
+</div>
+`
+}
+
+
+document.getElementById('refreshbtn').addEventListener('click', () => {
+  document.getElementById('textarea').value = ''
+})

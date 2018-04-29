@@ -11,10 +11,10 @@ window.document.getElementById('reg_button').addEventListener('click', () => {
     const password = document.getElementById('reg_password').value
     const password2 = document.getElementById('reg_password2').value
     const gender = document.getElementById('gender').value
-    console.log(gender, username,password2, email)
+    console.log(gender, username, password2, email)
 })
 
-function tabs(tab,cl) {
+function tabs(tab, cl) {
     let form = document.getElementsByClassName('form')
     for (let i = 0; i < form.length; i++) {
         form[i].style.display = 'none'
