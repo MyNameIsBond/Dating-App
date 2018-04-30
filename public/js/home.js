@@ -50,6 +50,9 @@ function makepost(text1) {
       <a href="" class="like-link"> like(s) </a>
     </li>
     <li>${text.date}</li>
+    <li>
+    <button onclick="delete_post()" class="btn-delete" style="padding: 0px;">Delete</button>
+  </li>
   </ul>
 </div>
 `
@@ -59,3 +62,19 @@ function makepost(text1) {
 document.getElementById('refreshbtn').addEventListener('click', () => {
   document.getElementById('textarea').value = ''
 })
+
+function delete_post() {
+  post = document.getElementById('textarea').value
+  const xml = new XMLHttpRequest()
+  xml.onload = function () {
+    if (xml.readyState === 4 && xml.status === 200) {
+      document.getElementById('post').innerHTML = makepost(this.responseText)
+    } else {
+      const error = 'error'
+      console.log(error, this.statusText)
+    }
+  }
+
+  xml.open('GET', `/delete/post/${post}`, true)
+  xml.send()
+}
