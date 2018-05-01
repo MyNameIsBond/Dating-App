@@ -11,11 +11,11 @@ mongoose.connect('mongodb://localhost/user')
 let Posts = require('./models/post')
 
 db.on('error', err => {
-  console.log(err)
+    console.log(err)
 })
 
 db.once('open', () => {
-  console.log('MongoDB connected')
+    console.log('MongoDB connected')
 })
 
 
@@ -36,11 +36,11 @@ app.get('/login', (req, res) => {
 
 
 app.get('/', (req, res) => {
+  console.log(req.body)
   Posts.find({}, (err, posts) => {
     if (err)
       console.log(err)
     else
-      console.log(posts)
     res.render('home', {
       locals: {
         posts
