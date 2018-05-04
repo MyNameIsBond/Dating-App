@@ -11,7 +11,7 @@ mongoose.connect('mongodb://localhost/user')
 let Posts = require('./models/post')
 
 db.on('error', err => {
-    console.log(err)
+    throw err
 })
 
 db.once('open', () => {
@@ -38,9 +38,9 @@ app.get('/login', (req, res) => {
 app.get('/', (req, res) => {
   console.log(req.body)
   Posts.find({}, (err, posts) => {
-    if (err)
-      console.log(err)
+    if (err) throw err
     else
+      console.log(posts)
     res.render('home', {
       locals: {
         posts
@@ -48,6 +48,12 @@ app.get('/', (req, res) => {
     })
   })
 })
+
+let all_post =  Posts.find({}, (err, posts) => {
+    if (err) throw err
+    else
+      return posts 
+  })
 
 app.get('/nav_bar', (req, res) => {
   res.sendFile(`${__dirname}/templates/nav_bar.html`)
@@ -57,20 +63,29 @@ app.get('/profile/:username', (req, res) => {
   res.sendFile(`${__dirname}/templates/profile.html`)
 })
 
-app.get('/post/:textarea', (req, res) => {
-  console.log(req.params.textarea)
-  let postt = new Posts()
-  postt.post = req.params.textarea
-  date = new Date()
-  postt.date = `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`
-
-  postt.save(err => {
-    if (err)
-      console.log(err)
-    else
-      return res.send(postt)
-  })
+app.post('/post/:textarea', (req, res) => {
+    console.log(req.params.textarea)
+    let postt = new Posts()
+    postt.post = req.params.textarea
+    date = new Date()
+    postt.date = `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`
+    postt.save(err => {
+        if (err) throw err
+        else return res.send(postt)
+    })
 })
+
+app.get('/delete/post/:id', (req,res) =>{
+      id = {_id : req.params.id}
+      Posts.remove(id, err  =>{
+        if (err) throw err
+          else res.status(200)
+      })
+})
+
+
+
+
 
 
 app.listen(port, () => {

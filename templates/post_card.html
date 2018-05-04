@@ -1,20 +1,6 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <link href="../public/css/home.css">
-
-  <title>Home</title>
-</head>
-
-<body>
-  <!-- navigation Bar -->
-  <div id='nav'>
-  </div>
-  <div class="container">
+  <div class="container post">
     ${posts.map(f =>`
-    <div class="user-card" id='user-card'>
+    <div class="user-card">
 
       <div class="user-card-items">
         <img src="../public/img/download2.jpeg" width="40px" height="40px">
@@ -34,7 +20,7 @@
         </li>
         <li>${f.date}</li>
         <li>
-          <button onclick="delete_post()" class="btn-delete" id="delete_post" data-id ='${f._id}'>${f._id}</button>
+          <button onclick="delete_post()" class="btn-delete" style="padding: 0px;">Delete</button>
         </li>
       </ul>
     </div>`).join('')}
@@ -58,9 +44,3 @@
       </ul>
     </form>
   </div>
-
-
-</body>
-<script src='../public/js/home.js'></script>
-
-</html>

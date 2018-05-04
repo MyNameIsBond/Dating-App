@@ -96,3 +96,19 @@ a {
   cursor: pointer;
   border-color: transparent;
 }
+
+#regbtn:focus {
+  outline: none;
+}
+#libtn:focus {
+  outline: none;
+}
+
+#regbtn:hover {
+  outline: none;
+  border-bottom-color: white;
+}
+#libtn:hover {
+    outline: none;
+    border-bottom-color: white;
+}
