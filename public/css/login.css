@@ -64,12 +64,12 @@ a {
 }
 
 #register {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #dfe166;
   box-shadow: 0px 14px 15px grey;
 }
 
 #logindiv {
-  background-color: rgba( 218, 165, 32, 0.1);
+  background-color: #ec96a4;
   box-shadow: 0px 14px 15px grey;
 }
 
@@ -79,11 +79,11 @@ a {
 
 #libtn {
     width: 50%;
-    background-color: rgba( 218, 165, 32, 0.1);
+    background-color:  #ec96a4;
 }
 
 #regbtn {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: #dfe166;
     width: 50%;
 }
 

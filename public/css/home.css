@@ -97,7 +97,6 @@ textarea:active {
 
 .user-card {
   background-color: #f4f4ef;
-  color: !important;
   padding: 15px 20px;
   margin: 20px 0px;
   height: auto;
@@ -150,11 +149,11 @@ textarea:active {
 }
 
 .like {
-  background-color:  rgb(19, 202, 156);
+  background-color:  #2988bc;
 }
 
 .like:hover {
   box-shadow: 0px 2px 3px grey;
-  background:rgb(19, 202, 156);
+  background:#2988bc;
 }
 
