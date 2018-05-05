@@ -21,7 +21,7 @@ ul li {
 ul li .input {
   padding: 15px;
   width: 100%;
-  box-shadow: 0px 1px 15px grey;
+  box-shadow: 0px 2px 3px grey;
   border-radius: 2px;
   border-color: transparent;
 }
@@ -32,9 +32,7 @@ ul li .input:focus {
   border-color: transparent;
 }
 
-ul li .input:hover {
-  box-shadow: 0px 1px 25px grey;
-}
+
 
 p {
   margin: 3px 1px;
@@ -75,38 +73,41 @@ a {
   box-shadow: 0px 14px 15px grey;
 }
 
+#login_btn:hover{
+  background-color: rgb(77, 255, 169) !important;
+}
 
 #libtn {
-  width: 50%;
-  background-color: rgba( 218, 165, 32, 0.1);
+    width: 50%;
+    background-color: rgba( 218, 165, 32, 0.1);
 }
 
 #regbtn {
-  background-color: rgba(0, 0, 0, 0.1);
-  width: 50%;
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 50%;
 }
 
 #regbtn:active {
-  outline: none;
+    outline: none;
 }
 
 #tabs-cnt>button {
-  text-align: 15px;
-  height: 40px;
-  cursor: pointer;
-  border-color: transparent;
+    text-align: 15px;
+    height: 40px;
+    cursor: pointer;
+    border-color: transparent;
 }
 
 #regbtn:focus {
-  outline: none;
+    outline: none;
 }
 #libtn:focus {
-  outline: none;
+   outline: none;
 }
 
 #regbtn:hover {
-  outline: none;
-  border-bottom-color: white;
+    outline: none;
+    border-bottom-color: white;
 }
 #libtn:hover {
     outline: none;
