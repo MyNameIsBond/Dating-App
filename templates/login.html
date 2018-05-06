@@ -16,74 +16,77 @@
   </div>
   <!-- Login  Form -->
   <div class="container">
-    <div id='tabs-cnt'>
-      <button class='tabs-btn' id='libtn' onclick="tabs('logindiv','libtn')">Login</button>
-      <button class='tabs-btn' id='regbtn' onclick="tabs('register','regbtn')">Register</button>
-    </div>
-    <div class="log-items form" id='logindiv'>
-      <form>
-        <ul>
-          <li>
-            <h1>Login</h1>
-          </li>
-          <li>
-            <p>email</p>
-            <input class='input' id='username' type='text' placeholder='example@mail.ac.uk'>
-          </li>
-          <li>
-            <p>password</p>
-            <input class='input' id='password' type='password' placeholder='password'>
-          </li>
-          <li>
-            <a href="">forgot password?</a>
-            <br>
-            <br>
-            <button type='button' class='btn' id='login_btn'>Login</button>
-          </li>
-        </ul>
-      </form>
-    </div>
-    <!-- Register  Form -->
-    <div class="form" id='register' hidden>
-      <form class='lgform'>
-        <ul>
-          <li>
-            <h1>Register</h1>
-          </li>
-          <li>
-            <p>username</p>
-            <input type='text' class='input' id='reg_username' placeholder='username'>
-          </li>
+    <div id='div-shadow'>
 
-          <li>
-            <p>email</p>
-            <input type='text' id='reg_email' class='input' placeholder='example@mail.ac.uk'>
-          </li>
-          <li>
-            <p>password</p>
-            <input class='input' type='password' id='reg_password' placeholder='password'>
+      <div id='tabs-cnt'>
+        <button class='tabs-btn' id='libtn' onclick="tabs('logindiv','libtn')">Login</button>
+        <button class='tabs-btn' id='regbtn' onclick="tabs('register','regbtn')">Register</button>
+      </div>
+      <div class="log-items form" id='logindiv'>
+        <form>
+          <ul>
+            <li>
+              <h1>Login</h1>
+            </li>
+            <li>
+              <p>email</p>
+              <input class='input' id='username' type='text' placeholder='example@mail.ac.uk'>
+            </li>
+            <li>
+              <p>password</p>
+              <input class='input' id='password' type='password' placeholder='password'>
+            </li>
+            <li>
+              <a href="">forgot password?</a>
+              <br>
+              <br>
+              <button type='button' class='btn' id='login_btn'>Login</button>
+            </li>
+          </ul>
+        </form>
+      </div>
+      <!-- Register  Form -->
+      <div class="form" id='register' hidden>
+        <form class='lgform'>
+          <ul>
+            <li>
+              <h1>Register</h1>
+            </li>
+            <li>
+              <p>username</p>
+              <input type='text' class='input' id='reg_username' placeholder='username'>
+            </li>
 
-          </li>
-          <li>
-            <p>repeat password</p>
-            <input type='password' class='input' id='reg_password2' placeholder='password'>
+            <li>
+              <p>email</p>
+              <input type='text' id='reg_email' class='input' placeholder='example@mail.ac.uk'>
+            </li>
+            <li>
+              <p>password</p>
+              <input class='input' type='password' id='reg_password' placeholder='password'>
 
-          </li>
-          <li>
-            <p>What's your gender</p>
-            <select id='gender'>
-              <option value='male' selected=''>male</option>
-              <option value=' female '>female</option>
-              <option value='gay '>gay</option>
-              <option value='transgender '>transgender</option>
-            </select>
-          </li>
+            </li>
+            <li>
+              <p>repeat password</p>
+              <input type='password' class='input' id='reg_password2' placeholder='password'>
 
-          <li>
-            <button class='btn' type="button" id='reg_button'>Register</button>
-          </li>
-        </ul>
-      </form>
+            </li>
+            <li>
+              <p>What's your gender</p>
+              <select id='gender'>
+                <option value='male' selected=''>male</option>
+                <option value=' female '>female</option>
+                <option value='gay '>gay</option>
+                <option value='transgender '>transgender</option>
+              </select>
+            </li>
+
+            <li>
+              <button class='btn' type="button" id='reg_button'>Register</button>
+            </li>
+          </ul>
+        </form>
+      </div>
     </div>
   </div>
 

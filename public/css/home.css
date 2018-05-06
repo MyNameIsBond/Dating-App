@@ -83,6 +83,10 @@ textarea:active {
   padding: 15px;
   background-color: #f4f4ef;
 }
+#submit-form:hover {
+  box-shadow:  0px 2px 10px grey;
+}
+
 .btn-post:hover{
   box-shadow: 0px 2px 3px grey !important;
 }

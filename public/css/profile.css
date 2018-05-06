@@ -9,7 +9,7 @@
 .profile-div {
   background-color: #f4f4ef;
   padding: 10px 10px;
-  box-shadow:  0px 2px 3px grey;
+  box-shadow: 0px 2px 3px grey;
   height: 200px;
 }
 
@@ -40,4 +40,22 @@
 .bio {
   padding: 25px 20px;
   overflow: hidden;
+}
+
+.user-buttons {
+  list-style: none;
+  border: solid 1px black;
+  text-align: center;
+}
+
+#buttons-id input {
+  width: 49.5%;
+  margin: -3px;
+  padding: 10px;
+  outline: none;
+  outline-style: none;
+}
+
+#buttons-id {
+  text-align: center;
 }

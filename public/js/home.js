@@ -49,7 +49,7 @@ function makepost(text1) {
     </li>
     <li>${text.date}</li>
     <li>
-    <button onclick="delete_post()" id='delete_post' class="btn-delete" data-id= '${text._id}'">${text._id}</button>
+    <button onclick="delete_post()" id='delete_post' class='btn-delete' data-id='${text._id}'">${text._id}</button>
   </li>
   </ul>
 </div>
@@ -79,7 +79,7 @@ document.getElementById('refreshbtn').addEventListener('click', () => {
 //       window.location.reload()
 // }
 
-function delete_post(){
+function delete_post() {
   let k = document.getElementsByClassName('btn-delete').id
   console.log(k)
 }

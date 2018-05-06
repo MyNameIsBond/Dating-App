@@ -65,12 +65,10 @@ a {
 
 #register {
   background-color: #dfe166;
-  box-shadow: 0px 14px 15px grey;
 }
 
 #logindiv {
   background-color: #ec96a4;
-  box-shadow: 0px 14px 15px grey;
 }
 
 #login_btn:hover{
@@ -112,4 +110,12 @@ a {
 #libtn:hover {
     outline: none;
     border-bottom-color: white;
+}
+
+#div-shadow {
+  box-shadow: 0px 2px 3px grey;
+}
+
+#div-shadow:hover {
+  box-shadow: 0px 2px 10px grey;
 }
