@@ -1,12 +1,10 @@
 body {
   background-image: url('../img/egg_shell.png');
-}
-
-* {
   padding: 0px;
   margin: 0px;
   color: #32384D;
 }
+
 
 .container {
   width: 70%;

@@ -2,8 +2,13 @@
   list-style: none;
   display: inline;
   padding: 0px 10px;
-  margin: 0px 10px;
-  width: 103%;
+  width: 100%;
+}
+
+.prof-list {
+  width: 100%;
+  height: 10%;
+  text-align: center;
 }
 
 .profile-div {
@@ -11,11 +16,6 @@
   padding: 10px 10px;
   box-shadow: 0px 2px 3px grey;
   height: 200px;
-}
-
-.prof-list {
-  width: 100%;
-  text-align: center;
 }
 
 .left-prof {
@@ -59,3 +59,61 @@
 #buttons-id {
   text-align: center;
 }
+
+
+/*Photos Tab*/
+.user-photos {
+  width: 100%;
+  height: auto;
+  border:solid black 1px;
+}
+
+.user-info {
+  width: 100%;
+  height: auto;
+  border:solid black 1px;
+}
+
+
+.userCard {
+  margin: 15px 0px;
+  width: 100%;
+  height: 300px;
+  box-shadow: 0px 2px 3px grey;
+  background: white;
+}
+
+.header {
+  background: #ec96a4;
+  height: 50px;
+  margin: 0px 0px;
+  text-align: center;
+}
+
+.header header {
+  margin: 10px 0px;
+}
+ #user-name {
+  margin: 0px 0px 0px 10px;
+ }
+
+#user-photo {
+  width: 200px;
+  max-height: 100%;
+  background-repeat: no-repeat;
+  text-align: center;
+  position: relative;
+}
+
+
+#user-photo > img {
+  max-height: 100%;
+  margin: 50px 0px;
+}
+
+#card-footer {
+  background-color: #5bc8ac;
+  text-align: center;
+  height: 10%;
+}
+
