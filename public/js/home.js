@@ -17,7 +17,7 @@ nav_bar()
 function sendpost() {
   post = document.getElementById('textarea').value
   let xml = new XMLHttpRequest()
-  xml.onreadystatechange = function () {
+  xml.onload = function () {
     if (xml.readyState === 4 && xml.status === 200) {
       document.getElementById('post').innerHTML = makepost(this.responseText)
     } else {
@@ -49,7 +49,7 @@ function makepost(text1) {
     </li>
     <li>${text.date}</li>
     <li>
-    <button onclick="delete_post()" id='delete_post' class='btn-delete' data-id='${text._id}'">${text._id}</button>
+    <button onclick="delete_post()" class="btn-delete" id="delete_post" data-id='${text._id}' value='${text._id}'>${text._id}</button>
   </li>
   </ul>
 </div>
@@ -61,25 +61,18 @@ document.getElementById('refreshbtn').addEventListener('click', () => {
   document.getElementById('textarea').value = ''
 })
 
-
-
-// function delete_post() {
-//     id  = document.getElementById('delete_post').value
-//     let xml = new XMLHttpRequest()
-//     xml.onload = function () {
-//           if (xml.readyState === 4 && xml.status === 200) {
-//           document.getElementById('user-card').remove()
-//       } else {
-//           const error = 'error'
-//           console.log(error, this.statusText)
-//       }
-//   }
-//       xml.open('GET', `/delete/post/${id}`, true)
-//       xml.send()
-//       window.location.reload()
-// }
-
 function delete_post() {
-  let k = document.getElementsByClassName('btn-delete').id
-  console.log(k)
+    let id  = document.getElementById('delete_post').value
+    let xml = new XMLHttpRequest()
+    xml.onload = function () {
+          if (xml.readyState === 4 && xml.status === 200) {
+          document.getElementById('user-card').remove()
+      } else {
+          const error = 'error'
+          console.log(error, this.statusText)
+      }
+  }
+      xml.open('GET', `/delete/post/${id}`, true)
+      xml.send()
 }
+

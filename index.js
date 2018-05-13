@@ -34,6 +34,12 @@ app.get('/login', (req, res) => {
   res.render('login')
 })
 
+app.post('/login', (req, res) => {
+  console.log(body.username)
+})
+
+
+
 
 app.get('/', (req, res) => {
   console.log(req.body)
@@ -71,17 +77,17 @@ app.post('/post/:textarea', (req, res) => {
   postt.date = `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`
   postt.save(err => {
     if (err) throw err
-    else return res.send(postt)
+    else return res.status(200).send(postt)
   })
 })
 
 app.get('/delete/post/:id', (req, res) => {
-  id = {
+  
+  Posts.remove({
     _id: req.params.id
-  }
-  Posts.remove(id, err => {
+  }, err => {
     if (err) throw err
-    else res.status(200)
+    else return res.status(200).send()
   })
 })
 

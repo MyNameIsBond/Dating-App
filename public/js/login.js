@@ -1,7 +1,15 @@
 window.document.getElementById('login_btn').addEventListener('click', () => {
-    const email = document.getElementById('username').value
-    const password = document.getElementById('password').value
-    console.log(email, password)
+    const xml = new XMLHttpRequest()
+    xml.onload = function() {
+    if (xml.readyState === 4 && xml.status === 200) {
+      document.getElementById('profile').innerHTML = this.responseText
+    } else {
+      const error = 'error'
+      console.log(error, this.statusText)
+    }
+  }
+    xml.open('POST','/profile',true)
+    xml.send()
 })
 
 
