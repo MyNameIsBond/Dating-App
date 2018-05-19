@@ -36,6 +36,7 @@ app.get('/login', (req, res) => {
 
 app.post('/login', (req, res) => {
   console.log(body.username)
+  console.log(body.username)
 })
 
 
@@ -92,10 +93,7 @@ app.get('/delete/post/:id', (req, res) => {
 })
 
 
-
-
-
-
 app.listen(port, () => {
   console.log(`server is on port: ${port}`)
 })
+
