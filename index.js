@@ -5,6 +5,7 @@ const es6Renderer = require('express-es6-template-engine')
 const path = require('path')
 const app = express()
 const bodyParser = require('body-parser')
+const falist = require('font-awesome-list')
 const port = 8080
 let db = mongoose.connection
 mongoose.connect('mongodb://localhost/user')
@@ -43,7 +44,7 @@ app.post('/login', (req, res) => {
 
 
 app.get('/', (req, res) => {
-  console.log(req.body)
+  console.log(falist.all())
   Posts.find({}, (err, posts) => {
     if (err) throw err
     else

@@ -1,2 +1,25 @@
-1)autokill posts!
-2) data mining for users.
+---------------->Designs to do!<----------------
+
+1) make hover user card
+
+2) make home card.
+
+3) get the nav bar with
+
+4) make the photos in a div right bellow.
+
+
+---------------->Back end!<----------------
+
+1) seperate and make a route.
+
+2) make like buttons - comments
+
+3) make users and registerations system
+
+4) make following 
+
+5) make posts or photos - autokill for 24h 
+
+6) data mining for users.
+
