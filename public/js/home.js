@@ -33,27 +33,38 @@ function sendpost() {
 function makepost(text1) {
   let text = JSON.parse(text1)
   return `
-  <div class="user-card">
-  <div class="user-card-items">
-    <img src="../public/img/download2.jpeg" width="40px" height="40px">
-    <br>
-    <small>Mr. Smith</small>
-  </div>
+    <div class="user-container" id='${text._id}'>
+    <div class="usercard2">
+      <img src="../public/img/lopez.jpg">
+      <h1><a href="">Nicky Smith</a></h1>
+      <ul>
+        <li><a href="/poke">poke</a></li>
+        <li><a href="/message">message</a></li>
+        <li><a href="/username">username</a></li>
+      </ul>  
+    </div>
+    <div class='post-user'>
+      <div class='post-text'>
+        <span class="close" title="delete post" onclick="delete_post('${text._id}')">&times;</span>
+        <div class='post-text2'>
+        <p>${text.post}</p>
+        <br>
+        <small>${text.date}</small>
 
-  <div class="user-card-items">
-    <p>${text.post}</p>
-  </div>
-  <hr>
-  <ul class="home-card-list">
-    <li><button onclick="like_post()" class="btn-delete like" style="padding: 0px;">23 like(s) </button>
-    </li>
-    <li>${text.date}</li>
-    <li>
-    <button onclick="delete_post()" class="btn-delete" id="delete_post" data-id='${text._id}' value='${text._id}'>${text._id}</button>
-  </li>
-  </ul>
-</div>
-`
+        </div>
+        
+      </div>
+        <hr>
+      <div class='post-list'>
+        <ul>
+          <li><a href="">Like</a>(34)</li>
+          <li><a href="">Comment</a>(3)</li>
+        </ul>
+      </div>
+
+    </div>
+    </div>
+    `
 }
 
 
@@ -61,12 +72,11 @@ document.getElementById('refreshbtn').addEventListener('click', () => {
   document.getElementById('textarea').value = ''
 })
 
-function delete_post() {
-    let id  = document.getElementById('delete_post').value
+function delete_post(id) {
     let xml = new XMLHttpRequest()
     xml.onload = function () {
           if (xml.readyState === 4 && xml.status === 200) {
-          document.getElementById('user-card').remove()
+          document.getElementById(id).remove()
       } else {
           const error = 'error'
           console.log(error, this.statusText)

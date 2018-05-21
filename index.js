@@ -44,7 +44,6 @@ app.post('/login', (req, res) => {
 
 
 app.get('/', (req, res) => {
-  console.log(falist.all())
   Posts.find({}, (err, posts) => {
     if (err) throw err
     else

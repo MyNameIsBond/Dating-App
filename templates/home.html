@@ -16,94 +16,43 @@
   <div id='nav'>
   </div>
   <div class="container">
-    <div class="user-container">
-      
-    <div class="usercard2">
+    ${posts.map(f =>`
+    <div class="user-container" id="${f._id}">
+    <div class="usercard2" >
       <img src="../public/img/lopez.jpg">
       <h1><a href="">Nicky Smith</a></h1>
       <ul>
         <li><a href="/poke">poke</a></li>
         <li><a href="/message">message</a></li>
         <li><a href="/username">username</a></li>
-      </ul>         
+      </ul>  
     </div>
-    <div>
-    </div>
-    </div>
-
-
-    <div class="user-container">
-      
-    <div class="usercard2">
-      <img src="../public/img/hotty2.jpg">
-      <h1><a href="">Meg Lopez</a></h1>
-      <ul>
-        <li><a href="/poke">poke</a></li>
-        <li><a href="/message">message</a></li>
-        <li><a href="/username">username</a></li>
-      </ul>         
-    </div>
-    <div>
-    </div>
-    </div>
-
-    <div class="user-container">
-      
-    <div class="usercard2">
-      <img src="../public/img/hotty3.jpg">
-      <h1><a href="">Artemis Brooks</a></h1>
-      <ul>
-        <li><a href="/poke">poke</a></li>
-        <li><a href="/message">message</a></li>
-        <li><a href="/username">username</a></li>
-      </ul>         
-    </div>
-    <div>
-    </div>
-    </div>
-
-    <div class="user-container">
-      
-    <div class="usercard2">
-      <img src="../public/img/hotty4.jpg">
-      <h1><a href="">Mika Manika</a></h1>
-      <ul>
-        <li><a href="/poke"><i class="far fa-user"></i></a></li>
-        <li><a href="/message">message</a></li>
-        <li><a href="/username">username</a></li>
-      </ul>       
-    </div>
-    <div>
-    </div>
-    </div>
-
-
-
-    ${posts.map(f =>`
-    <div class="user-card" id='user-card'>
-
-      <div class="user-card-items">
-        <img src="../public/img/download2.jpeg" width="40px" height="40px">
+    <div class='post-user'>
+      <div class='post-text'>
+        <span class="close" title="delete post" onclick="delete_post('${f._id}')">&times;</span>
+        <div class='post-text2'>
+        <p>${f.post}</p>
         <br>
-        <small>Mr. Smith</small>
+        <small>${f.date}</small>
+        </div>
       </div>
-
-      <div class="user-card-items">
-        <p>
-          ${f.post}
-        </p>
+        <hr>
+      <div class='post-list'>
+        <ul>
+          <li><a href="">Like</a>(34)</li>
+          <li><a href="">Comment</a>(3)</li>
+        </ul>
       </div>
-      <hr>
-      <ul class="home-card-list">
-        <li>
-          <button onclick="like_post()" class="btn-delete like" style="padding: 0px;">23 like(s) </button>
-        </li>
-        <li>${f.date}</li>
-        <li>
-          <button onclick="delete_post()" class="btn-delete" id="delete_post" data-id='${f._id}' value='${f._id}'>${f._id}</button>
-        </li>
-      </ul>
+    </div>
     </div>`).join('')}
+
+
+
+
+
+
+
+    
     <!-- //////////////User Card /////////////// -->
     <div id="post">
 
