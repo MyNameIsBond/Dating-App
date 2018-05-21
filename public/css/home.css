@@ -184,7 +184,7 @@ textarea:active {
 }
 
 .usercard2:hover img{
-  filter: grayscale(1);
+  filter: saturate(2) brightness(70%);
   transition: 0.2s ease;  
 
 }
@@ -317,4 +317,5 @@ textarea:active {
 
 .close:hover {
   color: red;  
+  box-shadow: 0px 2px 3px grey;  
 }
