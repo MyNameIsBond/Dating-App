@@ -1,0 +1,63 @@
+{
+  "_from": "material-photo-gallery",
+  "_id": "material-photo-gallery@0.1.1",
+  "_inBundle": false,
+  "_integrity": "sha1-brUsxW5fAuosh7kuYbRuRY0pGQY=",
+  "_location": "/material-photo-gallery",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "material-photo-gallery",
+    "name": "material-photo-gallery",
+    "escapedName": "material-photo-gallery",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#DEV:/",
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/material-photo-gallery/-/material-photo-gallery-0.1.1.tgz",
+  "_shasum": "6eb52cc56e5f02ea2c87b92e61b46e458d291906",
+  "_spec": "material-photo-gallery",
+  "_where": "C:\\Users\\m1lt0\\OneDrive\\Έγγραφα\\GitHub\\205CDE_Modern_Web\\205CDE",
+  "author": {
+    "name": "ettrics"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "A photo gallery inspired by Google Photos.",
+  "dev-dependencies": {
+    "autoprefixer": "^5.2.0",
+    "browserify": "^11.2.0",
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2",
+    "gulp-jshint": "^1.12.0",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-postcss": "^5.1.7",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.2.0",
+    "imagesloaded": "^3.2.0",
+    "jshint-stylish": "^2.0.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "keywords": [
+    "material",
+    "google",
+    "photo",
+    "gallery",
+    "javascript"
+  ],
+  "license": "MIT",
+  "main": "./src/js/material-photo-gallery.js",
+  "name": "material-photo-gallery",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.1.1"
+}

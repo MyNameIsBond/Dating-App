@@ -1,12 +1,12 @@
 ---------------->Designs to do!<----------------
 
-1) make hover user card
+1) make hover user card # Done!
 
-2) make home card.
+2) make home card. 
 
 3) get the nav bar with
 
-4) make the photos in a div right bellow.
+4) make the photos in a div right bellow. Done!
 
 
 ---------------->Back end!<----------------
@@ -22,4 +22,3 @@
 5) make posts or photos - autokill for 24h 
 
 6) data mining for users.
-

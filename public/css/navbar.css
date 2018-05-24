@@ -1,34 +1,44 @@
 
 
 nav {
+  height: 150px;
+  top: 0px;
   display: inline;
   text-align: center;
 }
 
 nav ul {
-  padding: 20px;
   box-shadow:  0px 2px 3px grey;
   background-color:#353C3F;
 }
+#navList {
+  margin:0px;
+  padding-top:5px; 
+  height: 70px;
 
+}
 nav #navList li {
   display: inline;
-  padding: 10px 19px;
 }
-/*#32384D*/
-ul li .right-item {
-  text-align: right;
+
+
+nav ul {
+  padding-top:100px; 
+}
+nav ul li {
+  padding-left: 140px;
 }
 
 nav ul li a {
+  letter-spacing: 2px;
   text-decoration: none;
   font-size: 18px;
-  padding: 40px;
   color: #f4f4ef;
 }
 
 nav ul li a:hover {
-  color: #ec96a4;
+  border-bottom: 2px #ec96a4 solid;
+  transition: .2s ease;
 }
 
 #search {

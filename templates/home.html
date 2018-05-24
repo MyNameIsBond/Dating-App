@@ -4,9 +4,6 @@
 <head>
   <meta charset="utf-8">
   <link href="../public/css/home.css">
-  <link href="../public/fonts/css/font-awesome.css">
-  <link href="../public/fonts/css/font-awesome.css.map">
-  <link href="../public/fonts/css/font-awesome.min.css">
 
   <title>Home</title>
 </head>
@@ -19,11 +16,11 @@
     ${posts.map(f =>`
     <div class="user-container" id="${f._id}">
     <div class="usercard2" >
-      <img src="../public/img/lopez.jpg">
+      <img  src="../public/img/lopez.jpg">
       <h1><a href="">Nicky Smith</a></h1>
       <ul>
         <li><a href="/poke">poke</a></li>
-        <li><a href="/message">message</a></li>
+        <li><a href='/message'>message</a></li>
         <li><a href="/username">username</a></li>
       </ul>  
     </div>
@@ -33,7 +30,7 @@
         <div class='post-text2'>
         <p>${f.post}</p>
         <br>
-        <small>${f.date}</small>
+        <small class='date'>${f.date}</small>
         </div>
       </div>
         <hr>
@@ -49,9 +46,6 @@
 
 
 
-
-
-
     
     <!-- //////////////User Card /////////////// -->
     <div id="post">
@@ -59,7 +53,7 @@
     </div>
     <!-- ///////////////////////////////// -->
 
-    <form class="container" id="submit-form">
+    <form id="submit-form">
       <h4>Write your thoughts</h4>
       <br>
       <textarea id="textarea" name="textarea" rows="10" cols="72"></textarea>
