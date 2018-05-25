@@ -1,10 +1,13 @@
-
+@import url(https://use.fontawesome.com/releases/v5.0.13/css/all.css);
 body {
   /*background-image: url('../img/egg_shell.png');*/
   padding: 0px;
   margin: 0px;
   color: #32384D;
   background: #eee;
+}
+i {
+  font-size: 15px;
 }
 #nav {
   top:0 !important;
@@ -131,10 +134,7 @@ textarea:active {
   width: 100%;
   height: 100%;
   filter: brightness(70%);
-
 }
-
-
 
 
 .usercard2 h1{
@@ -196,28 +196,27 @@ textarea:active {
   bottom: 0px;
   list-style: none;
   display: inline;
-
 }
 
 .post-user ul li {
   width: 100%;
   display: inline;
   margin: 0px 50px;
-
 }
-
 
 .post-text{
   text-align: center;
   width: 100%;
   height: 70%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
 
 }
 
 .post-text2 {
   height: 50%;
   padding: 10% 70px;
-  overflow: hidden;
 
 }
 
@@ -242,7 +241,6 @@ textarea:active {
   height: 40px;
   width: 40px;
   font-size: 40px;
-
   cursor: pointer;
 }
 
@@ -261,4 +259,27 @@ hr {
 .date {
   padding-top: 5px; 
   border-top:1px lightgrey solid;
+}
+
+
+/*scrolling bar*/
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 0px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #ec96a4; 
+    border-radius: 0px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #b30000; 
 }

@@ -20,7 +20,9 @@ nav ul {
 nav #navList li {
   display: inline;
 }
-
+nav i:hover {
+  color: #ec96a4;
+}
 
 nav ul {
   padding-top:100px; 

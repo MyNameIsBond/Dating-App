@@ -16,7 +16,7 @@
     ${posts.map(f =>`
     <div class="user-container" id="${f._id}">
     <div class="usercard2" >
-      <img  src="../public/img/lopez.jpg">
+      <img style="" src="../public/img/lopez.jpg">
       <h1><a href="">Nicky Smith</a></h1>
       <ul>
         <li><a href="/poke">poke</a></li>
@@ -30,14 +30,14 @@
         <div class='post-text2'>
         <p>${f.post}</p>
         <br>
-        <small class='date'>${f.date}</small>
+        <small class='date'><i class="far fa-calendar"></i> ${f.date}</small>
         </div>
       </div>
         <hr>
       <div class='post-list'>
         <ul>
-          <li><a href="">Like</a>(34)</li>
-          <li><a href="">Comment</a>(3)</li>
+          <li><a href=""><i style="color: darkred;" class="far fa-heart"></i></a> (34)</li>
+          <li><a href=""><i class="far fa-comment"></i></a> (3)</li>
         </ul>
       </div>
     </div>
@@ -54,7 +54,7 @@
     <!-- ///////////////////////////////// -->
 
     <form id="submit-form">
-      <h4>Write your thoughts</h4>
+      <h4><i class="fas fa-pencil-alt"></i> Write your thoughts</h4>
       <br>
       <textarea id="textarea" name="textarea" rows="10" cols="72"></textarea>
       <ul>
@@ -62,7 +62,7 @@
           <button onclick="sendpost()" type="button" name="button" class="btn btn-post">Post</button>
         </li>
         <li>
-          <button type="button" class="btn btn-cancel" id="refreshbtn">Cancel</button>
+          <button type="button" class="btn btn-cancel" id="refreshbtn"><i class="fas fa-ban"></i> Cancel</button>
         </li>
       </ul>
     </form>
