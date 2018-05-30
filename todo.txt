@@ -4,7 +4,7 @@
 
 2) make home card. 
 
-3) get the nav bar with
+3) get the nav bar width # Done!
 
 4) make the photos in a div right bellow. Done!
 
@@ -22,3 +22,15 @@
 5) make posts or photos - autokill for 24h 
 
 6) data mining for users.
+
+7) alert pop ups
+
+
+
+---------------->Messaging!<----------------
+
+1) upload: pictures, voice mail, emoji.
+
+2) httpReq.
+
+

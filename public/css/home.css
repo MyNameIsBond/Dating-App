@@ -1,10 +1,14 @@
 @import url(https://use.fontawesome.com/releases/v5.0.13/css/all.css);
+@import url(https://fonts.googleapis.com/css?family=Arimo);
+
+
 body {
   /*background-image: url('../img/egg_shell.png');*/
   padding: 0px;
   margin: 0px;
-  color: #32384D;
+  color: #778899;
   background: #eee;
+  font-family: 'Arimo', sans-serif;
 }
 i {
   font-size: 15px;
@@ -125,7 +129,7 @@ textarea:active {
 }
 
 
-.usercard2:hover h1 a {
+.usercard2:hover h2 a {
   opacity: 1;
 }
 
@@ -137,7 +141,7 @@ textarea:active {
 }
 
 
-.usercard2 h1{
+.usercard2 h2{
   opacity: 1;
   position: absolute;
   bottom: 0px;
@@ -148,7 +152,7 @@ textarea:active {
 
 
 }
-.usercard2 h1 a{
+.usercard2 h2 a{
   text-decoration: none;
   color: inherit;
 }

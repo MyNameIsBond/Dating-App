@@ -32,15 +32,12 @@ function sendpost() {
 
 function makepost(text1) {
   let text = JSON.parse(text1)
-  return `
-    <div class="user-container" id='${text._id}'>
-    <div class="usercard2">
-      <img src="../public/img/lopez.jpg">
-      <h1><a href="">Nicky Smith</a></h1>
-      <ul>
-        <li><a href="/poke">poke</a></li>
-        <li><a href="/message">message</a></li>
-        <li><a href="/username">username</a></li>
+  return `<div class="user-container" id="${text._id}">
+    <div class="usercard2" >
+      <img style="" src="../public/img/lopez.jpg">
+      <h2><a href="">Nicky Smith</a></h2>
+      <ul class="hover_icons">
+        <li><a href='/message'><i class="fas fa-envelope"></i></a></li>
       </ul>  
     </div>
     <div class='post-user'>
@@ -49,19 +46,16 @@ function makepost(text1) {
         <div class='post-text2'>
         <p>${text.post}</p>
         <br>
-        <small>${text.date}</small>
-
         </div>
-        
       </div>
         <hr>
       <div class='post-list'>
         <ul>
-          <li><a href="">Like</a>(34)</li>
-          <li><a href="">Comment</a>(3)</li>
+          <li><a href=""><i style="color: red;" class="far fa-heart"></i></a> (34)</li>
+          <li><a href=""><i class="far fa-comment"></i></a> (3)</li>
+          <li><small class='date'><i class="far fa-calendar"></i> ${text.date}</small></li>
         </ul>
       </div>
-
     </div>
     </div>
     `
@@ -85,4 +79,3 @@ function delete_post(id) {
       xml.open('GET', `/delete/post/${id}`, true)
       xml.send()
 }
-
