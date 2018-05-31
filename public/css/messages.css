@@ -1,0 +1,79 @@
+.mess-card {
+	display: flex;
+	background-color: #f4f4ef;
+	border-bottom: solid lightgrey 1px;
+  	border-top: solid lightgrey 1px;
+  	word-wrap:break-word;
+  	cursor: pointer;
+}
+.mess-card:hover {
+	filter: brightness(95%);
+}
+.mess-card i:hover {
+	color: #ec96a4;
+}
+.mess-card i {
+	/*background-color: red;*/
+	font-size:1.5em; 
+}
+
+.mess-card img {
+	max-height: 100%;
+	width: 20%;
+	padding: 5px 5px;
+}
+
+.mess-card small  {
+	padding:10px; 
+	text-align: right;
+}
+.mess-card > small > p {
+	bottom:0px !important; 
+	padding:0px !important; 
+}
+
+article {
+	
+	flex:1;
+	padding:0px !important;
+	margin:0px; 
+	text-align: left;
+}
+article h3{
+	padding:0px !important;
+
+}
+article p{
+	padding:0px !important;
+
+}
+
+.mess-card small {
+	bottom: 0px;
+	right: 0px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1em;
+  grid-auto-rows: auto;
+}
+
+
+aside {
+  grid-row: 1 / 5;
+  display: grid;
+  height: 100vh;
+  grid-auto-rows: minmax(50px, 90px);
+  overflow: auto;
+}
+
+aside > div{
+	text-align: center;
+  	background: white;
+}
+
+
+
+

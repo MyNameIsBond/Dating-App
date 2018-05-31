@@ -70,6 +70,10 @@ app.get('/profile/:username', (req, res) => {
   res.sendFile(`${__dirname}/templates/profile.html`)
 })
 
+app.get('/messages', (req, res) => {
+  res.sendFile(`${__dirname}/templates/messages.html`)
+})
+
 app.post('/post/:textarea', (req, res) => {
   console.log(req.params.textarea)
   let postt = new Posts()

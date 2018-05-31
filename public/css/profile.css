@@ -148,5 +148,4 @@ section img:hover {
   filter: brightness(50%);
   cursor: pointer;
   box-shadow: 0px 2px 3px grey;
-  transform: scale(1.1);
 }
