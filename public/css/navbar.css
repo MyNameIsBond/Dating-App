@@ -2,6 +2,7 @@
 
 nav {
   height: 170px;
+  white-space: nowrap; 
   top: 0px;
   display: inline;
   text-align: center;

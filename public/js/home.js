@@ -37,7 +37,7 @@ function makepost(text1) {
       <img style="" src="../public/img/lopez.jpg">
       <h2><a href="">Nicky Smith</a></h2>
       <ul class="hover_icons">
-        <li><a href='/message'><i class="fas fa-envelope"></i></a></li>
+        <li><a href='/messages'><i class="fas fa-envelope"></i></a></li>
       </ul>  
     </div>
     <div class='post-user'>

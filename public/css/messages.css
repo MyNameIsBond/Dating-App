@@ -1,19 +1,30 @@
+body {
+	overflow: hidden;
+}
+
 .mess-card {
 	display: flex;
+	flex-wrap: nowrap;
 	background-color: #f4f4ef;
 	border-bottom: solid lightgrey 1px;
   	border-top: solid lightgrey 1px;
   	word-wrap:break-word;
   	cursor: pointer;
+  	max-height: 100%;
+  	max-width: 100%;
+	white-space: nowrap;
+	justify-self: stretch;
 }
+
 .mess-card:hover {
 	filter: brightness(95%);
 }
+
 .mess-card i:hover {
 	color: #ec96a4;
 }
+
 .mess-card i {
-	/*background-color: red;*/
 	font-size:1.5em; 
 }
 
@@ -24,33 +35,36 @@
 }
 
 .mess-card small  {
-	padding:10px; 
+	padding:1em; 
 	text-align: right;
 }
+
 .mess-card > small > p {
-	bottom:0px !important; 
-	padding:0px !important; 
+	bottom:0em !important; 
+	padding:0em !important; 
 }
 
 article {
-	
+	white-space: nowrap; 
+	display: inline;
 	flex:1;
-	padding:0px !important;
-	margin:0px; 
+	padding:0em;
+	margin:0em; 
 	text-align: left;
+
+
 }
+
 article h3{
-	padding:0px !important;
-
-}
-article p{
-	padding:0px !important;
+	padding:0em !important;
 
 }
 
-.mess-card small {
-	bottom: 0px;
-	right: 0px;
+.mess-card small p{
+	margin: 2em 0em 0em;
+	padding: 0em 0em 0em 0em; 
+	bottom: 0em;
+	right: 0em;
 }
 
 main {
@@ -60,13 +74,13 @@ main {
   grid-auto-rows: auto;
 }
 
-
 aside {
-  grid-row: 1 / 5;
+  grid-row: 1 / 4;
   display: grid;
-  height: 100vh;
-  grid-auto-rows: minmax(50px, 90px);
-  overflow: auto;
+  height: 90vh;
+  grid-auto-rows: minmax(100px,100px);
+  overflow-y: scroll;
+
 }
 
 aside > div{
@@ -76,4 +90,39 @@ aside > div{
 
 
 
+section {
+  	border-top: 1px solid lightgrey;
 
+	background-color: #f4f4ef;
+ 	grid-area: 1 / col4-start / last-line / 4;
+  	grid-auto-rows: minmax(100px,100px);
+  	display: grid;
+  	height: 60.5vh;
+  	border-left: 1px solid lightgrey;
+  	text-align: center;
+}
+
+section img {
+	max-height: 100%;
+	max-width: 100%;
+	justify-self: center;
+}
+
+section .mess-info {
+
+	display: inline;
+	padding: 5px 5px; 
+}
+
+section .mess-photos {
+	overflow-y: auto;
+	height: inherit;
+  	grid-auto-rows: minmax(100px,100px);
+  	grid-template-columns: repeat(3, 1fr);
+  	cursor: pointer;
+
+
+}
+section .mess-photos img:hover {
+  filter: brightness(80%);
+}

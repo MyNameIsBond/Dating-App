@@ -119,3 +119,8 @@ a {
 #div-shadow:hover {
   box-shadow: 0px 2px 10px grey;
 }
+
+
+section .mess-photos:hover img {
+  filter: brightness(95%);
+}
