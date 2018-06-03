@@ -1,6 +1,6 @@
 
 nav {
-  height: 170px;
+  height: 10px;
   white-space: nowrap; 
   top: 0px;
   display: inline;
@@ -8,12 +8,11 @@ nav {
   width: 100%;
   background-color: black;
   position: fixed;
-
 }
 
 #nav {
   height: relative;
-  z-index: 99;
+  z-index: 4;
   height: 0px;
 }
 
@@ -21,15 +20,14 @@ nav ul {
 
   box-shadow:  0px 2px 3px 0 rgba(0,0,0,0.2);
   background-color:#f4f4ef;
-  /*background-color: black;*/
   position: relative;
   width: 100%;
 
 }
 #navList {
   margin:0px;
-  padding-top:15px; 
-  height: 60px;
+  padding:5px 15px; 
+  height: 50px;
 
 }
 
@@ -102,5 +100,22 @@ nav ul li a:hover {
 .con{
     float: left;
     cursor: pointer;
+    padding: 5px 5px;
 }
 
+.notification:hover {
+  color:#ec96a4;
+}
+
+.notification {
+  margin: 0px 20px;
+  cursor: pointer;
+  float:right;
+  padding:10px 15px;
+
+}
+
+
+.fa-bell{
+  font-size: 1.5em;
+}

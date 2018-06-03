@@ -13,7 +13,7 @@
 
 1) seperate and make a route.
 
-2) make like buttons - comments
+2) make like buttons - comments, maybe.
 
 3) make users and registerations system
 
