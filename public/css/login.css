@@ -52,6 +52,8 @@ a {
 
 .tabs-btn {
   width: 53%;
+  color:#778899;
+  font-size: 18px;
 }
 
 .actives {
@@ -121,6 +123,3 @@ a {
 }
 
 
-section .mess-photos:hover img {
-  filter: brightness(95%);
-}

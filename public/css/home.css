@@ -5,6 +5,7 @@
 body {
   /*background-image: url('../img/egg_shell.png');*/
   padding: 0px;
+  padding-top:75px;
   margin: 0px;
   color: #778899;
   background: #eee;
@@ -13,13 +14,12 @@ body {
 i {
   font-size: 15px;
 }
-#nav {
-  top:0 !important;
-}
+
 
 .container {
   width: 70%;
   margin: 4% auto;
+  
 }
 
 .btn {

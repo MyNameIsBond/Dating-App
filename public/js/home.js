@@ -14,6 +14,10 @@ function nav_bar() {
 }
 nav_bar()
 
+function menuicon(x) {
+  x.classList.toggle("change")
+}
+
 function sendpost() {
   post = document.getElementById('textarea').value
   let xml = new XMLHttpRequest()
