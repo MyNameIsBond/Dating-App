@@ -23,7 +23,7 @@ function sendpost() {
   let xml = new XMLHttpRequest()
   xml.onload = function () {
     if (xml.readyState === 4 && xml.status === 200) {
-      document.getElementById('post').innerHTML =  makepost(this.responseText)
+      document.getElementById('post').innerHTML = makepost(this.responseText)
     } else {
       const error = 'error'
       console.log(error, this.statusText)
@@ -71,15 +71,15 @@ document.getElementById('refreshbtn').addEventListener('click', () => {
 })
 
 function delete_post(id) {
-    let xml = new XMLHttpRequest()
-    xml.onload = function () {
-          if (xml.readyState === 4 && xml.status === 200) {
-          document.getElementById(id).remove()
-      } else {
-          const error = 'error'
-          console.log(error, this.statusText)
-      }
+  let xml = new XMLHttpRequest()
+  xml.onload = function () {
+    if (xml.readyState === 4 && xml.status === 200) {
+      document.getElementById(id).remove()
+    } else {
+      const error = 'error'
+      console.log(error, this.statusText)
+    }
   }
-      xml.open('GET', `/delete/post/${id}`, true)
-      xml.send()
+  xml.open('GET', `/delete/post/${id}`, true)
+  xml.send()
 }

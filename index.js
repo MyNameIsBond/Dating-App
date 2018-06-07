@@ -1,15 +1,26 @@
 'user strict'
+
+
 const express = require('express')
 const mongoose = require('mongoose')
 const es6Renderer = require('express-es6-template-engine')
 const path = require('path')
+
+
 const app = express()
 const bodyParser = require('body-parser')
 const falist = require('font-awesome-list')
 const port = 8080
 let db = mongoose.connection
+
+
 mongoose.connect('mongodb://localhost/user')
 let Posts = require('./models/post')
+const messanger = require('./routes/messanger')
+const profile = require('./routes/user-prof')
+
+
+
 
 db.on('error', err => {
   throw err
@@ -66,9 +77,7 @@ app.get('/nav_bar', (req, res) => {
   res.sendFile(`${__dirname}/templates/nav_bar.html`)
 })
 
-app.get('/profile/:username', (req, res) => {
-  res.sendFile(`${__dirname}/templates/profile.html`)
-})
+
 
 app.get('/messages', (req, res) => {
   res.sendFile(`${__dirname}/templates/messages.html`)
@@ -87,7 +96,7 @@ app.post('/post/:textarea', (req, res) => {
 })
 
 app.get('/delete/post/:id', (req, res) => {
-  
+
   Posts.remove({
     _id: req.params.id
   }, err => {
@@ -101,3 +110,5 @@ app.listen(port, () => {
   console.log(`server is on port: ${port}`)
 })
 
+app.use('/messanger', messanger)
+app.use('/profile', profile)

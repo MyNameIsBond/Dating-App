@@ -23,24 +23,24 @@
       </div>
       <div class="log-items form" id='logindiv'>
         <!-- Log In -->
-        <form action="login()">
+        <form action="/login" method="post">
           <ul>
             <li>
               <h1>Login</h1>
             </li>
             <li>
               <p>email</p>
-              <input class='input' id='username' type='text' placeholder='example@mail.ac.uk'>
+              <input class='input' name="email" id='username' type='text' placeholder='example@mail.ac.uk'>
             </li>
             <li>
               <p>password</p>
-              <input class='input' id='password' type='password' placeholder='password'>
+              <input class='input' id='password' name='password' type='password' placeholder='password'>
             </li>
             <li>
               <a href="">forgot password?</a>
               <br>
               <br>
-              <button type='button' class='btn' id='login_btn'>Login</button>
+              <button type='submit' value='Submit' class='btn' id='login_btn'>Login</button>
             </li>
           </ul>
         </form>
