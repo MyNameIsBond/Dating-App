@@ -1,5 +1,29 @@
 .swapping {
     border: solid 1px black;
-    height: 100px;
-    width: 200px;
+    height: 80%;
+    width: 35% !important;
+}
+
+.swapping header {
+    background-color: mediumvioletred;
+}
+
+.swapping article {
+    background-color: blueviolet;
+}
+
+.swapping footer {
+    background-color: deeppink;
+}
+
+.swapping main {
+    display: grid;
+    grid-template-rows: 1fr 4fr 1fr;
+    grid-row-gap: 20px;
+    grid-gap: 1px;
+    align-items: center;
+}
+
+.swapping main img {
+    height: 100%;
 }

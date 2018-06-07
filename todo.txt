@@ -8,6 +8,7 @@
 
 4) make the photos in a div right bellow. Done!
 
+5) make the slide in-out nav bar
 
 ---------------->Back end!<----------------
 

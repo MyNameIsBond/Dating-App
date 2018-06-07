@@ -1,11 +1,9 @@
 'user strict'
 
-
 const express = require('express')
 const mongoose = require('mongoose')
 const es6Renderer = require('express-es6-template-engine')
 const path = require('path')
-
 
 const app = express()
 const bodyParser = require('body-parser')
@@ -13,14 +11,11 @@ const falist = require('font-awesome-list')
 const port = 8080
 let db = mongoose.connection
 
-
 mongoose.connect('mongodb://localhost/user')
 let Posts = require('./models/post')
 const messanger = require('./routes/messanger')
 const profile = require('./routes/user-prof')
-
-
-
+const logreg = require('./routes/log-reg')
 
 db.on('error', err => {
   throw err
@@ -29,7 +24,6 @@ db.on('error', err => {
 db.once('open', () => {
   console.log('MongoDB connected')
 })
-
 
 app.use('/public', express.static(path.join(__dirname, 'public')))
 app.engine('html', es6Renderer)
@@ -41,18 +35,22 @@ app.use(bodyParser.urlencoded({
 }))
 app.use(bodyParser.json())
 
-
-app.get('/login', (req, res) => {
-  res.render('login')
+app.get('/template/test', (req, res) => {
+  res.render('test.html', {
+    locals: {
+      name: {
+        father: 'Achiles',
+        mother: 'Mimoza',
+        icon: 'fa-check'
+      },
+      surname: 'Hajdini'
+    }
+  })
 })
 
-app.post('/login', (req, res) => {
-  console.log(body.username)
-  console.log(body.username)
+app.get('/swap', (req, res) => {
+  res.sendFile(`${__dirname}/templates/swap.html`)
 })
-
-
-
 
 app.get('/', (req, res) => {
   Posts.find({}, (err, posts) => {
@@ -76,8 +74,6 @@ let all_post = Posts.find({}, (err, posts) => {
 app.get('/nav_bar', (req, res) => {
   res.sendFile(`${__dirname}/templates/nav_bar.html`)
 })
-
-
 
 app.get('/messages', (req, res) => {
   res.sendFile(`${__dirname}/templates/messages.html`)
@@ -105,10 +101,10 @@ app.get('/delete/post/:id', (req, res) => {
   })
 })
 
-
 app.listen(port, () => {
   console.log(`server is on port: ${port}`)
 })
 
 app.use('/messanger', messanger)
 app.use('/profile', profile)
+app.use('/login', logreg)
