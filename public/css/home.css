@@ -1,27 +1,38 @@
-
-
 @import url(https://use.fontawesome.com/releases/v5.0.13/css/all.css);
 @import url(https://fonts.googleapis.com/css?family=Arimo);
-
-
 body {
   /*background-image: url('../img/egg_shell.png');*/
   padding: 0px;
-  padding-top:60px;
+  padding-top: 60px;
   margin: 0px;
-  color: #778899;
+  /* color: #778899; */
+  color: #262626;
   background: #eee;
   font-family: 'Arimo', sans-serif;
 }
-i {
-  font-size: 15px;
+
+main {
+  margin-left: 2.2%;
 }
 
+#main {
+  /* margin-left: 2.2%; */
+  transition: all .1s ease-out;
+}
+
+.main {
+  transition: all .1s ease-out;
+  margin-left: 15%;
+}
+
+i {
+  font-size: 15px;
+  color: #262626;
+}
 
 .container {
   width: 70%;
   margin: 4% auto;
-  
 }
 
 .btn {
@@ -37,9 +48,9 @@ i {
   outline: none;
 }
 
-.btn:active{
+.btn:active {
   filter: brightness(85%);
-  border:none;
+  border: none;
   outline: none;
 }
 
@@ -93,7 +104,7 @@ textarea:active {
 }
 
 #submit-form {
-  box-shadow: 0px 2px 5px rgba(0,0,0,.2);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, .2);
   padding: 15px;
   margin: 4% auto;
   background-color: #f4f4ef;
@@ -101,10 +112,10 @@ textarea:active {
 }
 
 #submit-form:hover {
-  box-shadow:  0px 2px 10px grey;
+  box-shadow: 0px 2px 10px grey;
 }
 
-.btn-post:hover{
+.btn-post:hover {
   box-shadow: 0px 2px 3px grey !important;
 }
 
@@ -115,51 +126,48 @@ textarea:active {
   left: 0;
   transition: 0.9s;
   transform-origin: bottom;
-  float:left;
+  float: left;
 }
 
 .usercard2:hover {
   opacity: 1;
 }
-.usercard2:hover ul{
+
+.usercard2:hover ul {
   opacity: 1;
 }
 
-.usercard2:hover img{
+.usercard2:hover img {
   filter: brightness(100%);
-  transition: 0.2s ease ;
+  transition: 0.2s ease;
 }
-
 
 .usercard2:hover h2 a {
   opacity: 1;
 }
 
-.usercard2 img{
-
+.usercard2 img {
   width: 100%;
   height: 100%;
   filter: brightness(70%);
 }
 
-
-.usercard2 h2{
+.usercard2 h2 {
   opacity: 1;
   position: absolute;
   bottom: 0px;
   width: 100%;
   text-align: center;
   margin: 0px 0px;
-  background: rgba(255,255,255,0.5);
-
-
+  background: rgba(255, 255, 255, 0.5);
 }
-.usercard2 h2 a{
+
+.usercard2 h2 a {
   text-decoration: none;
   color: inherit;
 }
 
-.usercard2 ul{
+.usercard2 ul {
   opacity: 0;
   position: absolute;
   top: 0px;
@@ -167,7 +175,6 @@ textarea:active {
   list-style: none;
   padding: 0px;
 }
-
 
 .usercard2 ul li {
   background: transparent;
@@ -178,17 +185,17 @@ textarea:active {
   color: inherit;
 }
 
-.usercard2 ul li a:hover{
-  background: rgba(33,33,33,0.5);
+.usercard2 ul li a:hover {
+  background: rgba(33, 33, 33, 0.5);
 }
 
 .user-container {
   margin: 2% auto;
-  display: flex; 
-  margin-top:10px; 
+  display: flex;
+  margin-top: 10px;
   height: 250px;
   width: 70%;
-  box-shadow: 0px 2px 5px rgba(0,0,0,.2);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, .2);
   background: #f4f4ef;
 }
 
@@ -199,7 +206,7 @@ textarea:active {
   word-wrap: break-word;
 }
 
-.post-user ul{
+.post-user ul {
   margin: 0px auto;
   bottom: 0px;
   list-style: none;
@@ -212,22 +219,23 @@ textarea:active {
   margin: 0px 50px;
 }
 
-.post-text{
+.post-text {
   text-align: center;
   width: 100%;
   height: 70%;
   word-wrap: break-word;
+  overflow: hidden;
 }
 
 .post-text2 {
   height: 50%;
   padding: 10% 70px;
-  word-wrap: break-word;
 }
 
 .post-text2 p {
   text-align: center;
   font-size: 1.4em;
+  text-overflow: ellipsis;
 }
 
 .post-list {
@@ -238,9 +246,10 @@ textarea:active {
 }
 
 /*Close button*/
+
 .close {
-  top:0;
-  float:right;
+  top: 0;
+  float: right;
   height: 40px;
   width: 40px;
   font-size: 40px;
@@ -248,42 +257,119 @@ textarea:active {
 }
 
 .close:hover {
-  color: red;  
-  border:0;
-  box-shadow: 0px 2px 5px rgba(0,0,0,.2);  
+  color: red;
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, .2);
 }
 
 hr {
-  border:0;
+  border: 0;
   border-top: 1px lightgrey solid;
   height: 1;
 }
 
-
-
 /*scrolling bar*/
+
 ::-webkit-scrollbar {
   width: 4px;
 }
 
 /* Track */
+
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey; 
+  box-shadow: inset 0 0 5px grey;
   border-radius: 0px;
 }
- 
+
 /* Handle */
+
 ::-webkit-scrollbar-thumb {
-  background: #ec96a4; 
+  background: #ec96a4;
   border-radius: 0px;
 }
 
 /* Handle on hover */
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #b30000; 
+  background: #b30000;
 }
 
 .hover_icons i {
   background: white;
-  padding: 10px; 
+  padding: 10px;
+}
+
+/* Side Menu */
+
+.sidemenu {
+  height: 100%;
+  width: 15%;
+  position: absolute;
+  position: fixed;
+  left: -13%;
+  background-color: #f4f4ef;
+  box-shadow: 0px 2px 3px 0 rgba(0, 0, 0, 0.2);
+  transition: all .1s ease-out;
+}
+
+.sidemenu img {
+  padding: 10px;
+  width: 70%;
+  align-items: center;
+}
+
+.sidemenu header {
+  text-align: center;
+}
+
+.sidemenu header small,
+span {
+  margin: 10px;
+}
+
+.sidemenu ul {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  width: 100%;
+}
+
+.sidemenu ul li {
+  padding: 25px 0px;
+  border-bottom: lightgray 1px solid;
+  cursor: pointer;
+}
+
+.sidemenu ul li a i {
+  float: right;
+  margin: 0px 10px;
+}
+
+.sidemenu ul li a {
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #748596;
+  margin: 0px 0px 0px 9px;
+  height: 100%;
+  width: 100%;
+}
+
+.sidemenu ul li:hover a {
+  border-bottom: 2px #ec96a4 solid;
+  transition: .2s ease;
+}
+
+.sidemenu ul li:hover a i {
+  border-bottom: 2px #ec96a4 solid;
+  transition: .2s ease;
+}
+
+.sidemenu ul li:hover {
+  background-color: #a8b1b9;
+}
+
+.slidein {
+  left: 0%;
 }

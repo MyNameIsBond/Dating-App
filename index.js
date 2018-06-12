@@ -71,13 +71,36 @@ let all_post = Posts.find({}, (err, posts) => {
     return posts
 })
 
+
+// Navigation Bar.
+
 app.get('/nav_bar', (req, res) => {
   res.sendFile(`${__dirname}/templates/nav_bar.html`)
 })
 
+app.get('/side_bar', (req, res) => {
+  res.sendFile(`${__dirname}/templates/side_bar.html`)
+})
+
+app.get('/notifications', (req, res) => {
+  res.sendFile(`${__dirname}/templates/notifications.html`)
+})
+
+
+
+
+
+
+
+
 app.get('/messages', (req, res) => {
   res.sendFile(`${__dirname}/templates/messages.html`)
 })
+
+
+
+
+
 
 app.post('/post/:textarea', (req, res) => {
   console.log(req.params.textarea)

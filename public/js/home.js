@@ -14,8 +14,54 @@ function nav_bar() {
 }
 nav_bar()
 
+
+function notifications() {
+  const xml = new XMLHttpRequest()
+  xml.onload = function () {
+    if (xml.readyState === 4 && xml.status === 200) {
+      document.getElementById('notifications').innerHTML = this.responseText
+    } else {
+      const error = 'error'
+      console.log(error, this.statusText)
+    }
+  }
+
+  xml.open('GET', '/notifications', true)
+  xml.send()
+}
+notifications()
+
+function notificationss() {
+
+  document.getElementById('notifications').classList.toggle('notifications')
+
+}
+
+function side_bar() {
+  const xml = new XMLHttpRequest()
+  xml.onload = function () {
+    if (xml.readyState === 4 && xml.status === 200) {
+      document.getElementById('sidemenu').innerHTML = this.responseText
+    } else {
+      const error = 'error'
+      console.log(error, this.statusText)
+    }
+  }
+
+  xml.open('GET', '/side_bar', true)
+  xml.send()
+}
+
+side_bar()
+
+
+
+// ----------------------------------//
+
 function menuicon(x) {
   x.classList.toggle("change")
+  document.getElementById('sidemenu').classList.toggle('slidein')
+  document.getElementById('main').classList.toggle('main')
 }
 
 function sendpost() {

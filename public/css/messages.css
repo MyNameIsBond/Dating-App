@@ -7,11 +7,11 @@ body {
 	flex-wrap: nowrap;
 	background-color: #f4f4ef;
 	border-bottom: solid lightgrey 1px;
-  	border-top: solid lightgrey 1px;
-  	word-wrap:break-word;
-  	cursor: pointer;
-  	max-height: 100%;
-  	max-width: 100%;
+	border-top: solid lightgrey 1px;
+	word-wrap: break-word;
+	cursor: pointer;
+	max-height: 100%;
+	max-width: 100%;
 	white-space: nowrap;
 	justify-self: stretch;
 }
@@ -25,7 +25,7 @@ body {
 }
 
 .mess-card i {
-	font-size:1.5em; 
+	font-size: 1.5em;
 }
 
 .mess-card img {
@@ -34,75 +34,71 @@ body {
 	padding: 5px 5px;
 }
 
-.mess-card small  {
-	padding:1em; 
+.mess-card small {
+	padding: 1em;
 	text-align: right;
 }
 
-.mess-card > small > p {
-	bottom:0em !important; 
-	padding:0em !important; 
+.mess-card>small>p {
+	bottom: 0em !important;
+	padding: 0em !important;
 }
 
 article {
-	white-space: nowrap; 
+	white-space: nowrap;
 	display: inline;
-	flex:1;
-	padding:0em;
-	margin:0em; 
+	flex: 1;
+	padding: 0em;
+	margin: 0em;
 	text-align: left;
-
-
 }
 
-article h3{
-	padding:0em !important;
+article h3 {
+	padding: 0em !important;
 }
 
-.mess-card small p{
+.mess-card small p {
 	margin: 2em 0em 0em;
-	padding: 0em 0em 0em 0em; 
+	padding: 0em 0em 0em 0em;
 	bottom: 0em;
 	right: 0em;
 }
 
 main {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 1em;
-  margin-bottom: 0px;
-
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 1em;
+	margin-bottom: 0px;
 }
 
 aside {
 	grid-row: 1 / 4;
 	grid-column: 1/1;
-  	display: grid;
-  	height: 100vh;
-  	grid-auto-rows: minmax(100px,auto);
-  	overflow-y: scroll;
+	display: grid;
+	height: 100vh;
+	grid-auto-rows: minmax(100px, auto);
+	overflow-y: scroll;
 }
 
-aside > div{
+aside>div {
 	text-align: center;
-  	background: white;
+	background: white;
 }
-
 
 /*user info*/
+
 section {
 	background-color: #f4f4ef;
 	grid-row: 1/ 4;
 	grid-column: 4/4;
-  	display: grid;
-  	height: 100vh;
-  	border-left: 1px solid lightgrey;
-  	text-align: center;
+	display: grid;
+	height: 100vh;
+	border-left: 1px solid lightgrey;
+	text-align: center;
 	padding-bottom: 0px;
 	grid-gap: space-around;
-	padding:10px; 
+	padding: 10px;
 	overflow-y: auto !important;
-
 }
 
 section .mess-photos img {
@@ -113,20 +109,19 @@ section .mess-photos img {
 }
 
 section .mess-photos img:hover {
-  filter: brightness(80%);
+	filter: brightness(80%);
 }
 
-
 section .mess-photos {
-  	display: grid;
-  	grid-template-columns: repeat(3,1fr);
-  	grid-gap: 1vh;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 1vh;
 	overflow-y: auto;
 }
 
 section .mess-info {
-	grid-row:  span 1;
-	display: inline;	
+	grid-row: span 1;
+	display: inline;
 }
 
 section .mess-info img {
