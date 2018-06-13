@@ -29,13 +29,10 @@ function userInfoMenu() {
   const action = document.getElementById('user-menu')
   const openButton = document.getElementById('ellipsis-menu')
   document.onclick = function (e) {
-    if (e.target.id != 'user-menu') {
-      action.style.display = 'none'
-    }
     if (e.target === openButton) {
       action.style.display = 'block'
+    } else {
+      action.style.display = 'none'
     }
-
-
-  };
+  }
 }

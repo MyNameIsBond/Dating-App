@@ -33,7 +33,17 @@ notifications()
 
 function notificationss() {
 
-  document.getElementById('notifications').classList.toggle('notifications')
+  const not_button = document.getElementById('notification-icon')
+  const not_div = document.getElementById('notifications')
+
+  document.onclick = (e) => {
+    console.log(e)
+    if (e.target === not_button) {
+      not_div.style.display = 'block'
+    } else {
+      not_div.style.display = 'none'
+    }
+  }
 
 }
 
@@ -53,8 +63,6 @@ function side_bar() {
 }
 
 side_bar()
-
-
 
 // ----------------------------------//
 
