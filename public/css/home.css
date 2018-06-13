@@ -366,6 +366,10 @@ span {
   transition: .2s ease;
 }
 
+.sidemenu ul li a i:hover {
+  color: #ec96a4;
+}
+
 .sidemenu ul li:hover {
   background-color: #a8b1b9;
 }

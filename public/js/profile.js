@@ -22,3 +22,20 @@ document.getElementById('add_pic').addEventListener('click', () => {
 document.getElementById('add_pic_list').addEventListener('onmouseover', () => {
   console.log('hey')
 })
+
+
+function userInfoMenu() {
+
+  const action = document.getElementById('user-menu')
+  const openButton = document.getElementById('ellipsis-menu')
+  document.onclick = function (e) {
+    if (e.target.id != 'user-menu') {
+      action.style.display = 'none'
+    }
+    if (e.target === openButton) {
+      action.style.display = 'block'
+    }
+
+
+  };
+}

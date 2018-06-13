@@ -92,18 +92,43 @@
         </div>
       </div>`).join('')}
 
-
-
-
-
       <!-- //////////////User Card /////////////// -->
-
       <!-- ///////////////////////////////// -->
-
     </div>
 
   </main>
+  <div class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
+    <div class="gallery-cell"></div>
+    <div class="gallery-cell"></div>
+    <div class="gallery-cell"></div>
+    <div class="gallery-cell"></div>
+    <div class="gallery-cell"></div>
+  </div>
 </body>
+<style>
+  .gallery {
+    background: #EEE;
+  }
+
+  .gallery-cell {
+    width: 66%;
+    height: 200px;
+    margin-right: 10px;
+    background: #8C8;
+    counter-increment: gallery-cell;
+  }
+
+  /* cell number */
+
+  .gallery-cell:before {
+    display: block;
+    text-align: center;
+    content: counter(gallery-cell);
+    line-height: 200px;
+    font-size: 80px;
+    color: white;
+  }
+</style>
 <script src='../public/js/home.js'></script>
 
 </html>
