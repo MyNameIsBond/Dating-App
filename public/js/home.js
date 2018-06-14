@@ -38,7 +38,7 @@ function notificationss() {
 
   document.onclick = (e) => {
     console.log(e)
-    if (e.target === not_button) {
+    if (e.target === not_button && not_div.style.display == 'none') {
       not_div.style.display = 'block'
     } else {
       not_div.style.display = 'none'

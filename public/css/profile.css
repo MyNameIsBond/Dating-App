@@ -178,6 +178,53 @@ section img:hover {
 }
 
 .add_pic_list {
-  display: block !important;
+  display: block;
   transition: all ease-in 2.4s;
+}
+
+/* About Tab-Page */
+
+.user-info {
+  text-align: center;
+  width: 72%;
+  margin: 0px auto;
+}
+
+.user-info ul {
+  width: 50%;
+  margin: 0px auto;
+  padding: 0px 30%;
+}
+
+.user-info ul li {
+  text-align: right;
+  display: flex;
+  margin: 20px 110px;
+  list-style: none;
+}
+
+.user-info ul li i {
+  font-size: 25px;
+}
+
+.user-info ul li p {
+  margin: 10px auto;
+}
+
+.edit-button {
+  width: 30%;
+  margin: 30px auto;
+}
+
+.edit-button a {
+  width: 100%;
+  padding: 10px 60px;
+  border: 2px solid #ec96a4;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #262626;
+}
+
+.edit-button a:hover {
+  background-color: #ec96a4;
 }

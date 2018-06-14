@@ -14,25 +14,28 @@ function profile() {
 profile()
 
 document.getElementById('add_pic').addEventListener('click', () => {
-  document.getElementById('add_pic_list').classList.toggle('add_pic_list')
+  const add_button = document.getElementById('add_pic_button')
+  const add_div = document.getElementById('add_pic_list')
 
-
+  document.onclick = (e) => {
+    if (e.target === add_button && add_div.style.display == 'none') {
+      add_div.style.display = 'block'
+    } else {
+      add_div.style.display = 'none'
+    }
+  }
 })
-
-document.getElementById('add_pic_list').addEventListener('onmouseover', () => {
-  console.log('hey')
-})
-
 
 function userInfoMenu() {
 
   const action = document.getElementById('user-menu')
   const openButton = document.getElementById('ellipsis-menu')
-  document.onclick = function (e) {
-    if (e.target === openButton) {
+  this.onclick = e => {
+    if (e.target === openButton && action.style.display == 'none') {
       action.style.display = 'block'
     } else {
       action.style.display = 'none'
     }
   }
+
 }
