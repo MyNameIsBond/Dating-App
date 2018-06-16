@@ -4,13 +4,11 @@ const express = require('express')
 const mongoose = require('mongoose')
 const es6Renderer = require('express-es6-template-engine')
 const path = require('path')
-
 const app = express()
 const bodyParser = require('body-parser')
 const falist = require('font-awesome-list')
 const port = 8080
 let db = mongoose.connection
-
 mongoose.connect('mongodb://localhost/user')
 let Posts = require('./models/post')
 const messanger = require('./routes/messanger')
@@ -84,6 +82,10 @@ app.get('/side_bar', (req, res) => {
 
 app.get('/notifications', (req, res) => {
   res.sendFile(`${__dirname}/templates/notifications.html`)
+})
+
+app.get('/settings', (req, res) => {
+  res.sendFile(`${__dirname}/templates/settings.html`)
 })
 
 

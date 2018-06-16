@@ -1,4 +1,3 @@
-
 .lgform {
   align-items: center;
   padding: 2% 1%;
@@ -20,7 +19,7 @@ form ul li {
 form ul li .input {
   padding: 15px;
   width: 100%;
-  box-shadow: 0px 2px 3px grey;
+  box-shadow: var(--box-shadow);
   border-radius: 2px;
   border-color: transparent;
 }
@@ -30,8 +29,6 @@ form ul li .input:focus {
   border-radius: 2px;
   border-color: transparent;
 }
-
-
 
 p {
   margin: 3px 1px;
@@ -52,7 +49,7 @@ a {
 
 .tabs-btn {
   width: 53%;
-  color:#778899;
+  color: var(--text-color);
   font-size: 18px;
 }
 
@@ -72,54 +69,51 @@ a {
   background-color: #ec96a4;
 }
 
-#login_btn:hover{
+#login_btn:hover {
   background-color: rgb(77, 255, 169) !important;
 }
 
 #libtn {
-    width: 50%;
-    background-color:  #ec96a4;
+  width: 50%;
+  background-color: #ec96a4;
 }
 
 #regbtn {
-    background-color: #dfe166;
-    width: 50%;
+  background-color: #dfe166;
+  width: 50%;
 }
 
 #regbtn:active {
-    outline: none;
+  outline: none;
 }
 
 #tabs-cnt>button {
-    text-align: 15px;
-    height: 40px;
-    cursor: pointer;
-    border-color: transparent;
+  text-align: 15px;
+  height: 40px;
+  cursor: pointer;
+  border-color: transparent;
 }
 
 #regbtn:focus {
-    outline: none;
+  outline: none;
 }
+
 #libtn:focus {
-   outline: none;
+  outline: none;
 }
 
 #regbtn:hover {
-    outline: none;
-    filter: brightness(85%);
-    
+  outline: none;
+  filter: brightness(85%);
 }
+
 #libtn:hover {
-    outline: none;
-    filter: brightness(85%);
+  outline: none;
+  filter: brightness(85%);
 }
 
 #div-shadow {
-  box-shadow: 0px 2px 3px grey;
+  box-shadow: var(--box-shadow-Menus);
 }
 
-#div-shadow:hover {
-  box-shadow: 0px 2px 10px grey;
-}
-
-
+#div-shadow:hover {}

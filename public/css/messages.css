@@ -5,9 +5,8 @@ body {
 .mess-card {
 	display: flex;
 	flex-wrap: nowrap;
-	background-color: #f4f4ef;
+	background-color: var(--nav-bg-color);
 	border-bottom: solid lightgrey 1px;
-	border-top: solid lightgrey 1px;
 	word-wrap: break-word;
 	cursor: pointer;
 	max-height: 100%;
@@ -21,7 +20,7 @@ body {
 }
 
 .mess-card i:hover {
-	color: #ec96a4;
+	color: var(--decoration-color);
 }
 
 .mess-card i {
@@ -88,7 +87,7 @@ aside>div {
 /*user info*/
 
 section {
-	background-color: #f4f4ef;
+	background-color: var(--nav-bg-color);
 	grid-row: 1/ 4;
 	grid-column: 4/4;
 	display: grid;
