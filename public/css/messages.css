@@ -63,7 +63,7 @@ article h3 {
 	right: 0em;
 }
 
-main {
+#main {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-gap: 1em;

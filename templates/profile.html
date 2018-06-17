@@ -37,24 +37,29 @@
             need make. Sportsman one bed departure rapturous situation disposing his. Off say yet ample ten ought hence.
           </p>
           <div id="button-prof">
-            <a href="">
+            <a>
               <i class="fas fa-heart"></i> Meet Me</a>
-            <a href="">
+            <a>
               <i class="fas fa-envelope"></i> Message </a>
           </div>
 
         </header>
       </article>
+
+
+
+      <!--  -->
+
       <div id="button-info">
-        <a href="" id="media" onclick="openProfileTab(event,'Media')">Media</a>
-        <a href="" id='about' onclick="openProfileTab(event,'about')">About</a>
+        <a class='tablinks  prof_tab_active' onclick="openProfileTab(event,'media','photo-container')">Media</a>
+        <a class='tablinks ' onclick="openProfileTab(event,'about', 'user-info')">About</a>
       </div>
       <!-- <<<<<>>>>>>> -->
       <br>
       <br>
 
 
-      <section class='photo-container' style='display: none;'>
+      <section class='photo-container tabcontent' id="media" style="display: grid">
 
         <img src="../public/img/hotty2.jpg">
         <img src="../public/img/hotty3.jpg">
@@ -85,7 +90,7 @@
 
       <!-- User Info -->
 
-      <div class="user-info">
+      <div class="user-info tabcontent" id='about'>
 
         <ul>
           <li>
@@ -113,7 +118,10 @@
             <p>No Children</p>
           </li>
         </ul>
-        <hr>
+        <div>
+
+          <hr>
+        </div>
         <div class="edit-button">
           <a href="">
             <i class="fas fa-user-edit"></i> Edit</a>

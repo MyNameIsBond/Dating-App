@@ -13,6 +13,11 @@
   /* --hover-color:; */
 }
 
+*::selection {
+  color: var(--decoration-color);
+  background-color: var(--text-color);
+}
+
 body {
   /*background-image: url('../img/egg_shell.png');*/
   padding: 0px;
