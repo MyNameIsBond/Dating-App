@@ -65,7 +65,14 @@ nav ul li a:hover {
   width: 30%;
 }
 
-#search:focus {}
+#search:focus {
+  outline-color: var(--decoration-color);
+}
+
+.fa-search:hover {
+  color: var(--decoration-color);
+  cursor: pointer;
+}
 
 .bar1,
 .bar2,
