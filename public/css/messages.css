@@ -129,3 +129,7 @@ section .mess-info img {
 	justify-self: stretch;
 	align-self: stretch;
 }
+
+.mess-middle {
+	background-color: blueviolet;
+}

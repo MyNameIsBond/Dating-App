@@ -1,7 +1,9 @@
 @import url(https://use.fontawesome.com/releases/v5.0.13/css/all.css);
 @import url(https://fonts.googleapis.com/css?family=Arimo);
+@import url(https://unpkg.com/flickity@2/dist/flickity.min.css);
 :root {
-  --bg-color: #eee;
+  --bg-color: #e8eaee;
+  /* previous: #eee */
   --nav-bg-color: #f4f4ef;
   --text-color: #2e2e2e;
   --decoration-color: #F56C57;

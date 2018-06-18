@@ -2,100 +2,171 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <link href="../public/css/home.css">
+    <meta charset="utf-8">
+    <link href="../public/css/home.css">
 
-  <title>Home</title>
+    <title>Home</title>
 </head>
 
 <body>
-  <!-- navigation Bar -->
-  <nav id='nav'>
-  </nav>
+    <!-- navigation Bar -->
+    <nav id='nav'>
+    </nav>
 
-  <!-- Side menu -->
+    <!-- Side menu -->
 
-  <div class="sidemenu" id='sidemenu'>
+    <div class="sidemenu" id='sidemenu'>
 
-  </div>
-
-  <div id='notifications'>
-  </div>
-
-
-
-  <main id="main">
-
-
-
-    <div class="container">
-      <form id="submit-form">
-        <h4>
-          <i class="fas fa-pencil-alt"></i> Write your thoughts</h4>
-        <br>
-        <textarea id="textarea" name="textarea" rows="10" cols="72"></textarea>
-        <ul>
-          <li>
-            <button onclick="sendpost()" type="button" name="button" class="btn btn-post">Post</button>
-          </li>
-          <li>
-            <button type="button" class="btn btn-cancel" id="refreshbtn">
-              <i class="fas fa-ban"></i> Cancel</button>
-          </li>
-        </ul>
-      </form>
-      <div id="post">
-
-      </div>
-
-      ${posts.map(f =>`
-      <div class="user-container" id="${f._id}">
-        <div class="usercard2">
-          <img style="" src="../public/img/lopez.jpg">
-          <h2>
-            <a href="">Nicky Smith</a>
-          </h2>
-          <ul class="hover_icons">
-            <li>
-              <a href='/messages'>
-                <i class="fas fa-envelope"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class='post-user'>
-          <div class='post-text'>
-            <span class="close" title="delete post" onclick="delete_post('${f._id}')">&times;</span>
-            <div class='post-text2'>
-              <p>${f.post}</p>
-              <br>
-
-            </div>
-          </div>
-          <hr>
-          <div class='post-list'>
-            <ul>
-              <li>
-                <a href="">
-                  <i style="color: red;" class="far fa-heart"></i>
-                </a> (34)</li>
-              <li>
-                <a href="">
-                  <i class="far fa-comment"></i>
-                </a> (3)</li>
-              <li>
-                <small class='date'>
-                  <i class="far fa-calendar"></i> ${f.date}</small>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>`).join('')}
     </div>
 
-  </main>
- 
+    <div id='notifications'>
+    </div>
+
+
+
+    <main id="main">
+
+
+
+        <div class="container">
+            <form id="submit-form">
+                <h4>
+          <i class="fas fa-pencil-alt"></i> Write your thoughts</h4>
+                <br>
+                <textarea id="textarea" name="textarea" rows="10" cols="72"></textarea>
+                <ul>
+                    <li>
+                        <button onclick="sendpost()" type="button" name="button" class="btn btn-post">Post</button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-cancel" id="refreshbtn">
+              <i class="fas fa-ban"></i> Cancel</button>
+                    </li>
+                </ul>
+            </form>
+            <div id="post">
+
+            </div>
+
+            ${posts.map(f =>`
+            <div class="user-container" id="${f._id}">
+                <div class="usercard2">
+                    <img style="" src="../public/img/lopez.jpg">
+                    <h2>
+            <a href="">Nicky Smith</a>
+          </h2>
+                    <ul class="hover_icons">
+                        <li>
+                            <a href='/messages'>
+                <i class="fas fa-envelope"></i>
+              </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class='post-user'>
+                    <div class='post-text'>
+                        <span class="close" title="delete post" onclick="delete_post('${f._id}')">&times;</span>
+                        <div class='post-text2'>
+                            <p>${f.post}</p>
+                            <br>
+
+                        </div>
+                    </div>
+                    <hr>
+                    <div class='post-list'>
+                        <ul>
+                            <li>
+                                <a href="">
+                  <i style="color: red;" class="far fa-heart"></i>
+                </a> (34)</li>
+                            <li>
+                                <a href="">
+                  <i class="far fa-comment"></i>
+                </a> (3)</li>
+                            <li>
+                                <small class='date'>
+                  <i class="far fa-calendar"></i> ${f.date}</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>`).join('')}
+        </div>
+
+    </main>
+
 </body>
+<style>
+    .gallery-cell {
+        width: 100%;
+        height: 200px;
+        margin-right: 10px;
+        counter-increment: gallery-cell;
+    }
+
+    /* cell number */
+
+    .gallery-cell:before {
+        display: block;
+        text-align: center;
+        content: counter(gallery-cell);
+        line-height: 200px;
+        font-size: 80px;
+        color: white;
+    }
+
+
+    /* big buttons, no circle */
+
+    .flickity-prev-next-button {
+        width: 100px;
+        height: 100px;
+        background: transparent;
+    }
+
+    /* arrow color */
+
+    .flickity-prev-next-button .arrow {
+        fill: white;
+    }
+
+    .flickity-prev-next-button.no-svg {
+        color: white;
+    }
+
+    .flickity-prev-next-button:hover {
+        background: transparent;
+    }
+
+    /* hide disabled button */
+
+    .flickity-prev-next-button:disabled {
+        display: none;
+    }
+
+    /* position dots in gallery */
+
+    .flickity-page-dots {
+        bottom: 0px;
+    }
+
+    /* white circles */
+
+    .flickity-page-dots .dot {
+        width: 12px;
+        height: 12px;
+        opacity: 1;
+        background: transparent;
+        border: 2px solid white;
+    }
+
+    /* fill-in selected dot */
+
+    .flickity-page-dots .dot.is-selected {
+        background: white;
+    }
+</style>
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 <script src='../public/js/home.js'></script>
 
 </html>
