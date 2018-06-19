@@ -14,6 +14,21 @@ let Posts = require('./models/post')
 const messanger = require('./routes/messanger')
 const profile = require('./routes/user-prof')
 const logreg = require('./routes/log-reg')
+const session = require('express-session')
+const MongoStore = require('connect-mongo')(session)
+
+app.use(session({
+    secret: 'work hard',
+    resave: true,
+    saveUninitialized: false,
+    store: new MongoStore({
+        mongooseConnection: db
+    })
+}))
+
+
+
+
 
 db.on('error', err => {
     throw err
@@ -51,13 +66,16 @@ app.get('/swap', (req, res) => {
 })
 
 app.get('/', (req, res) => {
+    usersession = req.session
+    console.log(req.session)
     Posts.find({}, (err, posts) => {
         if (err) throw err
         else
             console.log(posts)
         res.render('home', {
             locals: {
-                posts
+                posts,
+                usersession
             }
         })
     })
