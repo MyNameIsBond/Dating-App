@@ -27,9 +27,6 @@ app.use(session({
 }))
 
 
-
-
-
 db.on('error', err => {
     throw err
 })
@@ -67,7 +64,7 @@ app.get('/swap', (req, res) => {
 
 app.get('/', (req, res) => {
     usersession = req.session
-    console.log(req.session)
+    console.log(usersession)
     Posts.find({}, (err, posts) => {
         if (err) throw err
         else

@@ -14,6 +14,11 @@ router.get('/', (req, res) => {
     res.render('login')
 })
 
+router.post('/', (req, res) => {
+    console.log(req.session)
+    res.render('login')
+})
+
 router.post('/register', (req, res) => {
     console.log('hello from the other side.')
     let user = new User()
@@ -40,8 +45,5 @@ router.get('/logout', function(req, res, next) {
         })
     }
 })
-
-
-
 
 module.exports = router

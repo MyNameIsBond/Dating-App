@@ -1,135 +1,174 @@
 body {
-	overflow: hidden;
+    overflow: hidden;
 }
 
 .mess-card {
-	display: flex;
-	flex-wrap: nowrap;
-	background-color: var(--nav-bg-color);
-	border-bottom: solid lightgrey 1px;
-	word-wrap: break-word;
-	cursor: pointer;
-	max-height: 100%;
-	max-width: 100%;
-	white-space: nowrap;
-	justify-self: stretch;
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: var(--nav-bg-color);
+    border-bottom: solid lightgrey 1px;
+    word-wrap: break-word;
+    cursor: pointer;
+    max-height: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    justify-self: stretch;
 }
 
 .mess-card:hover {
-	filter: brightness(95%);
+    filter: brightness(95%);
 }
 
 .mess-card i:hover {
-	color: var(--decoration-color);
+    color: var(--decoration-color);
 }
 
 .mess-card i {
-	font-size: 1.5em;
+    font-size: 1.5em;
 }
 
 .mess-card img {
-	max-height: 100%;
-	width: 20%;
-	padding: 5px 5px;
+    max-height: 100%;
+    width: 20%;
+    padding: 5px 5px;
 }
 
 .mess-card small {
-	padding: 1em;
-	text-align: right;
+    padding: 1em;
+    text-align: right;
 }
 
 .mess-card>small>p {
-	bottom: 0em !important;
-	padding: 0em !important;
+    bottom: 0em !important;
+    padding: 0em !important;
 }
 
 article {
-	white-space: nowrap;
-	display: inline;
-	flex: 1;
-	padding: 0em;
-	margin: 0em;
-	text-align: left;
+    white-space: nowrap;
+    display: inline;
+    flex: 1;
+    padding: 0em;
+    margin: 0em;
+    text-align: left;
 }
 
 article h3 {
-	padding: 0em !important;
+    padding: 0em !important;
 }
 
 .mess-card small p {
-	margin: 2em 0em 0em;
-	padding: 0em 0em 0em 0em;
-	bottom: 0em;
-	right: 0em;
+    margin: 2em 0em 0em;
+    padding: 0em 0em 0em 0em;
+    bottom: 0em;
+    right: 0em;
 }
 
 #main {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	grid-gap: 1em;
-	margin-bottom: 0px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1em;
+    margin-bottom: 0px;
 }
 
 aside {
-	grid-row: 1 / 4;
-	grid-column: 1/1;
-	display: grid;
-	height: 100vh;
-	grid-auto-rows: minmax(100px, auto);
-	overflow-y: scroll;
+    grid-row: 1 / 4;
+    grid-column: 1/1;
+    display: grid;
+    height: 100vh;
+    grid-auto-rows: minmax(100px, auto);
+    overflow-y: scroll;
 }
 
 aside>div {
-	text-align: center;
-	background: white;
+    text-align: center;
+    background: white;
 }
 
 /*user info*/
 
 section {
-	background-color: var(--nav-bg-color);
-	grid-row: 1/ 4;
-	grid-column: 4/4;
-	display: grid;
-	height: 100vh;
-	border-left: 1px solid lightgrey;
-	text-align: center;
-	padding-bottom: 0px;
-	grid-gap: space-around;
-	padding: 10px;
-	overflow-y: auto !important;
+    background-color: var(--nav-bg-color);
+    grid-row: 1/ 4;
+    grid-column: 4/4;
+    display: grid;
+    height: 100vh;
+    border-left: 1px solid lightgrey;
+    text-align: center;
+    padding-bottom: 0px;
+    grid-gap: space-around;
+    padding: 10px;
+    overflow-y: auto !important;
 }
 
 section .mess-photos img {
-	max-height: 100%;
-	max-width: 100%;
-	justify-self: stretch;
-	align-self: stretch;
+    max-height: 100%;
+    max-width: 100%;
+    justify-self: stretch;
+    align-self: stretch;
 }
 
 section .mess-photos img:hover {
-	filter: brightness(80%);
+    filter: brightness(80%);
 }
 
 section .mess-photos {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-gap: 1vh;
-	overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1vh;
+    overflow-y: auto;
 }
 
 section .mess-info {
-	grid-row: span 1;
-	display: inline;
+    grid-row: span 1;
+    display: inline;
 }
 
 section .mess-info img {
-	height: 50%;
-	width: 50%;
-	justify-self: stretch;
-	align-self: stretch;
+    height: 50%;
+    width: 50%;
+    justify-self: stretch;
+    align-self: stretch;
+}
+
+/* Message sender. */
+
+.carourel-top {
+    background-color: red;
 }
 
 .mess-middle {
-	background-color: blueviolet;
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+    justify-items: stretch;
+}
+
+.mess-middle img {
+    padding: 0px 0px;
+    margin: 5px 10px;
+    height: 45px;
+    width: 45px;
+    border-radius: 30px;
+    box-shadow: var(--box-shadow);
+}
+
+.messages .send {}
+
+.messages .sender {}
+
+.messages img {
+    height: 40px;
+    width: 40px;
+}
+
+.messages {
+    grid-column: 2/4;
+    grid-auto-rows: minmax(1fr, auto);
+}
+
+.messages .sender {
+    border-radius: 3px;
+}
+
+.messages .send {
+    justify-items: start;
 }
