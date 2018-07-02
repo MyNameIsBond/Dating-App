@@ -112,14 +112,28 @@ form ul {
 
 textarea {
     padding: 20px;
-    border-radius: 3px;
     background-color: var(--nav-bg-color);
     width: 92%;
-    height: 70px;
+    height: 10px;
+    border: none;
+    border-bottom: 3px solid var(--decoration-color);
+    overflow: hidden;
+    color: var(--icon-color);
+    font-size: 20px;
+    transition: .4s;
 }
 
 textarea:active {
     background-color: white;
+}
+
+textarea:focus {
+    outline: none;
+    background-color: var(--nav-bg-color);
+    color: var(--icon-color);
+    font-size: 20px;
+    overflow-wrap: break-word;
+    border-bottom: 3px solid var(--icon-color);
 }
 
 #submit-form {
@@ -342,7 +356,8 @@ hr {
     text-align: center;
 }
 
-.sidemenu header small, span {
+.sidemenu header small,
+span {
     margin: 10px;
 }
 

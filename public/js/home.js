@@ -78,6 +78,7 @@ function sendpost() {
   xml.onload = function () {
     if (xml.readyState === 4 && xml.status === 200) {
       document.getElementById('post').innerHTML = makepost(this.responseText)
+      document.getElementById('textarea').value = ''
     } else {
       const error = 'error'
       console.log(error, this.statusText)
@@ -86,6 +87,7 @@ function sendpost() {
 
   xml.open('POST', `/post/${post}`, true)
   xml.send()
+
 }
 
 function makepost(text1) {
