@@ -10,6 +10,9 @@
 
 5) make the slide in-out nav bar #Done!
 
+6) on the navigation bar make a the settings as 
+    a pop up meny.
+
 ---------------->Back end!<----------------
 
 1) seperate and make a route.
@@ -35,4 +38,5 @@
 1) upload: pictures, voice mail, emoji.
 
 2) httpReq.
+
 

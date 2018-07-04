@@ -26,7 +26,6 @@ router.post('/register', (req, res) => {
     user.email = req.body.email
     user.gender = req.body.gender
     user.password = req.body.password
-
     user.save(err => {
         if (err) throw err
         else return res.redirect('/')

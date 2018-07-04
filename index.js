@@ -16,6 +16,12 @@ const profile = require('./routes/user-prof')
 const logreg = require('./routes/log-reg')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
+const expressValidator = require('express-validator');
+
+app.use(passport.session())
+app.use(passport.initialize())
+
+app.use(expressValidator())
 
 app.use(session({
     secret: 'work hard',
