@@ -115,6 +115,7 @@ textarea {
     background-color: var(--nav-bg-color);
     width: 92%;
     height: 10px;
+    resize: none;
     border: none;
     border-bottom: 3px solid var(--decoration-color);
     overflow: hidden;
