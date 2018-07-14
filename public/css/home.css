@@ -6,7 +6,7 @@
     /* previous: #eee */
     --nav-bg-color: #f4f4ef;
     --text-color: #2e2e2e;
-    --decoration-color: #F56C57;
+    --decoration-color: rgb(62, 184, 157);
     --icon-color: #686767;
     --shadow-color: rgba(0, 0, 0, 0.4);
     --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -115,6 +115,7 @@ textarea {
     background-color: var(--nav-bg-color);
     width: 92%;
     height: 10px;
+    resize: none;
     border: none;
     border-bottom: 3px solid var(--decoration-color);
     overflow: hidden;

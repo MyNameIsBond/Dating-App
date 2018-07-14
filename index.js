@@ -8,20 +8,26 @@ const app = express()
 const bodyParser = require('body-parser')
 const falist = require('font-awesome-list')
 const port = 8080
-let db = mongoose.connection
+const db = mongoose.connection
 mongoose.connect('mongodb://localhost/user')
-let Posts = require('./models/post')
+const Posts = require('./models/post')
 const messanger = require('./routes/messanger')
 const profile = require('./routes/user-prof')
 const logreg = require('./routes/log-reg')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
-const expressValidator = require('express-validator');
 
-app.use(passport.session())
-app.use(passport.initialize())
-
+const flash = require('express-flash-messages')
+const expressValidator = require('express-validator')
+const passport = require('passport')
+const cookieParser = require('cookie-parser')
+app.use(flash())
 app.use(expressValidator())
+app.use(passport.initialize())
+app.use(passport.session())
+app.use(expressValidator())
+
+
 
 app.use(session({
     secret: 'work hard',
