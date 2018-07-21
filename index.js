@@ -28,7 +28,6 @@ app.use(passport.session())
 app.use(expressValidator())
 
 
-
 app.use(session({
     secret: 'work hard',
     resave: true,
@@ -70,13 +69,16 @@ app.get('/template/test', (req, res) => {
     })
 })
 
+app.get('/blog', (req, res) => {
+    res.sendFile(`${__dirname}/templates/blog.html`)
+})
+
 app.get('/swap', (req, res) => {
     res.sendFile(`${__dirname}/templates/swap.html`)
 })
 
 app.get('/', (req, res) => {
     usersession = req.session
-    console.log(usersession)
     Posts.find({}, (err, posts) => {
         if (err) throw err
         else
@@ -124,9 +126,9 @@ app.get('/messages', (req, res) => {
 
 
 
-
 app.post('/post/:textarea', (req, res) => {
-    console.log(req.params.textarea)
+    console.log(req.body.textarea)
+    console.log(req.params)
     let postt = new Posts()
     postt.post = req.params.textarea
     date = new Date()

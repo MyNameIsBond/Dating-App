@@ -20,7 +20,6 @@ router.post('/', (req, res) => {
 })
 
 router.post('/register', (req, res) => {
-  console.log('hello from the other side.')
   // check
 
   req.checkBody('email', 'This is not a valid e mail').isEmail()
@@ -37,7 +36,7 @@ router.post('/register', (req, res) => {
   console.log(errors)
   if (errors) {
     console.log(errors)
-    res.sendFile(`${process.env.PWD}/templates/flash_messages.html`, {
+    res.send({
       errors: errors
     })
   } else {

@@ -1,6 +1,9 @@
+const reg_button = window.document.getElementById('reg_button')
+
+
 window.document.getElementById('login_btn').addEventListener('click', () => {
   const xml = new XMLHttpRequest()
-  xml.onload = function() {
+  xml.onload = function () {
     if (xml.readyState === 4 && xml.status === 200) {
       document.getElementById('profile').innerHTML = this.responseText
     } else {
@@ -13,19 +16,20 @@ window.document.getElementById('login_btn').addEventListener('click', () => {
 })
 
 
-window.document.getElementById('reg_button').addEventListener('click', () => {
-  const username = document.getElementById('reg_username').value
-  const email = document.getElementById('reg_email').value
-  const password = document.getElementById('reg_password').value
-  const password2 = document.getElementById('reg_password2').value
-  const gender = document.getElementById('gender').value
-
-  let user = {
-    'username': username,
-    'email': email,
-    'password': password,
-    'password2': password2
+reg_button.addEventListener('click', (e) => {
+  const xml = new XMLHttpRequest()
+  e.preventDefault()
+  xml.onload = function () {
+    if (xml.readyState === 4 && xml.status === 200) {
+      document.getElementById('reg_errors').innerHTML = this.responseText
+      console.log(this.responseText)
+    } else {
+      const error = 'error'
+      console.log(error, this.statusText)
+    }
   }
+  xml.open('POST', 'login/register', true)
+  xml.send()
 })
 
 function tabs(tab, cl) {

@@ -1,0 +1,14 @@
+.grid-container {
+    display: grid;
+    color: white;
+    background-color: blue;
+    grid-template-columns: repeat(2, auto auto);
+}
+
+.grid-container>div {
+    background-color: rgb(19, 61, 65);
+}
+
+#one {
+    background-color: black;
+}
