@@ -52,16 +52,17 @@
           </form>
         </div>
         <!-- Register  Form -->
-        <div class="form" id='register' hidden>
+        <div class="form" id='register'>
           <form class='lgform' action="/login/register" method="POST">
             <ul>
               <li>
                 <h1>Register</h1>
               </li>
-              <li>
-                <div id='reg_errors'>
-                </div>
-              </li>
+              ${errors.map(f =>`
+              <li style="color: red;">
+                ${f.msg}
+              </li>`).join('')}
+
               <li>
                 <p>username</p>
                 <input type='text' class='input' name="username" id='reg_username' placeholder='username'>

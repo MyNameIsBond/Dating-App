@@ -10,8 +10,13 @@ const session = require('express-session')
 
 
 router.get('/', (req, res) => {
-  console.log(req.session)
-  res.render('login')
+
+  res.render('login', {
+    locals: {
+      errors: new Array(),
+      display: 'block'
+    }
+  })
 })
 
 router.post('/', (req, res) => {
@@ -21,7 +26,7 @@ router.post('/', (req, res) => {
 
 router.post('/register', (req, res) => {
   // check
-
+  console.log(req.body.username)
   req.checkBody('email', 'This is not a valid e mail').isEmail()
 
   req.checkBody('username', 'your username must be more than 6 characters').isLength({
@@ -33,11 +38,15 @@ router.post('/register', (req, res) => {
   req.checkBody('password2', 'Passwords Does not match').equals(req.body.password)
 
   let errors = req.validationErrors()
+  const display = '"display:block;"'
   console.log(errors)
   if (errors) {
     console.log(errors)
-    res.send({
-      errors: errors
+    return res.render('login', {
+      locals: {
+        errors,
+        display
+      }
     })
   } else {
     let user = new User()

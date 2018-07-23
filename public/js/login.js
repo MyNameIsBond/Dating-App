@@ -1,5 +1,6 @@
 const reg_button = window.document.getElementById('reg_button')
-
+const text = localStorage
+console.log(errors)
 
 window.document.getElementById('login_btn').addEventListener('click', () => {
   const xml = new XMLHttpRequest()
@@ -16,21 +17,20 @@ window.document.getElementById('login_btn').addEventListener('click', () => {
 })
 
 
-reg_button.addEventListener('click', (e) => {
-  const xml = new XMLHttpRequest()
-  e.preventDefault()
-  xml.onload = function () {
-    if (xml.readyState === 4 && xml.status === 200) {
-      document.getElementById('reg_errors').innerHTML = this.responseText
-      console.log(this.responseText)
-    } else {
-      const error = 'error'
-      console.log(error, this.statusText)
-    }
-  }
-  xml.open('POST', 'login/register', true)
-  xml.send()
-})
+// reg_button.addEventListener('click', (e) => {
+//   const xml = new XMLHttpRequest()
+//   xml.onload = function () {
+//     if (xml.status === 200) {
+//       document.getElementById('reg_errors').innerHTML = this.responseText
+//       console.log(this.responseText)
+//     } else {
+//       const error = 'error'
+//       console.log(error, this.statusText)
+//     }
+//   }
+//   xml.open('POST', 'login/register', true)
+//   xml.send()
+// })
 
 function tabs(tab, cl) {
   let form = document.getElementsByClassName('form')
