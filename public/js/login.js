@@ -1,6 +1,4 @@
 const reg_button = window.document.getElementById('reg_button')
-const text = localStorage
-console.log(errors)
 
 window.document.getElementById('login_btn').addEventListener('click', () => {
   const xml = new XMLHttpRequest()

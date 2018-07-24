@@ -27,7 +27,7 @@
           <button class='tabs-btn' id='libtn' onclick="tabs('logindiv','libtn')">Login</button>
           <button class='tabs-btn' id='regbtn' onclick="tabs('register','regbtn')">Register</button>
         </div>
-        <div class="log-items form" id='logindiv'>
+        <div class="log-items form" id='logindiv' ${display ? `hidden` : `style='display:block;' ` }>
           <!-- Log In -->
           <form action="/login" method="POST">
             <ul>
@@ -52,7 +52,7 @@
           </form>
         </div>
         <!-- Register  Form -->
-        <div class="form" id='register'>
+        <div class="form" id='register' ${display ? `${display}` : hidden}>
           <form class='lgform' action="/login/register" method="POST">
             <ul>
               <li>

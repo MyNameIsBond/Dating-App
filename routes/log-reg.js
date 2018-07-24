@@ -30,7 +30,7 @@ router.post('/register', (req, res) => {
   req.checkBody('email', 'This is not a valid e mail').isEmail()
 
   req.checkBody('username', 'your username must be more than 6 characters').isLength({
-    min: 6
+    min: 3
   })
   req.checkBody('password', 'The password should be more than 6 characters').isLength({
     min: 6
