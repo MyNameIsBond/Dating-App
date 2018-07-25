@@ -21,7 +21,12 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   console.log(req.session)
-  res.render('login')
+  res.render('login', {
+    locals: {
+      errors: new Array(),
+      display: 'block'
+    }
+  })
 })
 
 router.post('/register', (req, res) => {
