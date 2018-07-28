@@ -11,50 +11,7 @@
 </head>
 
 <body class="container">
-
-    <header>Name: ${name ? `My father's name is ${name.father} and my mother's is ${name.mother}` : 'I prefer not to say.'}</header>
-    <nav>last name : ${surname}</nav>
-    <p></p>
-    <i class="fas ${name.icon ? `${name.icon}` : 'fa-exclamation-triangle'}"></i>
-    <footer>footer</footer>
-    <div class="slider">
-        <div class="slide" id="slide-1">
-            1
-        </div>
-        <div class="slide" id="slide-2">
-            2
-        </div>
-        <div class="slide" id="slide-3">
-            3
-        </div>
-        <div class="slide" id="slide-4">
-            4
-        </div>
-        <div class="slide" id="slide-5">
-            5
-        </div>
-    </div>
-    <a class="waves-effect waves-dark btn">button</a>
-    <a class="waves-effect waves-light btn">
-        <i class="material-icons left">cloud</i>button</a>
-    <a class="waves-effect waves-light btn red">
-        <i class="material-icons right">cloud</i>button</a>
-
-    <div class="col s12 m8 offset-m2 l6 offset-l3">
-        <div class="card-panel grey lighten-5 z-depth-1">
-            <div class="row valign-wrapper">
-                <div class="col s2">
-                    <img src='../public/img/hotty3.jpg' alt="" class="circle responsive-img">
-                    <!-- notice the "circle" class -->
-                </div>
-                <div class="col s10">
-                    <span class="black-text">
-                        This is a square image. Add the "circle" class to it to make it appear circular.
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
+    <button onclick="test()"> try2</button>
 </body>
 
 <style>
@@ -76,4 +33,8 @@
 </style>
 
 </html>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script>
+    function test() {
+        location.replace('http://127.0.0.1:8080/messages')
+    }
+</script>

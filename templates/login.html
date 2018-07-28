@@ -24,7 +24,7 @@
     <div class="container">
       <div id='div-shadow'>
         <div id='tabs-cnt'>
-          <button class='tabs-btn' id='libtn' onclick="tabs('logindiv','libtn')">Login</button>
+          <button class='tabs-btn' id='libtn'>Login</button>
           <button class='tabs-btn' id='regbtn' onclick="tabs('register','regbtn')">Register</button>
         </div>
         <div class="log-items form" id='logindiv'>
@@ -53,7 +53,7 @@
         </div>
         <!-- Register  Form -->
         <div class="form" id='register' ${display ? `${display}` : hidden}>
-          <form class='lgform' action="/login/register" method="POST">
+          <form class='lgform' action="/login/register" method="POST" hidden>
             <ul>
               <li>
                 <h1>Register</h1>
@@ -108,6 +108,7 @@
           </form>
         </div>
       </div>
+      <button id="load_test">Click Me to go to Home</button>
     </div>
   </main>
 

@@ -34,13 +34,13 @@ router.post('/register', (req, res) => {
   console.log(req.body.username)
   req.checkBody('email', 'This is not a valid e mail').isEmail()
 
-  req.checkBody('username', 'your username must be more than 6 characters').isLength({
+  req.checkBody('username', 'your username should be more than 6 characters').isLength({
     min: 3
   })
   req.checkBody('password', 'The password should be more than 6 characters').isLength({
     min: 6
   })
-  req.checkBody('password2', 'Passwords Does not match').equals(req.body.password)
+  req.checkBody('password2', 'Passwords do not not match').equals(req.body.password)
 
   let errors = req.validationErrors()
   const display = '"display:block;"'
@@ -80,6 +80,14 @@ router.get('/logout', function (req, res, next) {
     })
 
   }
+})
+
+router.get('/register', (req, res) => {
+  res.render('register', {
+    locals: {
+      errors: new Array()
+    }
+  })
 })
 
 module.exports = router
