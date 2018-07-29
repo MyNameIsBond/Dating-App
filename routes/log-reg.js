@@ -47,7 +47,7 @@ router.post('/register', (req, res) => {
   console.log(errors)
   if (errors) {
     console.log(errors)
-    return res.render('login', {
+    return res.render('register', {
       locals: {
         errors,
         display
