@@ -7,7 +7,14 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 const session = require('express-session')
 
-
+function findInDB(type, parameter) {
+  User.findOne({
+    type: parameter
+  }, (err, resault) => {
+    if (err) throw err
+    else console.log(resault)
+  })
+}
 
 router.get('/', (req, res) => {
 
@@ -31,8 +38,8 @@ router.post('/', (req, res) => {
 
 router.post('/register', (req, res) => {
   // check
-  console.log(req.body.username)
   req.checkBody('email', 'This is not a valid e mail').isEmail()
+
 
   req.checkBody('username', 'your username should be more than 6 characters').isLength({
     min: 3
@@ -43,11 +50,25 @@ router.post('/register', (req, res) => {
   req.checkBody('password2', 'Passwords do not not match').equals(req.body.password)
 
   let errors = req.validationErrors()
+  User.findOne({
+    'email': req.body.email
+  }, (err, user) => {
+    if (err) {
+      throw err
+    } else {
+
+      let error = {
+        location: 'body',
+        param: 'email',
+        msg: 'email is already in use',
+        value: req.body.email
+      }
+      errors.push(error)
+    }
+  })
   const display = '"display:block;"'
-  console.log(errors)
   if (errors) {
-    console.log(errors)
-    return res.render('login', {
+    return res.render('register', {
       locals: {
         errors,
         display
