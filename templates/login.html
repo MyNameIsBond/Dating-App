@@ -24,8 +24,8 @@
     <div class="container">
       <div id='div-shadow'>
         <div id='tabs-cnt'>
-          <button class='tabs-btn' id='libtn'>Login</button>
-          <button class='tabs-btn' id='regbtn' onclick="tabs('register','regbtn')">Register</button>
+          <button class='tabs-btn' id='libtn' onclick="tabs('login')">Login</button>
+          <button class='tabs-btn' id='regbtn' onclick="tabs('login/register')">Register</button>
         </div>
         <div class="log-items form" id='logindiv'>
           <!-- Log In -->
@@ -52,63 +52,10 @@
           </form>
         </div>
         <!-- Register  Form -->
-        <div class="form" id='register' ${display ? `${display}` : hidden}>
-          <form class='lgform' action="/login/register" method="POST" hidden>
-            <ul>
-              <li>
-                <h1>Register</h1>
-              </li>
-              ${errors.map(f =>`
-              <li style="color: red;">
-                ${f.msg}
-              </li>`).join('')}
-
-              <li>
-
-                <p>username
-                  <i id="username_pic"></i>
-                </p>
-                <input type='text' class='input' name="username" id='reg_username' placeholder='username'>
-              </li>
-
-              <li>
-                <p>email
-                  <i id="email_pic"></i>
-                </p>
-                <input type='text' id='reg_email' name='email' class='input' placeholder='example@mail.ac.uk'>
-              </li>
-              <li>
-                <p>password
-                  <i id="password_pic"></i>
-                </p>
-                <input name="password" class='input' type='password' id='reg_password' placeholder='password'>
-
-              </li>
-              <li>
-                <p>repeat password
-                  <i id="password2_pic"></i>
-                </p>
-                <input type='password' name="password2" class='input' id='reg_password2' placeholder='password'>
-
-              </li>
-              <li>
-                <p>What's your gender</p>
-                <select id='gender' name="gender">
-                  <option value='male' selected=''>male</option>
-                  <option value=' female '>female</option>
-                  <option value='gay '>gay</option>
-                  <option value='transgender '>transgender</option>
-                </select>
-              </li>
-
-              <li>
-                <button class='btn' type='submit' value='Submit' id='reg_button'>Register</button>
-              </li>
-            </ul>
-          </form>
-        </div>
+        <div class="form" id='register'></div>
       </div>
-      <button id="load_test">Click Me to go to Home</button>
+    </div>
+
     </div>
   </main>
 
