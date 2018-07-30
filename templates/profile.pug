@@ -1,0 +1,118 @@
+extends home.pug
+
+block head
+    link(rel='stylesheet', href='../public/css/profile.css')
+    title Profile
+
+block main 
+    main#main
+        .container
+            #prof-info
+                article
+                    img(src='../public/img/hotty5.jpg', alt='')
+                    header
+                        #user-menu.user-menu
+                            ul
+                                li Hide from her
+                                li Report
+                                li Block
+                        h3
+                            | Username , 25
+                            i#ellipsis-menu.fas.fa-ellipsis-v(onclick='userInfoMenu()')
+                        h5
+                            i.fas.fa-circle(style='color: lightgreen;')
+                            |  online
+                        small
+                            i.fas.fa-map-marker
+                            |  London, UK
+                        p
+                            | By in no ecstatic wondered disposal my speaking. Direct wholly valley or uneasy it at really. Sir wish like said dull and
+                            | need make. Sportsman one bed departure rapturous situation disposing his. Off say yet ample ten ought hence.
+                        #button-prof
+                            a
+                                i.fas.fa-heart
+                                |  Meet Me
+                            a
+                                i.fas.fa-envelope
+                                |  Message
+
+            #button-info
+                a.tablinks.prof_tab_active(onclick="openProfileTab(event,'media','photo-container')") Media
+                a.tablinks(onclick="openProfileTab(event,'about', 'user-info')") About
+                br
+                br
+            section#media.photo-container.tabcontent(style='display: grid')
+                img(src='../public/img/hotty2.jpg')
+                img(src='../public/img/hotty3.jpg')
+                img(src='../public/img/hotty4.jpg')
+                img(src='../public/img/lopez.jpg')
+                img(src='../public/img/hotty5.jpg')
+                img(src='../public/img/hotty6.jpg')
+                img(src='../public/img/hotty7.jpg')
+                img(src='../public/img/hotty8.jpg')
+                img(src='../public/img/hotty9.jpg')
+                img(src='../public/img/hotty10.jpg')
+                img(src='../public/img/hotty11.jpg')
+                img(src='../public/img/hotty12.jpg')
+                img(src='../public/img/hotty13.jpg')
+                img(src='../public/img/hotty14.jpg')
+                img(src='../public/img/hotty15.jpg')
+                img(src='../public/img/hotty16.jpg')
+                img(src='../public/img/hotty17.jpg')
+                img(src='../public/img/hotty18.jpg')
+                img(src='../public/img/hotty19.jpg')
+                img(src='../public/img/hotty20.jpg')
+                img(src='../public/img/hotty21.jpg')
+                img(src='../public/img/hotty22.jpg')
+                img(src='../public/img/hotty23.jpg')
+                img(src='../public/img/hotty24.jpg')
+            // User Info
+            #about.user-info.tabcontent
+                ul
+                    li
+                        i.fas.fa-female
+                        p female
+                    li
+                        i.fas.fa-smoking-ban
+                        p Non Smoker
+                    li
+                        i.fas.fa-birthday-cake
+                        p 25
+                    li
+                        i.fas.fa-suitcase
+                        p Photo Model
+                    li
+                        i.fas.fa-graduation-cap
+                        p Some College
+                    li
+                        i.fas.fa-child
+                        p No Children
+                div
+                    hr
+                    .edit-button
+                        a(href='')
+                            i.fas.fa-user-edit
+                            |  Edit
+            // 
+            br
+            br
+            br
+            br
+        // Add button
+        #add_pic(title='Add Media')
+            i#add_pic_button.fas.fa-plus-circle
+        #add_pic_list
+            ul
+                li(id='')
+                    a(href='')
+                    p.add_pic_info
+                    i.fas.fa-camera
+                li
+                    a(href='')
+                    i.fas.fa-video
+                li
+                    a(href='')
+                    i.fas.fa-lock
+block script
+    script(src='../public/js/home.js')
+    script(src='../public/js/profile.js')

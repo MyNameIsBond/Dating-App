@@ -22,10 +22,7 @@ function findInDB(type, parameter) {
 router.get('/', (req, res) => {
 
   res.render('login', {
-    locals: {
-      errors: new Array(),
-      display: 'block'
-    }
+    errors: new Array(),
   })
 })
 
@@ -64,10 +61,8 @@ router.post('/register', [
   let errors = req.validationErrors()
 
   if (errors) {
-    return res.render('register', {
-      locals: {
-        errors
-      }
+    return res.render('register.pug', {
+      errors
     })
   } else {
     let user = new User()
@@ -99,7 +94,7 @@ router.get('/logout', function (req, res, next) {
 })
 
 router.get('/register', (req, res) => {
-  res.render('register', {
+  res.render('register.pug', {
     locals: {
       errors: new Array()
     }

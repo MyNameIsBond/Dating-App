@@ -1,0 +1,32 @@
+extends home.pug
+
+
+block head
+    link(rel="stylesheet" href="../public/css/swap.css")
+    title Meet Me
+block main
+    .container.swapping
+        .swap
+            img(src='../public/img/hotty14.jpg', alt='')
+            ul.info
+                li
+                    p
+                        i.fas.fa-circle
+                        |  Suzana , 25
+                li
+                    p
+                        i.fas.fa-map-marker
+                        |  London, UK
+            ul.card-buttons
+                li
+                    i.fas.fa-times-circle
+                li
+                    i.fas.fa-star
+                li
+                    i.fas.fa-heart
+        br
+        hr
+        br
+
+block script
+    script(src='../public/js/home.js')

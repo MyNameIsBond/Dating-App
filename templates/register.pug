@@ -1,0 +1,62 @@
+extends home.pug
+
+
+block head
+    link(rel="stylesheet", href='/public/css/login.css')
+    link(rel="stylesheet", href='/public/css/home.css')
+    title Register
+
+
+block main
+    main#main
+    .container
+        #div-shadow
+            #tabs-cnt
+                button#libtn.tabs-btn(onclick="tabs('login')") Login
+                button#regbtn.tabs-btn(onclick="tabs('login/register')") Register
+            #logindiv.log-items.form
+            // Register  Form
+            #register.form
+                form.lgform(action='/login/register', method='POST')
+                    ul
+
+                        li
+                            h1 Register
+                        if errors
+                            each error in errors
+                                li(style='color: red;')
+                                    | #{error.msg}
+                        li
+                            p
+                            | username
+                            i#username_pic
+                            input#reg_username.input(type='text', name='username', placeholder='username')
+                        li
+                            p
+                            | email
+                            i#email_pic
+                            input#reg_email.input(type='text', name='email', placeholder='example@mail.ac.uk')
+                        li
+                            p
+                            | password
+                            i#password_pic
+                            input#reg_password.input(name='password', type='password', placeholder='password')
+                        li
+                            p
+                            | repeat password
+                            i#password2_pic
+                            input#reg_password2.input(type='password', name='password2', placeholder='password')
+                        li
+                            p What's your gender
+                            select#gender(name='gender')
+                                option(value='male', selected='') male
+                                option(value=' female ') female
+                                option(value='gay ') gay
+                                option(value='transgender ') transgender
+                        li
+                            button#reg_button.btn(type='submit', value='Submit') Register
+
+block script
+    script(src='../public/js/login.js')
+    script(src='../public/js/home.js')
+    script(src='../public/js/register.js')

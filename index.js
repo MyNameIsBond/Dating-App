@@ -47,9 +47,9 @@ db.once('open', () => {
 })
 
 app.use('/public', express.static(path.join(__dirname, 'public')))
-app.engine('html', es6Renderer)
+// app.engine('html', es6Renderer)
 app.set('views', 'templates')
-app.set('view engine', 'html')
+app.set('view engine', 'pug')
 
 app.use(bodyParser.urlencoded({
     extended: false
@@ -70,25 +70,23 @@ app.get('/template/test', (req, res) => {
 })
 
 app.get('/blog', (req, res) => {
-    res.sendFile(`${__dirname}/templates/blog.html`)
+    res.render('blog.pug')
 })
 
 app.get('/swap', (req, res) => {
-    res.sendFile(`${__dirname}/templates/swap.html`)
+    res.render('swap.pug')
 })
 
 app.get('/', (req, res) => {
     usersession = req.session
+    console.log(typeof usersession)
     Posts.find({}, (err, posts) => {
         if (err) throw err
         else
-            console.log(posts)
-        res.render('home', {
-            locals: {
+            res.render('home', {
                 posts,
                 usersession
-            }
-        })
+            })
     })
 })
 
@@ -101,25 +99,13 @@ let all_post = Posts.find({}, (err, posts) => {
 
 // Navigation Bar.
 
-app.get('/nav_bar', (req, res) => {
-    res.sendFile(`${__dirname}/templates/nav_bar.html`)
-})
-
-app.get('/side_bar', (req, res) => {
-    res.sendFile(`${__dirname}/templates/side_bar.html`)
-})
-
-app.get('/notifications', (req, res) => {
-    res.sendFile(`${__dirname}/templates/notifications.html`)
-})
-
 app.get('/settings', (req, res) => {
     res.sendFile(`${__dirname}/templates/settings.html`)
 })
 
 
 app.get('/messages', (req, res) => {
-    res.sendFile(`${__dirname}/templates/messages.html`)
+    res.render('messages.pug')
 })
 
 
@@ -127,8 +113,6 @@ app.get('/messages', (req, res) => {
 
 
 app.post('/post/:textarea', (req, res) => {
-    console.log(req.body.textarea)
-    console.log(req.params)
     let postt = new Posts()
     postt.post = req.params.textarea
     date = new Date()

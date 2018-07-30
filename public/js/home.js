@@ -1,36 +1,3 @@
-function nav_bar() {
-  const xml = new XMLHttpRequest()
-  xml.onload = function () {
-    if (xml.readyState === 4 && xml.status === 200) {
-      document.getElementById('nav').innerHTML = this.responseText
-    } else {
-      const error = 'error'
-      console.log(error, this.statusText)
-    }
-  }
-
-  xml.open('GET', '/nav_bar', true)
-  xml.send()
-}
-nav_bar()
-
-
-function notifications() {
-  const xml = new XMLHttpRequest()
-  xml.onload = function () {
-    if (xml.readyState === 4 && xml.status === 200) {
-      document.getElementById('notifications').innerHTML = this.responseText
-    } else {
-      const error = 'error'
-      console.log(error, this.statusText)
-    }
-  }
-
-  xml.open('GET', '/notifications', true)
-  xml.send()
-}
-notifications()
-
 function notificationss() {
 
   const not_button = document.getElementById('notification-icon')
@@ -47,22 +14,7 @@ function notificationss() {
 
 }
 
-function side_bar() {
-  const xml = new XMLHttpRequest()
-  xml.onload = function () {
-    if (xml.readyState === 4 && xml.status === 200) {
-      document.getElementById('sidemenu').innerHTML = this.responseText
-    } else {
-      const error = 'error'
-      console.log(error, this.statusText)
-    }
-  }
 
-  xml.open('GET', '/side_bar', true)
-  xml.send()
-}
-
-side_bar()
 
 // ----------------------------------//
 
