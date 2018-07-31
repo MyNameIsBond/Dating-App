@@ -1,5 +1,6 @@
 const express = require('express')
 const passport = require('passport')
+const localstrategy = require('passport-local').Strategy
 const router = express.Router()
 const bodyParser = require('body-parser')
 const User = require('../models/users')
@@ -26,15 +27,18 @@ router.get('/', (req, res) => {
   })
 })
 
-router.post('/', (req, res) => {
-  console.log(req.session)
-  res.render('login', {
-    locals: {
-      errors: new Array(),
-      display: 'block'
-    }
+router.post('/',
+  passport.authenticate('local', {
+    successRedirect: '/',
+    failureRedirect: '/login',
+    failureFlash: true
+  }, (req, res) => {
+    res.redirect('/')
   })
-})
+
+);
+
+
 
 router.post('/register', [
   check('email').custom(value => {
@@ -73,7 +77,7 @@ router.post('/register', [
     user.save(err => {
       if (err) throw err
       else
-        req.flash('all Done')
+        req.flash('success', 'You are now registered')
       return res.redirect('/')
     })
   }

@@ -1,5 +1,9 @@
-function notificationss() {
+console.log('hey')
 
+
+
+
+function notificationss() {
   const not_button = document.getElementById('notification-icon')
   const not_div = document.getElementById('notifications')
 

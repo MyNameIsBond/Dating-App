@@ -15,11 +15,11 @@
 
 ---------------->Back end!<----------------
 
-1) seperate and make a route.
+1) seperate and make a route. Done!
 
 2) make like buttons - comments, maybe.
 
-3) make users and registerations system
+3) make users and registeration and login system
 
 4) make following 
 
