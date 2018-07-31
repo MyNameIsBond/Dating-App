@@ -20,6 +20,9 @@ block main
                         ul
                             li
                                 h1 Login
+                            if error
+                                li(style='color:red;')
+                                | #{error}
                             li
                                 p email
                                 input#username.input(name='email', type='text', placeholder='example@mail.ac.uk')

@@ -19,7 +19,7 @@ const UserSchema = mongoose.Schema({
     }
 })
 
-UserSchema.pre('save', function(next) {
+UserSchema.pre('save', function (next) {
     const user = this
     bcrypt.hash(user.password, 10, (err, hash) => {
         if (err) {
@@ -29,6 +29,31 @@ UserSchema.pre('save', function(next) {
         next()
     })
 });
+
+
+module.exports.comparePassword = function (myPlaintextPassword, hash, callback) {
+    bcrypt.compare(myPlaintextPassword, hash, function (err, res) {
+        if (err) throw err
+        callback(null, res)
+    });
+
+}
+
+module.exports.getUserByEmail = function (email, callback) {
+    let query = {
+        'email': email
+    }
+    User.findOne(query, callback)
+}
+
+module.exports.getUserById = function (id, callback) {
+    User.findById(id, callback)
+}
+
+
+
+
+
 
 
 let User = module.exports = mongoose.model('User', UserSchema)
