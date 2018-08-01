@@ -412,3 +412,9 @@ span {
 .slidein {
     left: 0%;
 }
+
+/* Messages */
+
+.error {
+    color: red;
+}

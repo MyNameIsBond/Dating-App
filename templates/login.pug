@@ -4,7 +4,6 @@ block head
     link(rel='stylesheet', href='/public/css/home.css')
     title Login
     
-    
 
 block main
     // Login  Form
@@ -20,9 +19,9 @@ block main
                         ul
                             li
                                 h1 Login
-                            if error
-                                li(style='color:red;')
-                                | #{error}
+                            li
+                                include flash_messages.pug
+
                             li
                                 p email
                                 input#username.input(name='email', type='text', placeholder='example@mail.ac.uk')
@@ -34,6 +33,7 @@ block main
                                 br
                                 br
                                 button#login_btn.btn(type='submit', value='Submit') Login
+
         // Register  Form
         #register.form
 block script

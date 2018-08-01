@@ -1,0 +1,11 @@
+
+- var messages = getMessages()
+if messages.notify
+    each msg in messages.info
+        .info= msg
+if messages.error
+    each msg in messages.error
+        .error= msg
+if messages.success
+    each msg in messages.success
+        .success= msg

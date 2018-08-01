@@ -11,7 +11,6 @@ html
     block head
         title Home
   body
-    
     // navigation Bar
     nav#nav
         ul#navList
@@ -116,6 +115,7 @@ html
 block main
     main#main
     .container
+        include flash_messages.pug
         form#submit-form
           h4
             i.fas.fa-pencil-alt
