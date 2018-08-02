@@ -29,19 +29,20 @@ UserSchema.pre('save', function (next) {
         next()
     })
 });
+let User = module.exports = mongoose.model('User', UserSchema)
 
 
-module.exports.comparePassword = function (myPlaintextPassword, hash, callback) {
-    bcrypt.compare(myPlaintextPassword, hash, function (err, res) {
+module.exports.comparePassword = function (password, hash, callback) {
+    bcrypt.compare(password, hash, function (err, isMatch) {
         if (err) throw err
-        callback(null, res)
+        callback(null, isMatch)
     });
 
 }
 
 module.exports.getUserByEmail = function (email, callback) {
     let query = {
-        'email': email
+        email: email
     }
     User.findOne(query, callback)
 }
@@ -49,11 +50,3 @@ module.exports.getUserByEmail = function (email, callback) {
 module.exports.getUserById = function (id, callback) {
     User.findById(id, callback)
 }
-
-
-
-
-
-
-
-let User = module.exports = mongoose.model('User', UserSchema)
