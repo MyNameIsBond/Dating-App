@@ -15,10 +15,13 @@ const {
 
 
 
-passport.use(new LocalStrategy(
-  function (username, password, done) {
+passport.use(new LocalStrategy({
+    usernameField: 'email',
+    passwordField: 'password'
+  },
+  function (email, password, done) {
     User.findOne({
-      'username': username
+      'email': email
     }, function (err, user) {
       if (err) throw err
       if (!user) {

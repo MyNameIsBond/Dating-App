@@ -83,7 +83,7 @@ app.get('/swap', (req, res) => {
 
 app.get('/', (req, res) => {
     usersession = req.session
-    console.log(usersession)
+    console.log(usersession.passport)
     Posts.find({}, (err, posts) => {
         if (err) throw err
         else

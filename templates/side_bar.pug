@@ -26,10 +26,10 @@
             a(href='/swap')
                 | Swap
                 i.fas.fa-heart
-        if user
+        if usersession.passport
             li.right-item
                 a(href='/login/logout')
-                    | Logout
+                    | Logout 
                     i.fas.fa-sign-in-alt
         else
             li.right-item
