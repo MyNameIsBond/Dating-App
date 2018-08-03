@@ -16,15 +16,16 @@ const {
 
 
 passport.use(new LocalStrategy(
-  function (email, password, done) {
-    User.getUserByEmail(email, function (err, user) {
+  function (username, password, done) {
+    User.findOne({
+      'username': username
+    }, function (err, user) {
       if (err) throw err
       if (!user) {
         return done(null, false, {
           message: 'Unknown email.'
-        });
+        })
       }
-      console.log('holy')
       User.comparePassword(password, user.password, function (err, isMatch) {
         if (err) throw err
         if (isMatch) {
@@ -35,22 +36,21 @@ passport.use(new LocalStrategy(
           })
         }
       })
-
-    });
+    })
   }
-));
+))
 
 
 
 passport.serializeUser(function (user, done) {
-  done(null, user.id);
-});
+  done(null, user.id)
+})
 
 passport.deserializeUser(function (id, done) {
   User.getUserById(id, function (err, user) {
-    done(err, user);
-  });
-});
+    done(err, user)
+  })
+})
 
 
 
@@ -112,9 +112,15 @@ router.post('/register', [
     user.password = req.body.password
     user.save(err => {
       if (err) throw err
-      else
-        req.flash('success', 'You are now registered')
-      return res.redirect('/')
+      else {
+        req.login(user, function (err) {
+          if (err) {
+            throw err
+          }
+          req.flash('success', `Welcome, ${user.username}`)
+          return res.redirect('/')
+        })
+      };
     })
   }
 })
@@ -126,12 +132,14 @@ router.get('/logout', function (req, res, next) {
       if (err) {
         return next(err)
       } else {
+        req.logout()
         return res.redirect('/')
       }
     })
 
   }
 })
+
 
 router.get('/register', (req, res) => {
   res.render('register.pug', {

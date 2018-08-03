@@ -1,0 +1,42 @@
+#sidemenu.sidemenu
+    header
+        img(src='../public/img/hotty12.jpg', alt='')
+        h4 Username , 23 
+        span
+            i.fas.fa-circle(style='color: lightgreen;')
+            |  online
+        small
+            i.fas.fa-map-marker
+            |  London, UK
+    hr
+    ul
+        li
+            a(onclick='', href='/')
+                | Home
+                i.fas.fa-home
+        li
+            a(onclick='', href='/profile/test')
+                | Profile
+                i.fas.fa-user
+        li.right-item
+            a(href='/messages')
+                | Messages
+                i.fas.fa-envelope
+        li
+            a(href='/swap')
+                | Swap
+                i.fas.fa-heart
+        if user
+            li.right-item
+                a(href='/login/logout')
+                    | Logout
+                    i.fas.fa-sign-in-alt
+        else
+            li.right-item
+                a(href='/login')
+                    | Login / Register 
+                    i.fas.fa-sign-in-alt
+        li
+            a(href='/blog')
+                | Blog
+                i.fab.fa-blogger-b

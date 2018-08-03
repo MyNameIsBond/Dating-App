@@ -27,6 +27,10 @@ app.use(passport.initialize())
 app.use(passport.session())
 app.use(expressValidator())
 
+app.use(function (req, res, next) {
+    res.locals.user = req.user || null
+    next()
+})
 
 app.use(session({
     secret: 'work hard',

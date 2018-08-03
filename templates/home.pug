@@ -11,107 +11,14 @@ html
     block head
         title Home
   body
-    // navigation Bar
-    nav#nav
-        ul#navList
-            li
-                .con(onclick='menuicon(this)')
-                    .bar1
-                    .bar2
-                    .bar3
-            li#search_li
-                input#search(placeholder='Username')
-            i#search_icon.fas.fa-search
-            li
-                .notification
-                    i#notification-icon.fas.fa-bell(onclick='notificationss()', title='notification')
+    include nav_bar.pug
 
     // Side menu
-    #sidemenu.sidemenu
-        header
-            img(src='../public/img/hotty12.jpg', alt='')
-            h4 Username , 23 
-            span
-                i.fas.fa-circle(style='color: lightgreen;')
-                |  online
-            small
-                i.fas.fa-map-marker
-                |  London, UK
-        hr
-        ul
-            li
-                a(onclick='', href='/')
-                    | Home
-                    i.fas.fa-home
-            li
-                a(onclick='', href='/profile/test')
-                    | Profile
-                    i.fas.fa-user
-            li.right-item
-                a(href='/messages')
-                    | Messages
-                    i.fas.fa-envelope
-            li
-                a(href='/swap')
-                    | Swap
-                    i.fas.fa-heart
-            li.right-item
-                a(href='/login')
-                    | Login
-                    i.fas.fa-sign-in-alt
-            li
-                a(href='/blog')
-                    | Blog
-                    i.fab.fa-blogger-b
+    include side_bar.pug
+
+    
     //Notification in the Navbar
-    #notifications
-        header
-            i.fas.fa-bell
-            |  Notifications
-        main
-            ul
-                li
-                    div
-                        img(src='../public/img/hotty13.jpg', alt='')
-                    |  a
-                    a(href='') message
-                    |  from
-                    a(href='') Jessica
-                li
-                    div
-                        img(src='../public/img/hotty14.jpg', alt='')
-                    |  a
-                    a(href='') message
-                    |  from
-                    a(href='') Elise
-                li
-                    div
-                        img(src='../public/img/hotty15.jpg', alt='')
-                    |  a
-                    a(href='') message
-                    |  from
-                    a(href='') Maria
-                li
-                    div
-                        img(src='../public/img/hotty16.jpg', alt='')
-                    |             a
-                    a(href='') message
-                    |  from
-                    a(href='') Margaret
-                li
-                    div
-                        img(src='../public/img/hotty17.jpg', alt='')
-                    | a
-                    a(href='') message
-                    |  from
-                    a(href='') Jeanete
-                li
-                    div
-                        img(src='../public/img/hotty18.jpg', alt='')
-                    |  a
-                    a(href='') message
-                    |  from
-                    a(href='') Nicky
+    include notifications.pug
 block main
     main#main
     .container

@@ -40,12 +40,12 @@ module.exports.comparePassword = function (password, hash, callback) {
 
 }
 
-module.exports.getUserByEmail = function (email, callback) {
-    let query = {
-        email: email
-    }
-    User.findOne(query, callback)
-}
+// module.exports.getUserByEmail = function (email, callback) {
+//     let query = {
+//         email: email
+//     }
+//     User.findOne(query, callback)
+// }
 
 module.exports.getUserById = function (id, callback) {
     User.findById(id, callback)
