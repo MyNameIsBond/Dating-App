@@ -16,41 +16,44 @@ const {
 
 
 passport.use(new LocalStrategy({
-    usernameField: 'email',
-    passwordField: 'password'
-  },
-  function (email, password, done) {
-    User.findOne({
-      'email': email
-    }, function (err, user) {
+  usernameField: 'email',
+  passwordField: 'password'
+}, (email, password, done) => {
+  User.findOne({
+    'email': email
+  }, (err, user) => {
+    if (err) throw err
+    if (!user) {
+      return done(null, false, {
+        message: 'Unknown email.'
+      })
+    }
+    User.comparePassword(password, user.password, (err, isMatch) => {
       if (err) throw err
-      if (!user) {
+      if (isMatch) {
+        return done(null, user)
+      } else {
         return done(null, false, {
-          message: 'Unknown email.'
+          message: 'Invalid Password'
         })
       }
-      User.comparePassword(password, user.password, function (err, isMatch) {
-        if (err) throw err
-        if (isMatch) {
-          return done(null, user)
-        } else {
-          return done(null, false, {
-            message: 'Invalid Password'
-          })
-        }
-      })
     })
+  })
+}))
+
+
+
+passport.serializeUser((user, done) => {
+  const userSession = {
+    id: user._id,
+    username: user.username,
+    gender: user.gender,
   }
-))
-
-
-
-passport.serializeUser(function (user, done) {
-  done(null, user.id)
+  done(null, userSession)
 })
 
-passport.deserializeUser(function (id, done) {
-  User.getUserById(id, function (err, user) {
+passport.deserializeUser((id, done) => {
+  User.getUserById(id, (err, user) => {
     done(err, user)
   })
 })
@@ -116,7 +119,7 @@ router.post('/register', [
     user.save(err => {
       if (err) throw err
       else {
-        req.login(user, function (err) {
+        req.login(user, err => {
           if (err) {
             throw err
           }
@@ -128,10 +131,10 @@ router.post('/register', [
   }
 })
 
-router.get('/logout', function (req, res, next) {
+router.get('/logout', (req, res, next) => {
   if (req.session) {
     // delete session object
-    req.session.destroy(function (err) {
+    req.session.destroy(err => {
       if (err) {
         return next(err)
       } else {
@@ -139,7 +142,6 @@ router.get('/logout', function (req, res, next) {
         return res.redirect('/')
       }
     })
-
   }
 })
 

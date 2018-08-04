@@ -29,8 +29,8 @@ UserSchema.pre('save', function (next) {
         next()
     })
 });
-let User = module.exports = mongoose.model('User', UserSchema)
 
+let User = module.exports = mongoose.model('User', UserSchema)
 
 module.exports.comparePassword = function (password, hash, callback) {
     bcrypt.compare(password, hash, function (err, isMatch) {
@@ -40,12 +40,7 @@ module.exports.comparePassword = function (password, hash, callback) {
 
 }
 
-// module.exports.getUserByEmail = function (email, callback) {
-//     let query = {
-//         email: email
-//     }
-//     User.findOne(query, callback)
-// }
+
 
 module.exports.getUserById = function (id, callback) {
     User.findById(id, callback)

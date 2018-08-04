@@ -11,6 +11,7 @@ const port = 8080
 const db = mongoose.connection
 mongoose.connect('mongodb://localhost/user')
 const Posts = require('./models/post')
+const User = require('./models/users')
 const messanger = require('./routes/messanger')
 const profile = require('./routes/user-prof')
 const logreg = require('./routes/log-reg')
@@ -27,10 +28,13 @@ app.use(passport.initialize())
 app.use(passport.session())
 app.use(expressValidator())
 
-app.use(function (req, res, next) {
-    res.locals.user = req.user || null
-    next()
-})
+
+
+
+
+
+
+
 
 app.use(session({
     secret: 'work hard',
@@ -40,6 +44,8 @@ app.use(session({
         mongooseConnection: db
     })
 }))
+
+
 
 
 db.on('error', err => {
@@ -60,18 +66,10 @@ app.use(bodyParser.urlencoded({
 }))
 app.use(bodyParser.json())
 
-app.get('/template/test', (req, res) => {
-    res.render('test.html', {
-        locals: {
-            name: {
-                father: 'Achiles',
-                mother: 'Mimoza',
-                icon: 'fa-check'
-            },
-            surname: 'Hajdini'
-        }
-    })
-})
+
+
+
+
 
 app.get('/blog', (req, res) => {
     res.render('blog.pug')
@@ -81,24 +79,23 @@ app.get('/swap', (req, res) => {
     res.render('swap.pug')
 })
 
+
+
+
+
 app.get('/', (req, res) => {
-    usersession = req.session
-    console.log(usersession.passport)
+
     Posts.find({}, (err, posts) => {
         if (err) throw err
         else
             res.render('home', {
                 posts,
-                usersession
+                user
             })
     })
 })
 
-let all_post = Posts.find({}, (err, posts) => {
-    if (err) throw err
-    else
-        return posts
-})
+
 
 
 // Navigation Bar.
