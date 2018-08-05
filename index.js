@@ -84,13 +84,12 @@ app.get('/swap', (req, res) => {
 
 
 app.get('/', (req, res) => {
-
+    console.log(res.locals)
     Posts.find({}, (err, posts) => {
         if (err) throw err
         else
             res.render('home', {
                 posts,
-                user
             })
     })
 })

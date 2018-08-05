@@ -69,11 +69,11 @@ router.get('/', (req, res) => {
 
 router.post('/',
   passport.authenticate('local', {
-    successRedirect: '/',
     failureRedirect: '/login',
     failureFlash: true
-  }), (res, req) => {
-    res.redirect('/')
+  }), (req, res) => {
+    req.flash('success', `Wellcome back ${req.username}`)
+    res.redirect(`/profile/${req.username}`)
   })
 
 
