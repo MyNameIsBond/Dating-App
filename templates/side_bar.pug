@@ -15,7 +15,7 @@
                 | Home
                 i.fas.fa-home
         li
-            a(onclick='', href='/profile/test')
+            a(onclick='', href=`/profile/Tony`)
                 | Profile
                 i.fas.fa-user
         li.right-item
@@ -30,7 +30,6 @@
             li.right-item
                 a(href='/login/logout')
                     | Logout 
-                    |#{user.username}
                     |#{user.email}
                     i.fas.fa-sign-in-alt
         else

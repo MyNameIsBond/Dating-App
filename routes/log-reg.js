@@ -1,15 +1,17 @@
 const express = require('express')
-const passport = require('passport')
-const LocalStrategy = require('passport-local').Strategy
+
 const router = express.Router()
 const bodyParser = require('body-parser')
 const User = require('../models/users')
 const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 const session = require('express-session')
+const passport = require('passport'),
+  LocalStrategy = require('passport-local').Strategy
 const {
   check
 } = require('express-validator/check')
+
 
 
 
@@ -42,21 +44,24 @@ passport.use(new LocalStrategy({
 }))
 
 
-
-passport.serializeUser((user, done) => {
+passport.serializeUser(function (user, done) {
   const userSession = {
     id: user._id,
     username: user.username,
     gender: user.gender,
   }
-  done(null, userSession)
+  done(null, user.id)
 })
 
-passport.deserializeUser((id, done) => {
-  User.getUserById(id, (err, user) => {
+passport.deserializeUser(function (id, done) {
+  User.getUserById(id, function (err, user) {
     done(err, user)
   })
 })
+
+
+
+
 
 
 
@@ -72,8 +77,22 @@ router.post('/',
     failureRedirect: '/login',
     failureFlash: true
   }), (req, res) => {
-    req.flash('success', `Wellcome back ${req.username}`)
-    res.redirect(`/profile/${req.username}`)
+    req.session.save((err) => {
+      if (err) {
+        throw err
+      }
+    })
+    user = req.user
+    req.login(user, function (err) {
+      if (err) {
+        throw err;
+      }
+      req.flash('success', `Wellcome back ${user.username}`)
+      return res.redirect('/profile/' + user.username);
+    });
+
+
+    // res.redirect(`/profile/${req.user.username}`)
   })
 
 
@@ -132,17 +151,19 @@ router.post('/register', [
 })
 
 router.get('/logout', (req, res, next) => {
+  user = req.user
   if (req.session) {
     // delete session object
     req.session.destroy(err => {
       if (err) {
         return next(err)
       } else {
-        req.logout()
+        req.logout(user)
         return res.redirect('/')
       }
     })
   }
+
 })
 
 

@@ -24,17 +24,7 @@ const passport = require('passport')
 const cookieParser = require('cookie-parser')
 app.use(flash())
 app.use(expressValidator())
-app.use(passport.initialize())
-app.use(passport.session())
 app.use(expressValidator())
-
-
-
-
-
-
-
-
 
 app.use(session({
     secret: 'work hard',
@@ -44,6 +34,10 @@ app.use(session({
         mongooseConnection: db
     })
 }))
+app.use(passport.initialize())
+app.use(passport.session())
+
+
 
 
 
@@ -84,7 +78,8 @@ app.get('/swap', (req, res) => {
 
 
 app.get('/', (req, res) => {
-    console.log(res.locals)
+
+    console.log(req.user)
     Posts.find({}, (err, posts) => {
         if (err) throw err
         else
