@@ -1,8 +1,3 @@
-console.log('hey')
-
-
-
-
 function notificationss() {
   const not_button = document.getElementById('notification-icon')
   const not_div = document.getElementById('notifications')
@@ -29,12 +24,12 @@ function menuicon(x) {
 }
 
 function sendpost() {
-  post = document.getElementById('textarea').value
+  post = document.getElementById('icon_prefix2').value
   let xml = new XMLHttpRequest()
   xml.onload = function () {
     if (xml.readyState === 4 && xml.status === 200) {
       document.getElementById('post').innerHTML = makepost(this.responseText)
-      document.getElementById('textarea').value = ''
+      document.getElementById('icon_prefix2').value = ''
     } else {
       const error = 'error'
       console.log(error, this.statusText)
@@ -79,7 +74,7 @@ function makepost(text1) {
 
 
 document.getElementById('refreshbtn').addEventListener('click', () => {
-  document.getElementById('textarea').value = ''
+  document.getElementById('icon_prefix2').value = ''
 })
 
 function delete_post(id) {
@@ -94,4 +89,11 @@ function delete_post(id) {
   }
   xml.open('GET', `/delete/post/${id}`, true)
   xml.send()
+}
+
+function side_bar_links(link) {
+
+  console.log(typeof link)
+  location.replace(`${link}`)
+
 }

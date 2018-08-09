@@ -77,23 +77,50 @@ router.post('/',
     failureRedirect: '/login',
     failureFlash: true
   }), (req, res) => {
-    req.session.save((err) => {
-      if (err) {
-        throw err
-      }
-    })
+    // req.session.save((err) => {
+    //   if (err) {
+    //     throw err
+    //   }
+    // })
     user = req.user
     req.login(user, function (err) {
       if (err) {
         throw err;
       }
       req.flash('success', `Wellcome back ${user.username}`)
-      return res.redirect('/profile/' + user.username);
-    });
-
-
-    // res.redirect(`/profile/${req.user.username}`)
+      return res.redirect('/profile/' + user.username)
+    })
   })
+
+router.get('/logout', (req, res, next) => {
+  user = req.user
+  if (req.session) {
+    // delete session object
+    req.session.destroy(err => {
+      if (err) {
+        return next(err)
+      } else {
+        req.logout()
+        return res.redirect('/')
+      }
+    })
+  }
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -136,36 +163,21 @@ router.post('/register', [
     user.gender = req.body.gender
     user.password = req.body.password
     user.save(err => {
-      if (err) throw err
-      else {
-        req.login(user, err => {
+      if (err) {
+        throw err
+      } else {
+        req.login(user, (err) => {
           if (err) {
             throw err
+          } else {
+            req.flash('success', `Wellcome ${user.username}`)
+            return res.redirect(`/profile/${user.username}`)
           }
-          req.flash('success', `Welcome, ${user.username}`)
-          return res.redirect('/')
         })
-      };
-    })
-  }
-})
-
-router.get('/logout', (req, res, next) => {
-  user = req.user
-  if (req.session) {
-    // delete session object
-    req.session.destroy(err => {
-      if (err) {
-        return next(err)
-      } else {
-        req.logout(user)
-        return res.redirect('/')
       }
     })
   }
-
 })
-
 
 router.get('/register', (req, res) => {
   res.render('register.pug', {
@@ -174,5 +186,13 @@ router.get('/register', (req, res) => {
     }
   })
 })
+
+
+
+
+
+
+
+
 
 module.exports = router

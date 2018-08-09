@@ -27,19 +27,31 @@ block main
     .container
         include flash_messages.pug
         form#submit-form
-          h4
-            i.fas.fa-pencil-alt
-            |  Write your thoughts
-          br
-          textarea#textarea(name='textarea')
-          ul
-            li
-              button.waves-effect.waves-light.btn(onclick='sendpost()', type='button', name='button') Post
-            li
-              button#refreshbtn.waves-effect.waves-light.btn(type='button')
-                i.fas.fa-ban
-                |  Cancel
+            br
+            .input-field.col.s6
+                i.material-icons.prefix mode_edit
+                textarea#icon_prefix2.materialize-textarea(name='textarea')
+                label(for="icon_prefix2") Write your thoughts
+            ul
+                li
+
+                    button.waves-effect.waves-light.btn(onclick='sendpost()', type='button', name='button') Post
+                        i.material-icons.right send
+                li
+                    button#refreshbtn.waves-effect.waves-light.btn(type='button')
+                        i.material-icons.right cancel
+                        |  Cancel
         #post
+        //- .row
+        //-     .col.s12.m6
+        //-         .card-panel.grey.lighten-5.z-depth-1
+        //-             .row.valign-wrapper
+        //-                 .col.s4.m2
+        //-                     img.circle.responsive-img.valign(src='../public/img/lopez.jpg', alt)
+        //-                 .col.s8.m10
+        //-                     span.black-text
+        //-                     | This is a square image. Add the "circle" class to it to make it appear circular.
+
 
         each post in posts
             .user-container(id=`${post._id}`)
@@ -72,6 +84,11 @@ block main
                                 small.date
                                     i.far.fa-calendar
                                     |  #{post.date}
+
+
+
+
+
 
 
 

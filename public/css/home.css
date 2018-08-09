@@ -7,7 +7,7 @@
     --nav-bg-color: #f4f4ef;
     --text-color: #2e2e2e;
     --decoration-color: rgb(62, 184, 157);
-    --icon-color: #686767;
+    --icon-color: #424242;
     --shadow-color: rgba(0, 0, 0, 0.4);
     --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     /* Box shdadow for pop up menus */
@@ -23,7 +23,7 @@
 body {
     /*background-image: url('../img/egg_shell.png');*/
     padding: 0px;
-    padding-top: 60px;
+    padding-top: 50px;
     margin: 0px;
     color: var(--text-color);
     background: var(--bg-color);
@@ -45,7 +45,7 @@ main {
 }
 
 i {
-    font-size: 15px;
+    font-size: 18px;
     color: var(--icon-color);
 }
 
@@ -88,18 +88,26 @@ form ul {
 }
 
 #submit-form ul li button {
-    margin: 0px 0px;
-    width: 49%;
+    margin: 0px 5px;
+    width: 25%;
     box-shadow: none;
+}
+
+#submit-form ul li button i {
+    color: var(--nav-bg-color);
+}
+
+#submit-form ul {
+    margin: 0px 35px;
 }
 
 #submit-form ul li {
     display: inline;
     list-style: none;
-    margin-top: 10px;
+    margin-top: 0px;
 }
 
-.btn-cancel {
+.input-field .btn-cancel {
     background-color: rgb(207, 65, 46);
     margin-right: auto;
     padding-left: auto;
@@ -108,6 +116,10 @@ form ul {
 .btn-cancel:hover {
     background-color: rgb(207, 65, 46);
     box-shadow: var(--box-shadow) !important;
+}
+
+#refreshbtn {
+    background-color: #b71c1c;
 }
 
 textarea {
@@ -374,6 +386,7 @@ span {
     padding: 25px 0px;
     border-bottom: lightgray 1px solid;
     cursor: pointer;
+    width: 100%;
 }
 
 .sidemenu ul li a i {
@@ -417,4 +430,8 @@ span {
 
 .error {
     color: red;
+}
+
+#logout_icon {
+    color: #b71c1c;
 }

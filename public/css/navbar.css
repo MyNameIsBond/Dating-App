@@ -27,7 +27,7 @@
 
 #navList {
   margin: 0px;
-  padding: 5px 15px;
+  padding: 0px 15px;
   height: 50px;
 }
 
@@ -61,7 +61,7 @@
 }
 
 #search {
-  padding: 10px;
+  padding: 0px;
   width: 30%;
 }
 
@@ -162,14 +162,14 @@ span {
 }
 
 .sidemenu ul li {
-  padding: 25px 0px;
+  padding: 20px 0px;
   border-bottom: lightgray 1px solid;
   cursor: pointer;
 }
 
 .sidemenu ul li a i {
   float: right;
-  margin: 0px 10px;
+  margin: 0px 5px;
 }
 
 .sidemenu ul li a {
@@ -223,7 +223,6 @@ span {
 #notifications header {
   background-color: var(--decoration-color);
   padding: 10px;
-  height: 25px;
   letter-spacing: 1px;
   text-align: center;
   font-size: 18px;
@@ -290,4 +289,9 @@ span {
 
 #search_icon {
   margin: 0px 0px 0px -30px;
+}
+
+#notification-icon {
+  border-radius: 20px;
+  padding: 5px;
 }

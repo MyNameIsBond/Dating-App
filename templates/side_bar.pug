@@ -10,28 +10,28 @@
             |  London, UK
     hr
     ul
-        li
-            a(onclick='', href='/')
+        li(onclick="side_bar_links('/')").waves-effect.waves-dark
+            a(href='/')
                 | Home
-                i.fas.fa-home
-        li
+                i.material-icons home
+        li(onclick=`side_bar_links('/profile/${user.username}')`).waves-effect.waves-dark
             a(onclick='', href=`/profile/Tony`)
                 | Profile
-                i.fas.fa-user
-        li.right-item
+                i.material-icons person
+        li.right-item(onclick="side_bar_links('/messages')").waves-effect.waves-dark
             a(href='/messages')
                 | Messages
-                i.fas.fa-envelope
-        li
+                i.material-icons message
+        li(onclick="side_bar_links('/swap')").waves-effect.waves-dark
             a(href='/swap')
                 | Swap
-                i.fas.fa-heart
-        li.right-item
-            a(href='/login/logout')
-                | Logout 
-                |#{user.email}
-                i.fas.fa-sign-in-alt
-        li
+                i.material-icons favorite
+        li(onclick="side_bar_links('/blog')").waves-effect.waves-dark
             a(href='/blog')
                 | Blog
-                i.fab.fa-blogger-b
+                i.small.material-icons art_track
+        li.right-item(onclick="side_bar_links('/login/logout')").waves-effect.waves-dark
+            a(href='/login/logout')
+                | Logout 
+                |#{user.username}
+                i.fas.fa-sign-in-alt#logout_icon
