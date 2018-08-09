@@ -1,4 +1,4 @@
-nav {
+.navigation {
   height: 10px;
   white-space: nowrap;
   top: 0px;
@@ -18,7 +18,7 @@ nav {
   color: var(--decoration-color);
 }
 
-nav ul {
+.navigation ul {
   box-shadow: var(--box-shadow);
   background-color: var(--nav-bg-color);
   position: relative;
@@ -31,31 +31,31 @@ nav ul {
   height: 50px;
 }
 
-nav #navList li {
+.navigation #navList li {
   display: inline;
 }
 
-nav ul li a:hover i {
+.navigation ul li a:hover i {
   color: var(--decoration-color);
 }
 
-nav ul li {
+.navigation ul li {
   padding-top: 100px;
 }
 
-nav ul li {
+.navigation ul li {
   padding-left: 100px;
   margin-top: 100px;
 }
 
-nav ul li a {
+.navigation ul li a {
   letter-spacing: 1px;
   text-decoration: none;
   font-size: 18px;
   color: var(--text-color);
 }
 
-nav ul li a:hover {
+.navigation ul li a:hover {
   border-bottom: 2px var(--decoration-color) solid;
   transition: .2s ease;
 }

@@ -44,15 +44,3 @@ window.document.getElementById('login_btn').addEventListener('click', () => {
 function tabs(link) {
   location.replace(`/${link}`)
 }
-
-window.document.getElementById('load_test').addEventListener('click', () => {
-  console.log('hey')
-  user = {
-    name: 'Miltos',
-    surname: 'Hajdini',
-    country: 'Greece',
-    hungry: 'yes'
-  }
-  window.history.pushState(user, 'Tony', '/messages')
-  location.replace("http://127.0.0.1:8080/messages")
-})

@@ -42,8 +42,8 @@ a {
 
 #tabs-cnt {
   width: 100%;
-  margin: 0 -2%;
-  padding: 0 2%;
+  /* margin: 0 -2%;
+  padding: 0 2%; */
   display: flex;
 }
 

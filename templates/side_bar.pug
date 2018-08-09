@@ -1,7 +1,7 @@
 #sidemenu.sidemenu
     header
         img(src='../public/img/hotty12.jpg', alt='')
-        h4 Username , 23 
+        h4 #{user.username} , 23 
         span
             i.fas.fa-circle(style='color: lightgreen;')
             |  online
@@ -26,17 +26,11 @@
             a(href='/swap')
                 | Swap
                 i.fas.fa-heart
-        if user
-            li.right-item
-                a(href='/login/logout')
-                    | Logout 
-                    |#{user.email}
-                    i.fas.fa-sign-in-alt
-        else
-            li.right-item
-                a(href='/login')
-                    | Login / Register 
-                    i.fas.fa-sign-in-alt
+        li.right-item
+            a(href='/login/logout')
+                | Logout 
+                |#{user.email}
+                i.fas.fa-sign-in-alt
         li
             a(href='/blog')
                 | Blog

@@ -4,6 +4,7 @@ extends home.pug
 block head
     link(rel="stylesheet", href='/public/css/login.css')
     link(rel="stylesheet", href='/public/css/home.css')
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet')
     title Register
 
 block main
@@ -26,25 +27,28 @@ block main
                                 li(style='color: red;')
                                     | #{error.msg}
                         li
-                            p
-                            | username
-                            i#username_pic
-                            input#reg_username.input(type='text', name='username', placeholder='username')
+                            .input-field.col.s12
+
+                                i.material-icons.prefix account_circle
+                                input#username.validate.input(type='text', name='username')
+                                label(for='email') Username
                         li
-                            p
-                            | email
-                            i#email_pic
-                            input#reg_email.input(type='text', name='email', placeholder='example@mail.ac.uk')
+                            .input-field.col.s12
+                                i.material-icons.prefix email
+                                input#email.validate.input(type='email', name='email')
+                                label(for='email') Email
                         li
-                            p
-                            | password
-                            i#password_pic
-                            input#reg_password.input(name='password', type='password', placeholder='password')
+                            .input-field.col.s12
+                                i.material-icons.prefix vpn_key
+                                input#password.input(name='password', type='password',data-length="6")
+                                label(for='email') Password
+
                         li
-                            p
-                            | repeat password
-                            i#password2_pic
-                            input#reg_password2.input(type='password', name='password2', placeholder='password')
+                            .input-field.col.s12
+                                i.material-icons.prefix vpn_key
+                                input#password.input(type='password', name='password2')
+                                label(for='email') Repeat Password
+
                         li
                             p What's your gender
                             select#gender(name='gender')
@@ -59,3 +63,4 @@ block script
     script(src='../public/js/login.js')
     script(src='../public/js/home.js')
     script(src='../public/js/register.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js')

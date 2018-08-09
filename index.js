@@ -24,7 +24,6 @@ const passport = require('passport')
 const cookieParser = require('cookie-parser')
 app.use(flash())
 app.use(expressValidator())
-app.use(expressValidator())
 
 app.use(session({
     secret: 'work hard',
@@ -79,7 +78,6 @@ app.get('/swap', (req, res) => {
 
 app.get('/', (req, res) => {
 
-    console.log(req.user)
     Posts.find({}, (err, posts) => {
         if (err) throw err
         else

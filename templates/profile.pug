@@ -2,6 +2,8 @@ extends home.pug
 
 block head
     link(rel='stylesheet', href='../public/css/profile.css')
+    link(rel='stylesheet',href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css')
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet')
     title Profile
 
 block main 
@@ -99,21 +101,27 @@ block main
             br
             br
             br
-        // Add button
-        #add_pic(title='Add Media')
-            i#add_pic_button.fas.fa-plus-circle
-        #add_pic_list
-            ul
-                li(id='')
-                    a(href='')
-                    p.add_pic_info
-                    i.fas.fa-camera
-                li
-                    a(href='')
-                    i.fas.fa-video
-                li
-                    a(href='')
-                    i.fas.fa-lock
+    .fixed-action-btn
+        a.btn-floating.btn-large.red
+            i.large.material-icons mode_edit
+        ul
+            li
+                a.btn-floating.red
+                    i.material-icons insert_chart
+            li
+                a.btn-floating.yellow.darken-1
+                    i.material-icons format_quote
+            li
+                a.btn-floating.green
+                    i.material-icons publish
+            li
+                a.btn-floating.blue
+                    i.material-icons attach_file
+
+
 block script
+    script(src='https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js')
     script(src='../public/js/home.js')
     script(src='../public/js/profile.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js')
+

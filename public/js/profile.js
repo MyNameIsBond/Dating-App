@@ -1,3 +1,12 @@
+document.addEventListener('DOMContentLoaded', () => {
+  var elems = document.querySelectorAll('.fixed-action-btn');
+  var instances = M.FloatingActionButton.init(elems, {
+    direction: 'top',
+    hoverEnabled: true
+  });
+});
+
+
 function profile() {
   const xml = new XMLHttpRequest()
   xml.onload = function () {

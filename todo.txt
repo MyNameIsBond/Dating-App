@@ -19,7 +19,7 @@
 
 2) make like buttons - comments, maybe.
 
-3) make users and registeration and login system
+3) make users and registeration and login system / Done!
 
 4) make following 
 
