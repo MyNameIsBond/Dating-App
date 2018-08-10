@@ -43,56 +43,22 @@ block main
                         i.material-icons.right cancel
                         |  Cancel
         #post
-        //- .row
-        //-     .col.s12.m6
-        //-         .card-panel.grey.lighten-5.z-depth-1
-        //-             .row.valign-wrapper
-        //-                 .col.s4.m2
-        //-                     img.circle.responsive-img.valign(src='../public/img/lopez.jpg', alt)
-        //-                 .col.s8.m10
-        //-                     span.black-text
-        //-                     | This is a square image. Add the "circle" class to it to make it appear circular.
-
-
+ 
         each post in posts
-            .user-container(id=`${post._id}`)
-                .usercard2
-                    img(style='', src='../public/img/lopez.jpg')
-                    h2
-                        a(href='') Nicky Smith
-                    ul.hover_icons
-                        li
-                            a(href='/messages')
-                                i.fas.fa-envelope
-                .post-user
-                    .post-text
-                        span.close(title='delete post', onclick=`delete_post('${post._id}')`) ×
-                        .post-text2
-                            p #{post.post}
-                            br
-                    hr
-                    .post-list
-                        ul
-                            li
-                                a(href='')
-                                    i.far.fa-heart(style='color: red;')
-                                |  (34)
-                            li
-                                a(href='')
-                                    i.far.fa-comment
-                                |  (3)
-                            li
-                                small.date
-                                    i.far.fa-calendar
-                                    |  #{post.date}
-        .user-post
-            img(src='../public/img/hotty5.jpg', alt)
-            .user-post-grid
-                a(href='profile/ela') Nicky Smith
-                    small 3 mins ago
-                p asjhaskdjhaskjhaskjhdka sjhskadjhaskjdha ksdjhdkasjhjk asdhsakjdhaskjdhask djhsadkjhsakjsah dkjashdkjsah skajhdsakjhdas kjdhsakdjhaskj hsadkjhaskjahsdkjhsakjashdkjash sjhskadjhaskjdha ksdjhdkasjhjk asdhsakjdhaskjdhask djhsadkjhsakjsahdkjashdkjsah skajhdsakjhdaskjdhsakdjhaskjhsadkjhaskjahsdkjhsakjashdkjashsh sjhskadjhaskjdha ksdjhdkasjhjk asdhsakjdhaskjdhask djhsadkjhsakjsahdkjashdkjsah skajhdsakjhdaskjdhsakdjhaskjhsadkjhaskjahsdkjhsakjashdkjash
-                .about-post
+            .user-post(id=`${post._id}`)
+                img(src='../public/img/hotty5.jpg', alt)
+                .user-post-grid
+                    .user-name-min
+                        a(href='profile/ela') Nicky Smith &middot;
+                            small  3 mins ago
+                        i.small.material-icons.waves-effect.waves-dark#close(title='delete post', onclick=`delete_post('${post._id}')`) close
 
+                    .post-p
+                        |#{post.post}
+                        hr
+                    .about-post
+                        i.small.material-icons.waves-effect.waves-dark#thumb_up thumb_up
+                        i.small.material-icons.waves-effect.waves-dark#thumb_down thumb_down
 
 
 

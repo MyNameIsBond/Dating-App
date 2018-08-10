@@ -56,34 +56,29 @@ function sendpost() {
 
 function makepost(text1) {
   let text = JSON.parse(text1)
-  return `<div class="user-container" id="${text._id}">
-    <div class="usercard2" >
-      <img style="" src="../public/img/lopez.jpg">
-      <h2><a href="">Nicky Smith</a></h2>
-      <ul class="hover_icons">
-        <li><a href='/messages'><i class="fas fa-envelope"></i></a></li>
-      </ul>  
-    </div>
-    <div class='post-user'>
-      <div class='post-text'>
-        <span class="close" title="delete post" onclick="delete_post('${text._id}')">&times;</span>
-        <div class='post-text2'>
-        <p>${text.post}</p>
-        <br>
-        </div>
+  return `<div class="user-post" id="${text._id}"><img src="../public/img/hotty5.jpg" alt="alt" />
+  <div class="user-post-grid">
+      <div class="user-name-min"><a href="profile/ela">Nicky Smith &middot;<small> ${text.date}</small></a><i class="small material-icons waves-effect waves-dark" id="close"onclick="delete_post('${text._id}')">close</i></div>
+      <div class="post-p">${text.post}
+          <hr/>
       </div>
-        <hr>
-      <div class='post-list'>
-        <ul>
-          <li><a href=""><i style="color: red;" class="far fa-heart"></i></a> (34)</li>
-          <li><a href=""><i class="far fa-comment"></i></a> (3)</li>
-          <li><small class='date'><i class="far fa-calendar"></i> ${text.date}</small></li>
-        </ul>
-      </div>
-    </div>
-    </div>
-    `
+      <div class="about-post"><i class="small material-icons waves-effect waves-dark" id="thumb_up">thumb_up</i><i class="small material-icons waves-effect waves-dark" id="thumb_down">thumb_down</i></div>
+  </div>
+</div>`
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 document.getElementById('refreshbtn').addEventListener('click', () => {

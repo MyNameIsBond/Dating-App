@@ -5,14 +5,15 @@ $nav-bg-color: #f4f4ef
 $decoration-color: rgb(62, 184, 157)
 $icon-color: #424242
 $box-shadow-Menus: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.4)
+// colours for buttons 
+
+$green: #26a69a
+$red: #b71c1c
 
 
-
-
+// post card on home page.
 .user-post
-    &:hover
-        background-color: pink
-    height: 10rem
+    height: inherit
     width: 55%
     margin: 4% auto
     box-shadow: $box-shadow
@@ -21,26 +22,41 @@ $box-shadow-Menus: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0
     background-color: $nav-bg-color
     img
         border-radius: 50%
-        height: 130px
-        width: 130px
+        height: 100px
+        width: 100px
         margin: 10px
     .user-post-grid
+        margin: 0px 5px
+        width: 100%
         display: grid 
         grid-template-columns: minmax(10px, auto)
-        grid-template-rows: 20px minmax(10px, auto)20px
-        border: solid black 1px
-
-    a
-        &:hover
-            font-weight: bold 
-        small
-            text-decoration: none
-            color: $decoration-color
-        p
-
-
-
-    .about-post
-        border: solid black 1px
-
+        grid-template-rows: minmax(auto, auto) minmax(auto, auto)auto
+        grid-auto-rows: minmax(auto,inherit)
+        .user-name-min
+            margin: 8px 5px
+            margin-bottom: 10px
+            a
+                &:hover
+                    font-weight: bold 
+                small
+                    text-decoration: none
+                    color: $decoration-color
+            #close
+                float: right
+                border-radius: 50%
+                &:hover
+                    color: $red
+    .post-p
+        margin: 0px 5px
         
+    .about-post
+        i
+            margin: 0px 5px 5px 0px
+            padding: 10px 10px
+            float: right
+            border-radius: 50%
+        height: inherit
+        #thumb_down
+            color: $red
+        #thumb_up
+            color: $green
