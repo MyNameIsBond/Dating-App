@@ -18,13 +18,14 @@ const logreg = require('./routes/log-reg')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
 
+const compileSass = require('express-compile-sass')
 const flash = require('express-flash-messages')
 const expressValidator = require('express-validator')
 const passport = require('passport')
 const cookieParser = require('cookie-parser')
 app.use(flash())
 app.use(expressValidator())
-
+const root = process.cwd();
 app.use(session({
     secret: 'work hard',
     resave: true,
@@ -35,6 +36,15 @@ app.use(session({
 }))
 app.use(passport.initialize())
 app.use(passport.session())
+
+
+app.use(compileSass({
+    root: root,
+    sourceMap: true, // Includes Base64 encoded source maps in output css
+    sourceComments: true, // Includes source comments in output css
+    watchFiles: true, // Watches sass files and updates mtime on main files for each change
+    logToConsole: false // If true, will log to console.error on errors
+}))
 
 
 

@@ -13,10 +13,6 @@ const {
 } = require('express-validator/check')
 
 
-
-
-
-
 passport.use(new LocalStrategy({
   usernameField: 'email',
   passwordField: 'password'

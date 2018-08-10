@@ -155,7 +155,7 @@ textarea:focus {
     padding: 15px;
     margin: 4% auto;
     background-color: var(--nav-bg-color);
-    width: 70%;
+    width: 55%;
 }
 
 #submit-form:hover {

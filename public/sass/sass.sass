@@ -1,0 +1,46 @@
+// Global Variables
+$box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)
+$bg-color: #e8eaee
+$nav-bg-color: #f4f4ef
+$decoration-color: rgb(62, 184, 157)
+$icon-color: #424242
+$box-shadow-Menus: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.4)
+
+
+
+
+.user-post
+    &:hover
+        background-color: pink
+    height: 10rem
+    width: 55%
+    margin: 4% auto
+    box-shadow: $box-shadow
+    display: flex
+    cursor: pointer
+    background-color: $nav-bg-color
+    img
+        border-radius: 50%
+        height: 130px
+        width: 130px
+        margin: 10px
+    .user-post-grid
+        display: grid 
+        grid-template-columns: minmax(10px, auto)
+        grid-template-rows: 20px minmax(10px, auto)20px
+        border: solid black 1px
+
+    a
+        &:hover
+            font-weight: bold 
+        small
+            text-decoration: none
+            color: $decoration-color
+        p
+
+
+
+    .about-post
+        border: solid black 1px
+
+        
