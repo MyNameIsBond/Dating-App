@@ -1,6 +1,6 @@
 extends home.pug
 block head
-    link(rel="stylesheet", href='../public/css/blog.css')
+    link(rel="stylesheet", href='../public/sass/sass.sass')
     title Blog    
 block main
     // navigation Bar
@@ -9,10 +9,24 @@ block main
         .container
             // container for the grid
             .grid-container
-                #one 1
-                #two 2
-                #three 3
-                #four 4
-                #five 5
+                .first_row
+                    img(src="../public/img/couples.jpg", alt="")
+                    img(src="../public/img/couples2.jpg", alt="")
+                .second_row
+                    img(src="../public/img/couples3.jpeg", alt="")
+                    img(src="../public/img/couples4.jpeg", alt="")
+                .third_row
+                    img(src="../public/img/couples5.jpg", alt="")
+                    img(src="../public/img/couples6.jpg", alt="")
+                .forth_row
+                    img(src="../public/img/couples7.jpg", alt="")
+                    img(src="../public/img/couples8.jpg", alt="")
+                .fifth_row
+                    img(src="../public/img/couples9.jpg", alt="")
+                    img(src="../public/img/couples10.jpg", alt="")
+
+
+
+
 block script
     script(src='../public/js/home.js')

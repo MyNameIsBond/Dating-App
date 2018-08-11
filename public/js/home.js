@@ -62,7 +62,7 @@ function makepost(text1) {
       <div class="post-p">${text.post}
           <hr/>
       </div>
-      <div class="about-post"><i class="small material-icons waves-effect waves-dark" id="thumb_up">thumb_up</i><i class="small material-icons waves-effect waves-dark" id="thumb_down">thumb_down</i></div>
+      <div class="about-post"><i class="small material-icons waves-effect waves-teal" id="thumb_up">thumb_up</i><i class="small material-icons waves-effect waves-red" id="thumb_down">thumb_down</i></div>
   </div>
 </div>`
 }

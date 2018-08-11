@@ -60,3 +60,22 @@ $red: #b71c1c
             color: $red
         #thumb_up
             color: $green
+
+
+// blog grid
+
+
+.grid-container
+    display: grid
+    color: white
+    background-color: blue
+    grid-template-columns: minmax(400px auto)
+    grid-template-rows: repeat(4, minmax(300px, auto))
+    grid-auto-rows:  minmax(auto, inherit)
+
+    div
+        background-color: rgb(19, 61, 65)
+        img
+            width: auto
+            height: 300px
+            justify-self: stretch
