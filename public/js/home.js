@@ -1,10 +1,9 @@
-let instance = M.Carousel.init({
-  fullWidth: true,
-  indicators: true
-})
 document.addEventListener('DOMContentLoaded', function () {
   var elems = document.querySelectorAll('.carousel');
-  var instances = M.Carousel.init(elems, options);
+  var instances = M.Carousel.init(elems, {
+    fullWidth: true,
+    indicators: true
+  })
 })
 
 
@@ -116,6 +115,3 @@ function side_bar_links(link) {
   location.replace(`${link}`)
 
 }
-
-
-
