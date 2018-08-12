@@ -50,7 +50,7 @@ block main
                 .user-post-grid
                     .user-name-min
                         a(href='profile/ela') Nicky Smith &middot;
-                            small  3 mins ago
+                            small  #{post.date}
                         i.small.material-icons.waves-effect.waves-dark#close(title='delete post', onclick=`delete_post('${post._id}')`) close
 
                     .post-p
@@ -63,6 +63,7 @@ block main
 
 
 block script
-    script(src='https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js')
+
     script(src='../public/js/home.js')
+    script(src='https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js')

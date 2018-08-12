@@ -1,32 +1,70 @@
 extends home.pug
 block head
     link(rel="stylesheet", href='../public/sass/sass.sass')
+    link(rel='stylesheet',href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css')
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet')
     title Blog    
 block main
     // navigation Bar
     // Photo On the Top
-    div
-        .container
-            // container for the grid
-            .grid-container
-                .first_row
-                    img(src="../public/img/couples.jpg", alt="")
-                    img(src="../public/img/couples2.jpg", alt="")
-                .second_row
-                    img(src="../public/img/couples3.jpeg", alt="")
-                    img(src="../public/img/couples4.jpeg", alt="")
-                .third_row
-                    img(src="../public/img/couples5.jpg", alt="")
-                    img(src="../public/img/couples6.jpg", alt="")
-                .forth_row
-                    img(src="../public/img/couples7.jpg", alt="")
-                    img(src="../public/img/couples8.jpg", alt="")
-                .fifth_row
-                    img(src="../public/img/couples9.jpg", alt="")
-                    img(src="../public/img/couples10.jpg", alt="")
+    .container
+        .carousel.carousel-slider.center
+            .carousel-fixed-item.center
+                a.btn.waves-effect.white.grey-text.darken-text-2 button
+            .carousel-item.red.white-text(href='#one!')
+                h2 First Panel
+                p.white-text This is your first panel
+            .carousel-item.amber.white-text(href='#two!')
+                h2 Second Panel
+                p.white-text This is your second panel
+            .carousel-item.green.white-text(href='#three!')
+                h2 Third Panel
+                p.white-text This is your third panel
+            .carousel-item.blue.white-text(href='#four!')
+                h2 Fourth Panel
+                p.white-text This is your fourth panel
 
+    
+        .grid-container
+            .blog-card
+                img(src="../public/img/couples.jpg")
+                .tittle
+                    h5 She was the office's bike
+                .blog-footer
+                    a Nicky Smith
+                    small 3 mins ago
 
+            .blog-card
+                img(src="../public/img/couples2.jpg")
+                .tittle
+                    h5 She never spits
+                .blog-footer
+                    a Nicky Smith
+                    small 3 mins ago
+            .blog-card
+                img(src="../public/img/couples3.jpeg")
+                .tittle
+                    h5 I found my sex friend
+                .blog-footer
+                    a Nicky Smith
+                    small 3 mins ago
+            .blog-card
+                img(src="../public/img/couples4.jpeg")
+                .tittle
+                    h5 Dress up like a man ashdkjashkajshd kjashdksajh kasj haskjhakjd askjdh askjd haskdj hkjd hskjhd sakjd sakjas dkjahskjsah ksajh sakdjhaskjh
+                .blog-footer
+                    a Nicky Smith
+                    small 3 mins ago
+            .blog-card
+                img(src="../public/img/couples5.jpg")
+                .tittle
+                    h5 Dress up like a man ashdkjashkajshd kjashdksajh kasj haskjhakjd askjdh askjd haskdj hkjd hskjhd sakjd sakjas dkjahskjsah ksajh sakdjhaskjh
+                .blog-footer
+                    a Nicky Smith
+                    small 3 mins ago
 
 
 block script
+    script(src='https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js')
     script(src='../public/js/home.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js')

@@ -5,8 +5,8 @@ $nav-bg-color: #f4f4ef
 $decoration-color: rgb(62, 184, 157)
 $icon-color: #424242
 $box-shadow-Menus: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.4)
-// colours for buttons 
 
+// colours for buttons 
 $green: #26a69a
 $red: #b71c1c
 
@@ -18,7 +18,6 @@ $red: #b71c1c
     margin: 4% auto
     box-shadow: $box-shadow
     display: flex
-    cursor: pointer
     background-color: $nav-bg-color
     img
         border-radius: 50%
@@ -63,19 +62,46 @@ $red: #b71c1c
 
 
 // blog grid
-
-
 .grid-container
     display: grid
-    color: white
-    background-color: blue
-    grid-template-columns: minmax(400px auto)
-    grid-template-rows: repeat(4, minmax(300px, auto))
-    grid-auto-rows:  minmax(auto, inherit)
+    grid-template-columns: repeat(3, 1fr)
+    grid-gap: 1em;
 
-    div
-        background-color: rgb(19, 61, 65)
-        img
-            width: auto
-            height: 300px
-            justify-self: stretch
+// blog card.
+
+.blog-card
+    &:hover
+        box-shadow: $box-shadow-Menus
+    background-color: $nav-bg-color
+    position: relative
+    box-shadow: $box-shadow
+    border: solid balck 1px
+    height: 500px
+    width: 400px
+
+    .tittle
+        overflow: hidden
+        white-space: nowrap
+        text-overflow: ellipsis
+    h5
+        padding: 0px 20px
+        top: 0px
+        -webkit-margin-before: .3em !important
+    img
+        height: 350px
+        width: 100%
+    .blog-footer
+        font-size: 20px
+        padding: 10px
+        width: 100%
+        position: absolute
+        bottom: 0px
+        left: 0px
+        a
+            margin: 0px 10px
+        small
+            border-left-style: solid
+            border-left-color: $decoration-color
+            border-block-end-width: 1px
+            padding: 2px 10px
+

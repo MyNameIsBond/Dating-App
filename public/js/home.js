@@ -1,3 +1,14 @@
+let instance = M.Carousel.init({
+  fullWidth: true,
+  indicators: true
+})
+document.addEventListener('DOMContentLoaded', function () {
+  var elems = document.querySelectorAll('.carousel');
+  var instances = M.Carousel.init(elems, options);
+})
+
+
+
 function notificationss() {
   const not_button = document.getElementById('notification-icon')
   const not_div = document.getElementById('notifications')
@@ -105,3 +116,6 @@ function side_bar_links(link) {
   location.replace(`${link}`)
 
 }
+
+
+
