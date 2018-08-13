@@ -64,13 +64,17 @@ $red: #b71c1c
 // blog grid
 .grid-container
     display: grid
-    grid-template-columns: repeat(3, 1fr)
-    grid-gap: 1em;
-    padding: 20px  0px
+    grid-template-columns: repeat(3, auto)
+    grid-gap: 2.5em
 // blog card.
 
 .blog-card
+    margin: auto
+    padding: auto auto
     &:hover
+        h5
+            text-decoration: underline
+            cursor: pointer
         box-shadow: $box-shadow-Menus
     background-color: $nav-bg-color
     position: relative
@@ -84,6 +88,8 @@ $red: #b71c1c
         white-space: nowrap
         text-overflow: ellipsis
     h5
+        &:hover
+            text-decoration: underline
         padding: 0px 20px
         top: 0px
         -webkit-margin-before: .3em !important
@@ -114,12 +120,38 @@ $red: #b71c1c
         img
             height: 400px
             width: 100%
-        h2 , p
+        h2
             color: red
 
 
 // newest - hotest blog.
 
+.latest-post
+    background-color: $nav-bg-color
+    position: relative
+    display: flex
+    margin: 4em 0
+    box-shadow: $box-shadow
+    height: 400px
+    width: auto
+    img
+        height: 100%
+        width: auto
+    h3
+        margin-left: 50px
+    .latest-footer
+        position: absolute
+        bottom: 0.5em
+        right: 32%
+        font-size: 2em
 
-    
-
+        small
+            border-left-style: solid
+            border-left-color: $decoration-color
+            border-block-end-width: 1px
+            padding-left: 10px
+        a
+            padding: 0px 10px
+    h3
+        &:hover
+            text-decoration: underline

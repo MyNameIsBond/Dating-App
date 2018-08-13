@@ -83,7 +83,9 @@ app.get('/swap', (req, res) => {
 })
 
 
-
+app.get('/blogcreate', (req, res) => {
+    res.render('blog_create.pug')
+})
 
 
 app.get('/', (req, res) => {

@@ -1,0 +1,58 @@
+extend home.pug
+
+block head
+    link(rel="stylesheet", href='../public/sass/blog_create.sass')
+    link(rel='stylesheet',href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css')
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet')
+
+block main
+    .blog_buttons
+        ul
+            li 
+                i.material-icons format_align_center
+            li
+                i.material-icons format_align_justify
+            li
+                i.material-icons format_bold
+            li
+                i.material-icons format_clear
+            li
+                i.material-icons format_color_text
+            li
+                i.material-icons format_indent_decrease
+            li
+                i.material-icons format_indent_increase
+            li
+                i.material-icons format_italic
+            li
+                i.material-icons format_line_spacing
+            li
+                i.material-icons format_list_bulleted
+            li
+                i.material-icons format_list_numbered
+            li
+                i.material-icons format_quote
+            li
+                i.material-icons format_size
+            li
+                i.material-icons format_underlined
+            li
+                i.material-icons format_underlined
+
+
+
+
+    .container
+        textarea(name="")
+
+
+
+
+
+
+
+block script
+
+    script(src='https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js')
+    script(src='../public/js/home.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js')
