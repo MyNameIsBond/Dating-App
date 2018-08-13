@@ -15,6 +15,7 @@ const User = require('./models/users')
 const messanger = require('./routes/messanger')
 const profile = require('./routes/user-prof')
 const logreg = require('./routes/log-reg')
+const blog = require('./routes/blog_back_end')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
 
@@ -23,6 +24,12 @@ const flash = require('express-flash-messages')
 const expressValidator = require('express-validator')
 const passport = require('passport')
 const cookieParser = require('cookie-parser')
+
+
+
+
+
+
 app.use(flash())
 app.use(expressValidator())
 const root = process.cwd();
@@ -74,18 +81,14 @@ app.use(bodyParser.json())
 
 
 
-app.get('/blog', (req, res) => {
-    res.render('blog.pug')
-})
+
 
 app.get('/swap', (req, res) => {
     res.render('swap.pug')
 })
 
 
-app.get('/blogcreate', (req, res) => {
-    res.render('blog_create.pug')
-})
+
 
 
 app.get('/', (req, res) => {
@@ -145,3 +148,4 @@ app.listen(port, () => {
 app.use('/messanger', messanger)
 app.use('/profile', profile)
 app.use('/login', logreg)
+app.use('/blog', blog)

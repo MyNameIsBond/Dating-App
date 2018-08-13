@@ -1,9 +1,37 @@
-.blog_buttons
-    height: 50px
-    width: 100%
-    background-color: red
-    border: solid 1px black
+@import 'sass'
 
-    ul
-        display: block
-        float: left
+
+// Text Decoration
+
+
+body
+
+.blog_buttons
+    height: auto
+    width: auto
+    background-color: $decoration-color 
+    display: block
+    text-align: center
+    i
+        &:hover
+            background-color: $hover-color
+        padding: 10px 10px
+        margin: 0px 0px
+
+
+
+
+
+
+.text-field
+    height: 70em
+    width: 100%
+    background-color: white
+    box-shadow: $box-shadow
+    textarea
+        border-bottom-color: none
+        height: 100%
+        padding: 100px
+        font-size: 25px
+        &:focus
+            font-size: 25px
