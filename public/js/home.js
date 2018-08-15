@@ -1,3 +1,22 @@
+const io = require('socket.io-client');
+// or with import syntax
+import io from 'socket.io-client';
+
+
+
+
+socket.on('connect', () => {
+
+  console.log('hello, world of sockets')
+})
+
+
+
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
   var elems = document.querySelectorAll('.carousel');
   var instances = M.Carousel.init(elems, {
@@ -46,26 +65,10 @@ function menuicon(x) {
   document.getElementById('main').classList.toggle('main')
 }
 
-function sendpost() {
-  post = document.getElementById('icon_prefix2').value
-  let xml = new XMLHttpRequest()
-  xml.onload = function () {
-    if (xml.readyState === 4 && xml.status === 200) {
-      document.getElementById('post').innerHTML = makepost(this.responseText)
-      document.getElementById('icon_prefix2').value = ''
-    } else {
-      const error = 'error'
-      console.log(error, this.statusText)
-    }
-  }
-
-  xml.open('POST', `/post/${post}`, true)
-  xml.send()
-
-}
 
 function makepost(text1) {
   let text = JSON.parse(text1)
+
   return `<div class="user-post" id="${text._id}"><img src="../public/img/hotty5.jpg" alt="alt" />
   <div class="user-post-grid">
       <div class="user-name-min"><a href="profile/ela">Nicky Smith &middot;<small> ${text.date}</small></a><i class="small material-icons waves-effect waves-dark" id="close"onclick="delete_post('${text._id}')">close</i></div>
@@ -79,12 +82,31 @@ function makepost(text1) {
 
 
 
+function makepost2(text) {
+  let main_div = document.createElement('div')
+
+  main_div.setAttribute('class', 'user-post-grid')
+
+}
 
 
+function sendpost() {
+  post = document.getElementsByTagName('textarea')[0].value
 
+  let xml = new XMLHttpRequest()
+  xml.onload = function () {
+    if (xml.readyState === 4 && xml.status === 200) {
+      document.getElementById('post').innerHTML = makepost2(this.responseText)
+      document.getElementById('icon_prefix2').value = ''
+    } else {
+      const error = 'error'
+      console.log(error, this.statusText)
+    }
+  }
 
-
-
+  xml.open('POST', `/post/${post}`, true)
+  xml.send()
+}
 
 
 
@@ -110,8 +132,10 @@ function delete_post(id) {
 }
 
 function side_bar_links(link) {
-
-  console.log(typeof link)
   location.replace(`${link}`)
-
 }
+
+
+
+
+// Make a post

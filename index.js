@@ -55,6 +55,11 @@ app.use(compileSass({
 
 
 
+app.use(function (req, res, next) {
+    // res.status(404).send("Sorry can't find that!")
+    console.log(req.status)
+    next()
+})
 
 
 
@@ -149,3 +154,7 @@ app.use('/messanger', messanger)
 app.use('/profile', profile)
 app.use('/login', logreg)
 app.use('/blog', blog)
+
+app.use(function (req, res, next) {
+    res.status(404).render('404')
+})
