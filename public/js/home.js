@@ -1,18 +1,14 @@
-const io = require('socket.io-client');
-// or with import syntax
-import io from 'socket.io-client';
+let socket = io.connect('http://localhost:8080')
+let login = io.connect('http://localhost:8080/login')
 
-
-
-
-socket.on('connect', () => {
-
-  console.log('hello, world of sockets')
+login.on('connection', (data) => {
+  console.log(data)
 })
 
 
-
-
+socket.on('connection', () => {
+  console.log('client done!')
+})
 
 
 

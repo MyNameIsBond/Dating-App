@@ -55,11 +55,23 @@ app.use(compileSass({
 
 
 
-app.use(function (req, res, next) {
-    // res.status(404).send("Sorry can't find that!")
-    console.log(req.status)
-    next()
+// socket 
+
+// const server = require('http').Server(express)
+
+const server = app.listen(port, () => {
+    console.log(`server is on port: ${port}`)
 })
+const io = require('socket.io').listen(server)
+
+io.on('connection', socket => {
+    console.log(socket.handshake)
+    socket.emit('connection', {
+        hello: 'hey'
+    })
+    // socket.emit('new', (greetings))
+})
+
 
 
 
@@ -146,9 +158,7 @@ app.get('/delete/post/:id', (req, res) => {
     })
 })
 
-app.listen(port, () => {
-    console.log(`server is on port: ${port}`)
-})
+
 
 app.use('/messanger', messanger)
 app.use('/profile', profile)

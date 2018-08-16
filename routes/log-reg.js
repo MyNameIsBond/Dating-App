@@ -11,6 +11,11 @@ const {
   check
 } = require('express-validator/check')
 
+const io = require('socket.io').listen(router)
+
+
+
+// Local Strategy
 
 passport.use(new LocalStrategy({
   usernameField: 'email',
@@ -59,9 +64,7 @@ passport.deserializeUser(function (id, done) {
 
 
 
-
 router.get('/', (req, res) => {
-
   res.render('login', {
     errors: new Array(),
   })
@@ -82,11 +85,17 @@ router.post('/',
       if (err) {
         throw err;
       }
+      io.connect('connection', (socket) => {
+        socket.emit('connection', (user))
+      })
       req.flash('success', `Wellcome back ${user.username}`)
       return res.redirect('/profile/' + user.username)
     })
   })
 
+
+
+// Logout
 router.get('/logout', (req, res, next) => {
   user = req.user
   if (req.session) {

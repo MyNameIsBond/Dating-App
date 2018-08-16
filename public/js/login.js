@@ -15,32 +15,6 @@ window.document.getElementById('login_btn').addEventListener('click', () => {
 })
 
 
-// reg_button.addEventListener('click', (e) => {
-//   const xml = new XMLHttpRequest()
-//   xml.onload = function () {
-//     if (xml.status === 200) {
-//       document.getElementById('reg_errors').innerHTML = this.responseText
-//       console.log(this.responseText)
-//     } else {
-//       const error = 'error'
-//       console.log(error, this.statusText)
-//     }
-//   }
-//   xml.open('POST', 'login/register', true)
-//   xml.send()
-// })
-
-// function tabs(tab, cl) {
-//   let form = document.getElementsByClassName('form')
-//   for (let i = 0; i < form.length; i++) {
-//     form[i].style.display = 'none'
-//   }
-//   document.getElementById(tab).style.display = 'block'
-//   let tabs = document.getElementById(cl)
-//   tabs.classList.add('actives')
-// }
-
-
 function tabs(link) {
   location.replace(`/${link}`)
 }
